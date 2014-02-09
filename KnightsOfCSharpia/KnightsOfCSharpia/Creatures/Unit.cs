@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using KnightsOfCSharpia.Items;
+using KnightsOfCSharpia.Spells;
+using KnightsOfCSharpia.Common;
 
 namespace KnightsOfCSharpia
 {
@@ -67,14 +66,8 @@ namespace KnightsOfCSharpia
             protected set { this.inventory = value; }
         }
 
-        public void Attack()
-        {
-            throw new System.NotImplementedException();
-        }
+        public abstract AttackLog Attack(Hero target);
 
-        public void Defend()
-        {
-            throw new System.NotImplementedException();
-        }
+        public abstract string Defend(SpellDamage attackSpell);
     }
 }

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KnightsOfCSharpia
+namespace KnightsOfCSharpia.Spells
 {
-    public class Equipment
+    public enum DamageTypeEnum
     {
-        private List<Item> items;
+        Physical,
+        Magical
     }
 }

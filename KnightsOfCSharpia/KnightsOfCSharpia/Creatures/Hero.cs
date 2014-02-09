@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using KnightsOfCSharpia.Items;
+using KnightsOfCSharpia.Spells;
 
 namespace KnightsOfCSharpia
 {
@@ -16,6 +14,8 @@ namespace KnightsOfCSharpia
         private uint intelligence;
         private uint endurance;
         private Equipment equipment;
+        // NasC0 - I added a SpellBookCollection to every unit, that holds all their skills
+        private SpellBookCollection abilities;
 
         public Hero(string name, uint  strength, uint dexterity, uint intelligence, uint endurance) : base(name)
         {
@@ -24,7 +24,46 @@ namespace KnightsOfCSharpia
             this.dexterity = dexterity;
             this.intelligence = intelligence;
             this.endurance = endurance;
+            this.IsAlive = true;
         }
+
+        public uint CurrentMana
+        {
+            get
+            {
+                return this.currentMana;
+            }
+            set
+            {
+                this.currentMana = value;
+            }
+        }
+
+        public uint MaxMana
+        {
+            get
+            {
+                return this.maxMana;
+            }
+            set
+            {
+                this.maxMana = value;
+            }
+        }
+
+        public SpellBookCollection Abilities
+        {
+            get
+            {
+                return this.abilities;
+            }
+            private set
+            {
+                this.abilities = value;
+            }
+        }
+
+        public bool IsAlive { get; set; }
 
         public void EquipItem(Item item)
         {
