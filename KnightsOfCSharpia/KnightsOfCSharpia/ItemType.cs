@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace KnightsOfCSharpia.Items
+namespace KnightsOfCSharpia
 {
     public enum ItemType
     {
         Weapon,
-        Arms,
+        Gloves,
         Armour,
-        Head,
+        Helm,
         Shield,
         Belt,
         Shoes,
