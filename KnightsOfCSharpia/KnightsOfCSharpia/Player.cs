@@ -2,17 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace KnightsOfCSharpia
 {
-    public enum ItemType
+    class Player
     {
-        Weapon,
-        Gloves,
-        Armour,
-        Helm,
-        Shield,
-        Belt,
-        Shoes,
+        private string name;
+
+        private Hero character;
     }
 }

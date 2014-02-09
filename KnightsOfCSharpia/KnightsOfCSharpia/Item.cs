@@ -9,7 +9,7 @@ namespace KnightsOfCSharpia
     {
         private string name;
         private ItemType type;
-        private int size;
+        private uint size;
         private int healthModifier;
         private int manaModifier;
         private int strenghtModifier;
@@ -19,5 +19,11 @@ namespace KnightsOfCSharpia
         private int enduranceModifier;
         private int attackPointsModifier;
         private int defencePointsModifier;
+
+        public uint Size
+        {
+            get { return this.size; }
+            set { this.size = value; }
+        }
     }
 }
