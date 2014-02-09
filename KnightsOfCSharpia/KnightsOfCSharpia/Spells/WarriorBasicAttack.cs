@@ -15,7 +15,7 @@
 
         public DamageTypeEnum DamageType { get; private set; }
 
-        public override SpellDamage Effect(int casterModifier)
+        public override SpellDamage Effect(uint casterModifier)
         {
             return new SpellDamage(SpellName, casterModifier, this.DamageType);
         }

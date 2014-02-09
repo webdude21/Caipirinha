@@ -21,7 +21,7 @@ namespace KnightsOfCSharpia.Spells
 
         // Returns a SpellDamage log which can be used when calling the creature Defend abilit;
         // In this case, this spell deals no extra damage outside the casterModifier
-        public override SpellDamage Effect(int casterModifier)
+        public override SpellDamage Effect(uint casterModifier)
         {
             return new SpellDamage(SpellName, casterModifier, this.DamageType);
         }

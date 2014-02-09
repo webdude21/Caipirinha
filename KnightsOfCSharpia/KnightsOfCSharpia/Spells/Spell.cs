@@ -18,12 +18,12 @@ namespace KnightsOfCSharpia.Spells
 
         public bool AffectsCaster { get; private set; }
 
-        public int ManaCost { get; private set; }
+        public uint ManaCost { get; private set; }
 
         public string Name { get; private set; }
 
         public string Description { get; private set; }
 
-        public abstract SpellDamage Effect(int casterModifier);
+        public abstract SpellDamage Effect(uint casterModifier);
     }
 }
