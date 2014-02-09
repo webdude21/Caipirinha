@@ -10,6 +10,8 @@ namespace KnightsOfCSharpia
     {
         static void Main()
         {
+            var drakon = new Creature("Зелен дракон", 10, 20);
+            Console.WriteLine(drakon.GetAttackPoints());
         }
     }
 }
