@@ -1,90 +1,94 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="KnightsOfCSharpia.KnightsOfCSharpia">
-    <Position X="0.5" Y="1.25" Width="1.5" />
+  <Class Name="KnightsOfCSharpia.KnightsOfCSharpia" Collapsed="true">
+    <Position X="13.75" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>KnightsOfCSharpia.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KnightsOfCSharpia.Hero">
-    <Position X="4.75" Y="1.25" Width="2.25" />
-    <Compartments>
-      <Compartment Name="Nested Types" Collapsed="false" />
-    </Compartments>
+  <Class Name="KnightsOfCSharpia.Mage" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAAAIAAAAAAAgEAAAAAAAAgAAAAEAAAAQABgIAAEAAE=</HashCode>
-      <FileName>Hero.cs</FileName>
+      <HashCode>AAAAAECAABAAAAAACAAAAAAAAIBAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Creatures\Mage.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KnightsOfCSharpia.Warrior">
-    <Position X="7.5" Y="1.25" Width="1.5" />
+  <Class Name="KnightsOfCSharpia.Items.Item" Collapsed="true">
+    <Position X="5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAACAAAAAAAAACEAAAAAAAABAAAAAAAAAAAAAACA=</HashCode>
-      <FileName>Warrior.cs</FileName>
+      <HashCode>BACAAgQIgAAAgAAAAIAAAgQQACAFUCAgAUAiAAIAIoA=</HashCode>
+      <FileName>Items\Item.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KnightsOfCSharpia.Mage">
-    <Position X="7.5" Y="4" Width="1.5" />
+  <Class Name="KnightsOfCSharpia.Spells.Spell" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAECAAAAIAAAACAAAAAAAAABAAAAAAAAAAAAAACA=</HashCode>
-      <FileName>Mage.cs</FileName>
+      <HashCode>AAAAAAIAAAggAAAAAAAABAQAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Spells\Spell.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KnightsOfCSharpia.Item">
-    <Position X="9.5" Y="1.25" Width="2" />
+  <Class Name="KnightsOfCSharpia.Spells.SpellBookCollection">
+    <Position X="8.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BACAAAAIAAAAgAAAAIAAAgAAAAAFEAAgAAAgAAAAAoA=</HashCode>
-      <FileName>Item.cs</FileName>
+      <HashCode>gAAAAAAAAAAAAAAACAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Spells\SpellBookCollection.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KnightsOfCSharpia.Spell">
-    <Position X="12" Y="1.25" Width="1.5" />
+  <Class Name="KnightsOfCSharpia.Spells.MageBasicAttack" Collapsed="true">
+    <Position X="7" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAQAAAACAAAAAAAAAAA=</HashCode>
-      <FileName>Spell.cs</FileName>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAgAIAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Spells\MageBasicAttack.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KnightsOfCSharpia.Player">
-    <Position X="0.5" Y="3" Width="1.5" />
+  <Class Name="KnightsOfCSharpia.Spells.WarriorBasicAttack" Collapsed="true">
+    <Position X="9.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Player.cs</FileName>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAgAIAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Spells\WarriorBasicAttack.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KnightsOfCSharpia.Creature">
-    <Position X="4.75" Y="5.25" Width="2.25" />
+  <Class Name="KnightsOfCSharpia.Items.Helmet" Collapsed="true">
+    <Position X="4.25" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
-      <FileName>Creature.cs</FileName>
+      <FileName>Items\Helmet.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KnightsOfCSharpia.Unit">
-    <Position X="2.5" Y="1.25" Width="1.5" />
+  <Class Name="KnightsOfCSharpia.Unit" Collapsed="true">
+    <Position X="1.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAIAAAACAAAAAgAAAQIAIEEAAADAAAAAgAAQAE=</HashCode>
-      <FileName>Unit.cs</FileName>
+      <FileName>Creatures\Unit.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KnightsOfCSharpia.Inventory">
-    <Position X="0.5" Y="5.75" Width="1.5" />
+  <Class Name="KnightsOfCSharpia.Inventory" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAAAAAAAAAAAAEoAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Inventory.cs</FileName>
+      <FileName>Items\Inventory.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KnightsOfCSharpia.Equipment">
-    <Position X="2.5" Y="6.5" Width="1.5" />
+  <Struct Name="KnightsOfCSharpia.Spells.SpellDamage" Collapsed="true">
+    <Position X="11.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Equipment.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAIAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Spells\SpellDamage.cs</FileName>
     </TypeIdentifier>
-  </Class>
-  <Enum Name="KnightsOfCSharpia.ItemType">
-    <Position X="9.5" Y="5.5" Width="1.5" />
+  </Struct>
+  <Struct Name="KnightsOfCSharpia.Common.AttackLog" Collapsed="true">
+    <Position X="11.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAEAAIAAAQgBAAAgAAAAAAgAAAAAAAAAAAA=</HashCode>
-      <FileName>ItemType.cs</FileName>
+      <HashCode>AACAAAAQAAAIAAAEAAAAAAAQAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\AttackLog.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="KnightsOfCSharpia.Items.ItemType" Collapsed="true">
+    <Position X="5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAIAAAAgAAAAgAAAAAAgAAAAAAAAEAAA=</HashCode>
+      <FileName>Items\ItemType.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

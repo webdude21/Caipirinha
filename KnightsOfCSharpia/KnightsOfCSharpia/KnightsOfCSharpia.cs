@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using KnightsOfCSharpia.Items;
+using KnightsOfCSharpia.Common;
 
 namespace KnightsOfCSharpia
 {
@@ -10,8 +8,8 @@ namespace KnightsOfCSharpia
     {
         static void Main()
         {
-            var drakon = new Creature("Зелен дракон", 10, 20);
-            Console.WriteLine(drakon.GetAttackPoints());
+            var bla = Helmet.MakeRandom(2, ItemRarity.Rare);
+            Item item = RandomGenerator.GenerateRandomItems(2);
         }
     }
 }
