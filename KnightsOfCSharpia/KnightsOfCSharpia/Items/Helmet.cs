@@ -9,6 +9,10 @@ namespace KnightsOfCSharpia.Items
 {
     public class Helmet : Item
     {
+        protected const ItemType ItemType = Items.ItemType.Head;
+
+        protected const int ItemSize = 2;
+
         /// <summary>
         /// Generates a random Helmet.
         /// </summary>
@@ -106,7 +110,7 @@ namespace KnightsOfCSharpia.Items
         /// <param name="name">Name of the item.</param>
         /// <param name="rarity">Rarity of the item.</param>
         public Helmet(string name, ItemRarity rarity)
-            :base(name, ItemType.Head, rarity, 2)
+            :base(name, ItemType, rarity, ItemSize)
         {
         }
 
@@ -119,7 +123,7 @@ namespace KnightsOfCSharpia.Items
         /// <param name="propertiesAndValues">A collection of the Modifier properties with random values attached to them.
         /// You should never used this constructor, unless you pass in random values here!</param>
         internal Helmet(string name, ItemRarity rarity, List<KeyValuePair<PropertyInfo, int>> propertiesAndValues)
-            :base(name, ItemType.Head, rarity, 2)
+            :base(name, ItemType, rarity, ItemSize)
         {
             // The base constructor takes care of the item Name, Type, Rarity and Size.
             // After that, we initialise the selected properties using reflection.

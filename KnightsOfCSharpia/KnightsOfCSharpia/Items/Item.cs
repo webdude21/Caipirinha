@@ -2,11 +2,34 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using KnightsOfCSharpia.Common;
+using System.Reflection;
 
 namespace KnightsOfCSharpia.Items
 {
     public class Item
     {
+        public static Item MakeRandom(int partyLevel, ItemRarity rarity, string itemClass)
+        {
+            string fullClassName = String.Format("KnigtsOfCSharpia.Items.{0}", itemClass);
+
+            // First, determine a random number of properties to modify
+            // 3-5 for Rare items
+            // 1-3 for Common items
+            int numberOfProperties = 0;
+
+            if (rarity == ItemRarity.Rare)
+            {
+                numberOfProperties = RandomGenerator.GetRandomValue(3, 6);
+            }
+            else if (rarity == ItemRarity.Common)
+            {
+                numberOfProperties = RandomGenerator.GetRandomValue(1, 4);
+            }
+
+            return new Item("bla", ItemType.Head, rarity, 2);
+        }
+
         private string name;
         private ItemType type;
         private ItemRarity rarity;
