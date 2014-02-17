@@ -1,6 +1,4 @@
 ﻿using System;
-using KnightsOfCSharpia.Items;
-using KnightsOfCSharpia.Common;
 
 namespace KnightsOfCSharpia
 {

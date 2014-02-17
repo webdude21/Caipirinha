@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using KnightsOfCSharpia.Common;
 
-namespace KnightsOfCSharpia
+namespace KnightsOfCSharpia.Creatures
 {
     public class Creature : Unit
     {
