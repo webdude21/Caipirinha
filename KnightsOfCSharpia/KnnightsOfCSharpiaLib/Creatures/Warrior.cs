@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using KnightsOfCSharpia.Common;
 
-namespace KnightsOfCSharpia
+namespace KnightsOfCSharpia.Creatures
 {
     public class Warrior : Hero
     {

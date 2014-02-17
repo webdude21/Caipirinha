@@ -1,7 +1,7 @@
 ﻿using KnightsOfCSharpia.Items;
 using KnightsOfCSharpia.Spells;
 
-namespace KnightsOfCSharpia
+namespace KnightsOfCSharpia.Creatures
 {
     public abstract class Hero : Unit
     {
