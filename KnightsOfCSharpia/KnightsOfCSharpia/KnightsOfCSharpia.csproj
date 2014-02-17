@@ -48,6 +48,7 @@
     <Compile Include="Creatures\Player.cs" />
     <Compile Include="Creatures\Unit.cs" />
     <Compile Include="Creatures\Warrior.cs" />
+    <Compile Include="Items\Boots.cs" />
     <Compile Include="Items\Equipment.cs" />
     <Compile Include="Items\Helmet.cs" />
     <Compile Include="Items\Inventory.cs" />
