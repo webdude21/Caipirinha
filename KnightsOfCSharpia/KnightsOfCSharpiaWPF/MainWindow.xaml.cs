@@ -28,8 +28,21 @@ namespace KnightsOfCSharpiaWPF
         private void newGameButton_Click(object sender, RoutedEventArgs e)
         {
             var gamefield = new GameField();
-            this.Hide();
+            this.Close();
             gamefield.Show();
+        }
+
+        protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)
+        {
+            double ratio = 0.618;
+            if (sizeInfo.WidthChanged)
+            {
+                this.Width = sizeInfo.NewSize.Height / ratio;
+            }
+            else
+            {
+                this.Height = sizeInfo.NewSize.Width * ratio;
+            }
         }
     }
 }

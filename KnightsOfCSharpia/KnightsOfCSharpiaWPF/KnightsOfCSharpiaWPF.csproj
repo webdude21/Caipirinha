@@ -110,6 +110,20 @@
     <Resource Include="Backgrounds_Images\autumn.png" />
     <Resource Include="Backgrounds_Images\clearing.png" />
     <Resource Include="Backgrounds_Images\forest.png" />
+    <Resource Include="creatures_Images\angel.png" />
+    <Resource Include="creatures_Images\archer.png" />
+    <Resource Include="creatures_Images\barberian.png" />
+    <Resource Include="creatures_Images\brute.png" />
+    <Resource Include="creatures_Images\dwarf.png" />
+    <Resource Include="creatures_Images\earthmage.png" />
+    <Resource Include="creatures_Images\firemage.png" />
+    <Resource Include="creatures_Images\icemage.png" />
+    <Resource Include="creatures_Images\knight.png" />
+    <Resource Include="creatures_Images\necromancer.png" />
+    <Resource Include="creatures_Images\ninja.png" />
+    <Resource Include="creatures_Images\samurai.png" />
+    <Resource Include="creatures_Images\skeleton.png" />
+    <Resource Include="creatures_Images\summoner.png" />
     <Resource Include="КOCS_Images\OF CSHAPRIA.png" />
   </ItemGroup>
   <ItemGroup>

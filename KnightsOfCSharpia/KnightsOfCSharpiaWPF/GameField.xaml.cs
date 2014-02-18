@@ -23,5 +23,17 @@ namespace KnightsOfCSharpiaWPF
         {
             InitializeComponent();
         }
+        protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)
+        {
+            double ratio = 0.618;
+            if (sizeInfo.WidthChanged)
+            {
+                this.Width = sizeInfo.NewSize.Height / ratio;
+            }
+            else
+            {
+                this.Height = sizeInfo.NewSize.Width * ratio;
+            }
+        }
     }
 }
