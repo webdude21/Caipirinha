@@ -10,28 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace KnightsOfCSharpiaWPF
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for GameField.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class GameField : Window
     {
-        public MainWindow()
+        public GameField()
         {
             InitializeComponent();
         }
-
-        private void newGameButton_Click(object sender, RoutedEventArgs e)
-        {
-            var gamefield = new GameField();
-            this.Close();
-            gamefield.Show();
-        }
-
         protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)
         {
             double ratio = 0.618;

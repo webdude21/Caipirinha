@@ -5,7 +5,7 @@ using System.Text;
 using KnightsOfCSharpia.Spells;
 using KnightsOfCSharpia.Common;
 
-namespace KnightsOfCSharpia
+namespace KnightsOfCSharpia.Creatures
 {
     public class Mage : Hero
     {

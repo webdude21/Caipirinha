@@ -3,7 +3,7 @@ using KnightsOfCSharpia.Items;
 using KnightsOfCSharpia.Spells;
 using KnightsOfCSharpia.Common;
 
-namespace KnightsOfCSharpia
+namespace KnightsOfCSharpia.Creatures
 {
     public abstract class Unit
     {

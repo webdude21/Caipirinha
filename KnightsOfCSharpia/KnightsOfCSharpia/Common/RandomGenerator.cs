@@ -72,9 +72,13 @@ namespace KnightsOfCSharpia.Common
 
             // Invoke the MakeRandom method of the class, which creates an item based on the parameters provided
             // In this case, we provide partyLevel and rarity of the item, and the static method of the item handles the rest.
-            Object[] parameters = { partyLevel, rarity };
+            MethodInfo method = typeof(Item).GetMethod("MakeRandom", BindingFlags.NonPublic | BindingFlags.Static).MakeGenericMethod(selectedType);
 
-            return (Item)selectedType.GetMethod("MakeRandom").Invoke(null, parameters);
+            // Returns an Object type of the desired item
+            var result = method.Invoke(null, new object[] { partyLevel, rarity });
+
+            // Casts the resulting item to Item for polymorphism and easier method use (otherwise this too will be a generic method, which defeats the purpose)
+            return (Item)result;
         }
     }
 }
