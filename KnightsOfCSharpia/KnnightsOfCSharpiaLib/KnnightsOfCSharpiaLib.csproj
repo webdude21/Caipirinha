@@ -44,7 +44,6 @@
     <Compile Include="Creatures\Creature.cs" />
     <Compile Include="Creatures\Hero.cs" />
     <Compile Include="Creatures\Mage.cs" />
-    <Compile Include="Creatures\Player.cs" />
     <Compile Include="Creatures\Unit.cs" />
     <Compile Include="Creatures\Warrior.cs" />
     <Compile Include="Items\Boots.cs" />
@@ -61,6 +60,9 @@
     <Compile Include="Spells\SpellBookCollection.cs" />
     <Compile Include="Spells\SpellDamage.cs" />
     <Compile Include="Spells\WarriorBasicAttack.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Creatures\ClassDiagramCreatures.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

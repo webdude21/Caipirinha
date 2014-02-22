@@ -1,22 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using KnightsOfCSharpia.Common;
+﻿using KnightsOfCSharpia.Common;
+using System;
 
 namespace KnightsOfCSharpia.Creatures
 {
     public class Warrior : Hero
     {
-        private const uint Strength = 15;
-        private const uint Dexterity = 6;
-        private const uint Intelligence = 2;
-        private const uint Endurance = 12;
 
-        public Warrior(string name)
-            : base(name, Strength, Dexterity, Intelligence, Endurance)
+        public Warrior(string name, uint strenght, uint dexterity, uint Intelligence, uint willpower)
+            : base(name, strenght, dexterity, Intelligence, willpower)
         {
             
+        }
+
+        public override uint GetAttackPoints()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override uint GetDeffencePoints()
+        {
+            throw new NotImplementedException();
         }
 
         public override AttackLog Attack(Hero target)
@@ -30,10 +33,7 @@ namespace KnightsOfCSharpia.Creatures
                 string result = target.Defend(attackResult);
                 return new AttackLog(true, String.Format("{0} uses {1} on {2}", this.Name, currentAbility.Name, result));
             }
-            else
-            {
-                return AttackLog.AttackFailed;
-            }
+            return AttackLog.AttackFailed;
         }
 
         public override string Defend(Spells.SpellDamage attackSpell)

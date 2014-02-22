@@ -1,21 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using KnightsOfCSharpia.Common;
 using KnightsOfCSharpia.Spells;
-using KnightsOfCSharpia.Common;
+using System;
 
 namespace KnightsOfCSharpia.Creatures
 {
     public class Mage : Hero
     {
-        private const uint Strength = 4;
-        private const uint Dexterity = 8;
-        private const uint Intelligence = 16;
-        private const uint Endurance = 7;
-
-        public Mage(string name)
-            : base(name, Strength, Dexterity, Intelligence, Endurance)
+        public Mage(string name, uint strenght, uint dexterity, uint Intelligence, uint willpower)
+            : base(name, strenght, dexterity, Intelligence, willpower)
         {
             this.Abilities.AddSpell(new MageBasicAttack());
         }
@@ -23,6 +15,11 @@ namespace KnightsOfCSharpia.Creatures
         // Returns AttackLog, so we can see if the attack has passed
         // And if it passed, the details about it:
         // What type of damage is dealt, what ability was used, how much damage was dealt
+        public override uint GetDeffencePoints()
+        {
+            throw new NotImplementedException();
+        }
+
         public override AttackLog Attack(Hero target)
         {
             if (target.IsAlive)
@@ -36,10 +33,7 @@ namespace KnightsOfCSharpia.Creatures
                 string result = target.Defend(spellCastResult);
                 return new AttackLog(true, String.Format("{0} uses {1} on {2}", this.Name, spellUsed.Name, result));
             }
-            else
-            {
-                return AttackLog.AttackFailed;
-            }
+            return AttackLog.AttackFailed;
         }
 
         public override string Defend(SpellDamage attackSpell)
@@ -52,11 +46,11 @@ namespace KnightsOfCSharpia.Creatures
 
             if (attackSpell.DamageType == DamageTypeEnum.Physical)
             {
-                resultingDamage = this.DefencePoints - attackSpell.SpellDamageModifier;
+                resultingDamage = this.GetDeffencePoints() - attackSpell.SpellDamageModifier;
             }
             else
             {
-                resultingDamage = this.DefencePoints - attackSpell.SpellDamageModifier;
+                resultingDamage = this.GetDeffencePoints() - attackSpell.SpellDamageModifier;
             }
 
             return String.Format("{0} for {1} {2} damage. Remaining HP: {3}", this.Name, resultingDamage, attackSpell.DamageType, this.CurrentHealth);

@@ -1,9 +1,5 @@
-﻿using KnightsOfCSharpia.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Reflection;
-using System.Text;
 
 namespace KnightsOfCSharpia.Items
 {

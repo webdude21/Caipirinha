@@ -1,70 +1,39 @@
-﻿using System;
-using KnightsOfCSharpia.Items;
+﻿using KnightsOfCSharpia.Common;
 using KnightsOfCSharpia.Spells;
-using KnightsOfCSharpia.Common;
+using System;
 
 namespace KnightsOfCSharpia.Creatures
 {
     public abstract class Unit
     {
         private string name;
-        private uint currentHealth;
-        private uint maxHealth;
-        private uint level;
-        private uint defencePoints;
-        private Inventory inventory;
+        public uint MaxHealth { get; set; }
+        public uint CurrentHealth { get; set; }
+        public uint Level { get; set; }
 
-        public Unit(string name)
+        protected Unit(string name, uint level = 1)
         {
             this.Name = name;
-            inventory = new Inventory();
+            this.Level = level;
+            this.MaxHealth = Level * 100;
+            this.CurrentHealth = this.MaxHealth;
         }
 
         public string Name
         {
             get { return this.name; }
-            private set
+            set
             {
                 if (string.IsNullOrEmpty(value))
                 {
                     throw new ArgumentException("Invalid name null or empty value");
                 }
-
                 this.name = value;
             }
         }
 
-        public uint CurrentHealth
-        {
-            get { return this.currentHealth; }
-            protected set { this.currentHealth = value; }
-        }
-
-        public uint MaxHealth
-        {
-            get { return this.currentHealth; }
-            protected set { this.currentHealth = value; }
-        }
-
-        public uint Level
-        {
-            get { return this.level; }
-            protected set { this.level = value; }
-        }
-
         public abstract uint GetAttackPoints();
-
-        public uint DefencePoints
-        {
-            get { return this.defencePoints; }
-            protected set { this.defencePoints = value; }
-        }
-
-        public Inventory Inventory
-        {
-            get { return this.inventory; }
-            protected set { this.inventory = value; }
-        }
+        public abstract uint GetDeffencePoints();
 
         public abstract AttackLog Attack(Hero target);
 

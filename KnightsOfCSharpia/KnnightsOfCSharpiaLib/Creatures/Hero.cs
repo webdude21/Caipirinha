@@ -5,63 +5,27 @@ namespace KnightsOfCSharpia.Creatures
 {
     public abstract class Hero : Unit
     {
-        private uint currentMana;
-        private uint maxMana;
-        private uint experience;
-        private uint nextLevelExperience;
-        private uint strength;
-        private uint dexterity;
-        private uint intelligence;
-        private uint endurance;
+        public uint Strength { get; set; }
+        public uint Dexterity { get; set; }
+        public uint Intelligence { get; set; }
+        public uint Willpower { get; set; }
+        public uint CurrentMana { get; set; }
+        public uint MaxMana { get; set; }
+
+
         private Equipment equipment;
         // NasC0 - I added a SpellBookCollection to every unit, that holds all their skills
-        private SpellBookCollection abilities;
 
-        public Hero(string name, uint  strength, uint dexterity, uint intelligence, uint endurance) : base(name)
+        public Hero(string name, uint strength, uint dexterity, uint intelligence, uint willpower) : base(name)
         {
+            Strength = strength;
+            Dexterity = dexterity;
+            Intelligence = intelligence;
+            Willpower = willpower;
             this.equipment = new Equipment();
-            this.strength = strength;
-            this.dexterity = dexterity;
-            this.intelligence = intelligence;
-            this.endurance = endurance;
-            this.IsAlive = true;
         }
 
-        public uint CurrentMana
-        {
-            get
-            {
-                return this.currentMana;
-            }
-            set
-            {
-                this.currentMana = value;
-            }
-        }
-
-        public uint MaxMana
-        {
-            get
-            {
-                return this.maxMana;
-            }
-            set
-            {
-                this.maxMana = value;
-            }
-        }
-
-        public SpellBookCollection Abilities
-        {
-            get
-            {
-                return this.abilities;
-            }
-            private set
-            {
-                this.abilities = value;
-            }
-        }
+        public SpellBookCollection Abilities { get; set; }
 
         public bool IsAlive { get; set; }
 
@@ -77,7 +41,7 @@ namespace KnightsOfCSharpia.Creatures
 
         public override uint GetAttackPoints()
         {
-            return this.strength * 2; //TODO: Add equipped items to attack power
+            return this.Strength * 2; //TODO: Add equipped items to attack power
         }
     }
 }
