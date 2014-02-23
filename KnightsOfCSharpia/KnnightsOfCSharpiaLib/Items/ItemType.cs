@@ -1,5 +1,5 @@
 ﻿
-namespace KnightsOfCSharpia.Items
+namespace KnnightsOfCSharpiaLib.Items
 {
     public enum ItemType
     {

@@ -1,8 +1,8 @@
-﻿using KnightsOfCSharpia.Common;
-using KnightsOfCSharpia.Spells;
+﻿using KnnightsOfCSharpiaLib.Common;
+using KnnightsOfCSharpiaLib.Spells;
 using System;
 
-namespace KnightsOfCSharpia.Creatures
+namespace KnnightsOfCSharpiaLib.Creatures
 {
     public abstract class Unit
     {

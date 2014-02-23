@@ -1,7 +1,7 @@
-﻿using KnightsOfCSharpia.Items;
-using KnightsOfCSharpia.Spells;
+﻿using KnnightsOfCSharpiaLib.Items;
+using KnnightsOfCSharpiaLib.Spells;
 
-namespace KnightsOfCSharpia.Creatures
+namespace KnnightsOfCSharpiaLib.Creatures
 {
     public abstract class Hero : Unit
     {
@@ -12,7 +12,6 @@ namespace KnightsOfCSharpia.Creatures
         public uint CurrentMana { get; set; }
         public uint MaxMana { get; set; }
         public bool IsAlive { get; set; }
-        public SpellBookCollection Abilities { get; set; }
         public Equipment Equipment { get; private set; }
         // NasC0 - I added a SpellBookCollection to every unit, that holds all their skills
 
@@ -39,11 +38,6 @@ namespace KnightsOfCSharpia.Creatures
         public override uint GetAttackPoints()
         {
             return this.Strength * 2; //TODO: Add equipped items to attack power
-        }
-
-        protected virtual void LevelUp()
-        {
-
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KnightsOfCSharpia.Creatures
+namespace KnnightsOfCSharpiaLib.Creatures
 {
     public class Creature : Unit
     {
@@ -28,6 +28,11 @@ namespace KnightsOfCSharpia.Creatures
         }
 
         public override string Defend(Spells.SpellDamage attackSpell)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string Defend(SpellDamage attackSpell)
         {
             throw new NotImplementedException();
         }

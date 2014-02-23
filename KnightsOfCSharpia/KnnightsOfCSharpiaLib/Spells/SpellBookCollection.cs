@@ -1,4 +1,4 @@
-﻿namespace KnightsOfCSharpia.Spells
+﻿namespace KnnightsOfCSharpiaLib.Spells
 {
     using System;
     using System.Collections.Generic;

@@ -1,10 +1,10 @@
-﻿using KnightsOfCSharpia.Items;
+﻿using KnnightsOfCSharpiaLib.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace KnightsOfCSharpia.Spells
+namespace KnnightsOfCSharpiaLib.Spells
 {
     public abstract class Spell
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KnightsOfCSharpia.Spells
+namespace KnnightsOfCSharpiaLib.Spells
 {
     public enum DamageTypeEnum
     {

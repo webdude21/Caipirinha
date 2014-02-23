@@ -1,9 +1,9 @@
-﻿using KnightsOfCSharpia.Items;
+﻿using KnnightsOfCSharpiaLib.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace KnightsOfCSharpia
+namespace KnnightsOfCSharpiaLib
 {
     public class Inventory
     {

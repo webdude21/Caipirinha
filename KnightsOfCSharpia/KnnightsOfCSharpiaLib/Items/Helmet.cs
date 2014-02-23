@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
 
-namespace KnightsOfCSharpia.Items
+namespace KnnightsOfCSharpiaLib.Items
 {
     public class Helmet : Item
     {

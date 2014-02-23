@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace KnightsOfCSharpia.Common
+namespace KnnightsOfCSharpiaLib.Common
 {
     /// <summary>
     /// A random generator class, which generates random numbers,
@@ -78,7 +78,7 @@ namespace KnightsOfCSharpia.Common
             var result = method.Invoke(null, new object[] { partyLevel, rarity });
 
             // Casts the resulting item to Item for polymorphism and easier method use (otherwise this too will be a generic method, which defeats the purpose)
-            return (Item)result;
+            return result as Item;
         }
     }
 }

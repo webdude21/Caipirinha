@@ -1,16 +1,19 @@
-﻿using KnightsOfCSharpia.Common;
-using KnightsOfCSharpia.Spells;
+﻿using KnnightsOfCSharpiaLib.Common;
+using KnnightsOfCSharpiaLib.Spells;
 using System;
 
-namespace KnightsOfCSharpia.Creatures
+namespace KnnightsOfCSharpiaLib.Creatures
 {
-    public class Mage : Hero
+    public class Mage : Hero, IScalable
     {
         public Mage(string name, uint strenght, uint dexterity, uint Intelligence, uint willpower)
             : base(name, strenght, dexterity, Intelligence, willpower)
         {
-            this.Abilities.AddSpell(new MageBasicAttack());
         }
+
+        public int CurrentXp { get; private set; }
+
+        public int NeededXP { get; private set; }
 
         // Returns AttackLog, so we can see if the attack has passed
         // And if it passed, the details about it:
@@ -20,45 +23,40 @@ namespace KnightsOfCSharpia.Creatures
             throw new NotImplementedException();
         }
 
-        public override AttackLog Attack(Hero target)
-        {
-            if (target.IsAlive)
-            {
-                // Here the computer generated oponents can decide what attack to use
-                // For now it's only basic attack
-                var spellUsed = this.Abilities["basic attack"];
-                var spellCastResult = spellUsed.Effect(this.GetAttackPoints());
-                this.CurrentMana -= spellUsed.ManaCost;
+        //public override AttackLog Attack(Hero target)
+        //{
+        //    if (target.IsAlive)
+        //    {
+        //        // Here the computer generated oponents can decide what attack to use
+        //        // For now it's only basic attack
+        //        var spellUsed = this.Abilities["basic attack"];
+        //        var spellCastResult = spellUsed.Effect(this.GetAttackPoints());
+        //        this.CurrentMana -= spellUsed.ManaCost;
 
-                string result = target.Defend(spellCastResult);
-                return new AttackLog(true, String.Format("{0} uses {1} on {2}", this.Name, spellUsed.Name, result));
-            }
-            return AttackLog.AttackFailed;
-        }
-
-        public override string Defend(SpellDamage attackSpell)
-        {
-            // Here we can check the type of damage dealt and apply the correct response
-            // Right now the two scenarios are the same, since we don't have separate defences for each type of attack
-            // Right now, the return string is not quite accurate, since (if we decide on it) each character could be able to dodge
-            // the attack, since returning an attack failed.
-            uint resultingDamage = 0;
-
-            if (attackSpell.DamageType == DamageTypeEnum.Physical)
-            {
-                resultingDamage = this.GetDeffencePoints() - attackSpell.SpellDamageModifier;
-            }
-            else
-            {
-                resultingDamage = this.GetDeffencePoints() - attackSpell.SpellDamageModifier;
-            }
-
-            return String.Format("{0} for {1} {2} damage. Remaining HP: {3}", this.Name, resultingDamage, attackSpell.DamageType, this.CurrentHealth);
-        }
+        //        string result = target.Defend(spellCastResult);
+        //        return new AttackLog(true, String.Format("{0} uses {1} on {2}", this.Name, spellUsed.Name, result));
+        //    }
+        //    return AttackLog.AttackFailed;
+        //}
 
         public void Cast(Spell spell)
         {
             throw new System.NotImplementedException();
+        }
+
+        public override AttackLog Attack(Hero target)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void LevelUp()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string Defend(Spells.SpellDamage attackSpell)
+        {
+            throw new NotImplementedException();
         }
     }
 }
