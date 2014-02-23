@@ -16,7 +16,7 @@ namespace KnightsOfCSharpiaLib.Common
     {
         private static readonly Random generator;
 
-        private static string[] warriorAbilityNames = new string[]
+        private readonly static string[] warriorAbilityNames = new string[]
         {
             "Cleave",
             "Mutilate",
@@ -25,7 +25,7 @@ namespace KnightsOfCSharpiaLib.Common
             "Charge"
         };
 
-        private static string[] mageAbilityNames = new string[]
+        private readonly static string[] mageAbilityNames = new string[]
         {
             "Fireball",
             "Frostbolt",

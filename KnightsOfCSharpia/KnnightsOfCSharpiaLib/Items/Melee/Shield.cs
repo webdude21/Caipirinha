@@ -28,7 +28,7 @@
         /// After that, the selected properties are initialized using reflection.
         /// This constructor is generally used by the MakeRandom function!
         /// </param>
-        internal Shield(string name, ItemRarity rarity, List<KeyValuePair<PropertyInfo, int>> propertiesAndValues)
+        public Shield(string name, ItemRarity rarity, List<KeyValuePair<PropertyInfo, uint>> propertiesAndValues)
             : this(name, rarity)
         {
             foreach (var propAndVal in propertiesAndValues)

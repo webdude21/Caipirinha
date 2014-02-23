@@ -4,7 +4,7 @@
     using System.Reflection;
     public class Armour : Item
     {
-        public const ItemType ItemSlot = ItemType.Armour;
+        public const ItemType ItemSlot = ItemType.Chest;
 
         public const int ItemSize = 6;
 

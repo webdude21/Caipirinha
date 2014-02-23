@@ -5,7 +5,7 @@ using System;
 
 namespace KnightsOfCSharpiaLib.Creatures
 {
-    public class Warrior : Hero, IScalable
+    public class Warrior : Hero, IScalable, ICombatant
     {
         private const int SpecialAbilityManaCost = 50;
         private const DamageType SpecialAbilityType = DamageType.Physical;
