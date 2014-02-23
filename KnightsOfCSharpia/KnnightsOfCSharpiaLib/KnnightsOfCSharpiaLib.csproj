@@ -42,12 +42,14 @@
     <Compile Include="Common\AttackLog.cs" />
     <Compile Include="Common\RandomGenerator.cs" />
     <Compile Include="Creatures\Creature.cs" />
-    <Compile Include="Creatures\Enemy.cs" />
     <Compile Include="Creatures\Hero.cs" />
     <Compile Include="Creatures\IScalable.cs" />
     <Compile Include="Creatures\Mage.cs" />
+    <Compile Include="Creatures\MageTypes.cs" />
     <Compile Include="Creatures\Unit.cs" />
     <Compile Include="Creatures\Warrior.cs" />
+    <Compile Include="EnemyMage.cs" />
+    <Compile Include="EnemyWorrior.cs" />
     <Compile Include="Engine\BattleEngine.cs" />
     <Compile Include="Creatures\IEnemy.cs" />
     <Compile Include="Items\Armour.cs" />
@@ -69,9 +71,12 @@
     <Compile Include="Spells\SpellBookCollection.cs" />
     <Compile Include="Spells\SpellDamage.cs" />
     <Compile Include="Spells\WarriorBasicAttack.cs" />
+    <Compile Include="WorriorType.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="FullLibClassDiagram.cd" />
     <None Include="Creatures\ClassDiagramCreatures.cd" />
+    <None Include="Items\ClassDiagramItems.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
