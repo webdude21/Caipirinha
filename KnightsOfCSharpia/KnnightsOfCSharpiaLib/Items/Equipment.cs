@@ -1,7 +1,6 @@
-﻿using KnnightsOfCSharpiaLib.Items;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace KnnightsOfCSharpiaLib
+namespace KnnightsOfCSharpiaLib.Items
 {
     public class Equipment
     {

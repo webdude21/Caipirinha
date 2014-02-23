@@ -1,5 +1,4 @@
 ﻿using KnnightsOfCSharpiaLib.Items;
-using KnnightsOfCSharpiaLib.Spells;
 
 namespace KnnightsOfCSharpiaLib.Creatures
 {
@@ -16,10 +15,10 @@ namespace KnnightsOfCSharpiaLib.Creatures
         protected Hero(string name, uint strength, uint dexterity, uint intelligence, uint willpower)
             : base(name)
         {
-            Strength = strength;
-            Dexterity = dexterity;
-            Intelligence = intelligence;
-            Willpower = willpower;
+            this.Strength = strength;
+            this.Dexterity = dexterity;
+            this.Intelligence = intelligence;
+            this.Willpower = willpower;
             this.Equipment = new Equipment();
         }
 

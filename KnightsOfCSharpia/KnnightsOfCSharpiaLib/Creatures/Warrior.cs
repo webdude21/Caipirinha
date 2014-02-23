@@ -5,18 +5,21 @@ namespace KnnightsOfCSharpiaLib.Creatures
 {
     public class Warrior : Hero, IScalable
     {
-
         public Warrior(string name, uint strenght, uint dexterity, uint intelligence, uint willpower)
-            : base(name, strenght, dexterity, intelligence, willpower) { }
+            : base(name, strenght, dexterity, intelligence, willpower)
+        {
+            this.MaxMana = intelligence * 100;
+            this.MaxHealth = willpower * 100;
+        }
 
         public override uint GetAttackPoints()
         {
-            return this.Strength*Level;
+            return this.Strength * Level;
         }
 
         public override uint GetDeffencePoints()
         {
-            return this.Dexterity*Level;
+            return this.Dexterity * Level;
         }
 
         public override AttackLog SpecialAttack(Unit target)
@@ -50,7 +53,10 @@ namespace KnnightsOfCSharpiaLib.Creatures
 
         public void LevelUp()
         {
-            throw new NotImplementedException();
+            this.Strength = this.Strength + 1;
+            this.Dexterity = this.Dexterity + 1;
+            this.MaxHealth = this.MaxHealth + 100;
+            this.MaxMana = this.MaxMana + 50;
         }
 
         public int CurrentXp
