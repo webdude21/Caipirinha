@@ -1,6 +1,6 @@
-﻿using System;
-using KnightsOfCSharpia.Common;
-using KnightsOfCSharpia.Items;
+﻿using KnnightsOfCSharpiaLib.Common;
+using KnnightsOfCSharpiaLib.Items;
+using System;
 using System.Collections.Generic;
 
 class ConsoleTests

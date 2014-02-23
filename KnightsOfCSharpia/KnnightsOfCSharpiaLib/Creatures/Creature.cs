@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KnnightsOfCSharpiaLib.Spells;
+using System;
 
 namespace KnnightsOfCSharpiaLib.Creatures
 {
@@ -22,17 +23,27 @@ namespace KnnightsOfCSharpiaLib.Creatures
             return Level * DefaultDefencePoints;
         }
 
-        public override Common.AttackLog Attack(Hero target)
+        public Common.AttackLog Attack(Hero target)
         {
             throw new NotImplementedException();
         }
 
-        public override string Defend(Spells.SpellDamage attackSpell)
+        public string Defend(Spells.SpellDamage attackSpell)
         {
             throw new NotImplementedException();
         }
 
-        public override string Defend(SpellDamage attackSpell)
+        public override void Update()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Common.AttackLog Attack(Unit target)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Common.AttackLog Defend(uint damage)
         {
             throw new NotImplementedException();
         }

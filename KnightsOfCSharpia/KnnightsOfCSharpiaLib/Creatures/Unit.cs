@@ -10,6 +10,7 @@ namespace KnnightsOfCSharpiaLib.Creatures
         public uint MaxHealth { get; set; }
         public uint CurrentHealth { get; set; }
         public uint Level { get; set; }
+        public uint Mana { get; protected set; }
 
         protected Unit(string name, uint level = 1)
         {
@@ -32,16 +33,13 @@ namespace KnnightsOfCSharpiaLib.Creatures
             }
         }
 
+        public abstract AttackLog Attack(Unit target);
+
+        public abstract AttackLog Defend(uint damage);
+
         public abstract uint GetAttackPoints();
         public abstract uint GetDeffencePoints();
 
-        public abstract AttackLog Attack(Hero target);
-
-        public abstract string Defend(SpellDamage attackSpell);
-
-        public virtual void Update()
-        {
-            
-        }
+        public abstract void Update();
     }
 }

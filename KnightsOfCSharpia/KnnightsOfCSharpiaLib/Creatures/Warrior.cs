@@ -33,7 +33,7 @@ namespace KnnightsOfCSharpiaLib.Creatures
         //    return AttackLog.AttackFailed;
         //}
 
-        public override string Defend(Spells.SpellDamage attackSpell)
+        public override AttackLog Defend(uint damage)
         {
             throw new NotImplementedException();
         }
@@ -43,7 +43,7 @@ namespace KnnightsOfCSharpiaLib.Creatures
             throw new System.NotImplementedException();
         }
 
-        public override AttackLog Attack(Hero target)
+        public override AttackLog Attack(Unit target)
         {
             throw new NotImplementedException();
         }
@@ -61,6 +61,11 @@ namespace KnnightsOfCSharpiaLib.Creatures
         public int NeededXP
         {
             get { throw new NotImplementedException(); }
+        }
+
+        public override void Update()
+        {
+            throw new NotImplementedException();
         }
     }
 }
