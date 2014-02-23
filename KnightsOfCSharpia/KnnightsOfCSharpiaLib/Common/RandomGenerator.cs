@@ -49,11 +49,11 @@ namespace KnightsOfCSharpia.Common
         /// </summary>
         /// <param name="partyLevel">The level of the party for which the item is dropped</param>
         /// <returns></returns>
-        public static Item GenerateRandomItems(int partyLevel)
+        public static Item GenerateRandomItem(int partyLevel)
         {
             // There's a 10% chance for a Rare item drop.
             ItemRarity rarity;
-            if (RandomGenerator.GetRandomValue(0, 101) <= 10)
+            if (RandomGenerator.GetRandomValue(0, 101) <= 20)
             {
                 rarity = ItemRarity.Rare;
             }

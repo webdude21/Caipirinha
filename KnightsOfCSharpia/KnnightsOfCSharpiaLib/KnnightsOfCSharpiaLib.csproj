@@ -46,6 +46,7 @@
     <Compile Include="Creatures\Mage.cs" />
     <Compile Include="Creatures\Unit.cs" />
     <Compile Include="Creatures\Warrior.cs" />
+    <Compile Include="Engine\BattleEngine.cs" />
     <Compile Include="Items\Boots.cs" />
     <Compile Include="Items\Equipment.cs" />
     <Compile Include="Items\Helmet.cs" />

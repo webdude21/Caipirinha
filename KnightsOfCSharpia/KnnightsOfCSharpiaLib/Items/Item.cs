@@ -13,17 +13,17 @@ namespace KnightsOfCSharpia.Items
         internal static T MakeRandom<T>(int partyLevel, ItemRarity rarity) where T : Item
         {
             // Then, determine a random number of properties to modify
-            // 3-5 for Rare items
-            // 1-3 for Common items
+            // 2-4 for Rare items
+            // 1-2 for Common items
             int numberOfProperties = 0;
 
             if (rarity == ItemRarity.Rare)
             {
-                numberOfProperties = RandomGenerator.GetRandomValue(3, 6);
+                numberOfProperties = RandomGenerator.GetRandomValue(2, 5);
             }
             else if (rarity == ItemRarity.Common)
             {
-                numberOfProperties = RandomGenerator.GetRandomValue(1, 4);
+                numberOfProperties = RandomGenerator.GetRandomValue(1, 3);
             }
 
             Type variable = typeof(T);
@@ -98,22 +98,17 @@ namespace KnightsOfCSharpia.Items
 
             object instance = Activator.CreateInstance(variable, itemName, rarity, propertiesAndValues);
 
-            return (T)instance;
+            return instance as T;
         }
 
         private string name;
         private ItemType type;
         private ItemRarity rarity;
         private int size;
-        private int healthModifier;
-        private int manaModifier;
         private int strenghtModifier;
-        private int defenceModifier;
         private int dexterityModifier;
         private int intelligenceModifier;
-        private int enduranceModifier;
-        private int attackPointsModifier;
-        private int defencePointsModifier;
+        private int willPowerModifier;
 
         // Since when creating an object, the parent constructor is the first one that gets called (when specified)
         // Initialize all modifiers to 0 and then change the desired ones from the child constructor
@@ -124,60 +119,10 @@ namespace KnightsOfCSharpia.Items
             this.Rarity = rarity;
             this.Size = itemSize;
 
-            this.HealthModifier = 0;
-            this.ManaModifier = 0;
             this.StrenghtModifier = 0;
-            this.DefenceModifier = 0;
             this.DexterityModifier = 0;
             this.IntelligenceModifier = 0;
-            this.EnduranceModifier = 0;
-            this.AttackPointsModifier = 0;
-            this.DefencePointsModifier = 0;
-        }
-
-        public Item(string itemName, ItemType type, ItemRarity rarity, int itemSize, List<KeyValuePair<PropertyInfo, int>> propertiesAndValues)
-            :this(itemName, type, rarity, itemSize)
-        {
-            foreach (var propAndVal in propertiesAndValues)
-            {
-                propAndVal.Key.SetValue(this, propAndVal.Value, null);
-            }
-        }
-
-        public int DefencePointsModifier
-        {
-            get
-            {
-                return this.defencePointsModifier;
-            }
-            set
-            {
-                this.defencePointsModifier = value;
-            }
-        }
-
-        public int AttackPointsModifier
-        {
-            get
-            {
-                return this.attackPointsModifier;
-            }
-            set
-            {
-                this.attackPointsModifier = value;
-            }
-        }
-
-        public int EnduranceModifier
-        {
-            get
-            {
-                return this.enduranceModifier;
-            }
-            set
-            {
-                this.enduranceModifier = value;
-            }
+            this.WillPowerModifier = 0;
         }
 
         public int IntelligenceModifier
@@ -204,18 +149,6 @@ namespace KnightsOfCSharpia.Items
             }
         }
 
-        public int DefenceModifier
-        {
-            get
-            {
-                return this.defenceModifier;
-            }
-            set
-            {
-                this.defenceModifier = value;
-            }
-        }
-
         public int StrenghtModifier
         {
             get
@@ -228,27 +161,15 @@ namespace KnightsOfCSharpia.Items
             }
         }
 
-        public int ManaModifier
+        public int WillPowerModifier
         {
             get
             {
-                return this.manaModifier;
+                return this.willPowerModifier;
             }
             set
             {
-                this.manaModifier = value;
-            }
-        }
-
-        public int HealthModifier
-        {
-            get
-            {
-                return this.healthModifier;
-            }
-            set
-            {
-                this.healthModifier = value;
+                this.willPowerModifier = value;
             }
         }
 
