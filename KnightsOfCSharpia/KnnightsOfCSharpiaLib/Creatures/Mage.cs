@@ -9,6 +9,8 @@ namespace KnnightsOfCSharpiaLib.Creatures
         public Mage(string name, uint strenght, uint dexterity, uint intelligence, uint willpower)
             : base(name, strenght, dexterity, intelligence, willpower)
         {
+            this.MaxMana = intelligence * 100;
+            this.MaxHealth = willpower * 100;
         }
 
         public int CurrentXp { get; private set; }
@@ -20,12 +22,12 @@ namespace KnnightsOfCSharpiaLib.Creatures
         // What type of damage is dealt, what ability was used, how much damage was dealt
         public override uint GetAttackPoints()
         {
-            throw new NotImplementedException();
+            return this.Intelligence * Level;
         }
 
         public override uint GetDeffencePoints()
         {
-            throw new NotImplementedException();
+            return this.Willpower * Level;
         }
 
         public override AttackLog SpecialAttack(Unit target)
@@ -61,7 +63,10 @@ namespace KnnightsOfCSharpiaLib.Creatures
 
         public void LevelUp()
         {
-            throw new NotImplementedException();
+            this.Intelligence = this.Intelligence + 1;
+            this.Willpower = this.Willpower + 1;
+            this.MaxHealth = this.MaxHealth + 50;
+            this.MaxMana = this.MaxMana + 100;
         }
 
         public override AttackLog Defend(uint damage)

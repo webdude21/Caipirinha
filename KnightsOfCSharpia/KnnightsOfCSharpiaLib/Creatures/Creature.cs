@@ -1,6 +1,4 @@
-﻿using KnnightsOfCSharpiaLib.Common;
-using KnnightsOfCSharpiaLib.Spells;
-using System;
+﻿using System;
 
 namespace KnnightsOfCSharpiaLib.Creatures
 {
