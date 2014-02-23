@@ -3,20 +3,20 @@ using System.Reflection;
 
 namespace KnnightsOfCSharpiaLib.Items
 {
-    public class Boots : Item
+    public class Sword : Item
     {
-        public const ItemType ItemSlot = ItemType.Shoes;
+        public const ItemType ItemSlot = ItemType.Weapon;
 
-        public const int ItemSize = 2;
+        public const int ItemSize = 4;
 
-        public Boots(string name, ItemRarity rarity)
+        public Sword(string name, ItemRarity rarity)
             :base(name, ItemSlot, rarity, ItemSize)
         {
             
         }
 
-        public Boots(string name, ItemRarity rarity, List<KeyValuePair<PropertyInfo, int>> propertiesAndValues)
-            : this(name, rarity)
+        public Sword(string name, ItemRarity rarity, List<KeyValuePair<PropertyInfo, int>> propertiesAndValues)
+            :this(name, rarity)
         {
             foreach (var propAndVal in propertiesAndValues)
             {

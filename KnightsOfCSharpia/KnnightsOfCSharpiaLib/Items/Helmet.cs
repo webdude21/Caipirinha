@@ -29,14 +29,14 @@ namespace KnnightsOfCSharpiaLib.Items
         /// <param name="propertiesAndValues">A collection of the Modifier properties with random values attached to them.
         /// You should never used this constructor, unless you pass in random values here!</param>
         public Helmet(string name, ItemRarity rarity, List<KeyValuePair<PropertyInfo, int>> propertiesAndValues)
-            : base(name, ItemSlot, rarity, ItemSize)
+            : this(name, rarity)
         {
             // The base constructor takes care of the item Name, Type, Rarity and Size.
             // After that, we initialise the selected properties using reflection.
             // This constructor is generally used by the MakeRandom function!
             foreach (var propAndVal in propertiesAndValues)
             {
-                propAndVal.Key.SetValue(this, propAndVal.Value, null);
+                propAndVal.Key.SetValue(this, propAndVal.Value);
             }
         }
     }

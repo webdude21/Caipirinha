@@ -1,22 +1,23 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
 
 namespace KnnightsOfCSharpiaLib.Items
 {
-    public class Boots : Item
+    public class Gloves : Item
     {
-        public const ItemType ItemSlot = ItemType.Shoes;
+        public const ItemType ItemSlot = ItemType.Arms;
 
         public const int ItemSize = 2;
 
-        public Boots(string name, ItemRarity rarity)
+        public Gloves(string name, ItemRarity rarity)
             :base(name, ItemSlot, rarity, ItemSize)
         {
             
         }
 
-        public Boots(string name, ItemRarity rarity, List<KeyValuePair<PropertyInfo, int>> propertiesAndValues)
-            : this(name, rarity)
+        public Gloves(string name, ItemRarity rarity, List<KeyValuePair<PropertyInfo, int>> propertiesAndValues)
+            :this(name, rarity)
         {
             foreach (var propAndVal in propertiesAndValues)
             {
