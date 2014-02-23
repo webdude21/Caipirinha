@@ -41,6 +41,8 @@ namespace KnnightsOfCSharpiaLib.Creatures
         public abstract uint GetAttackPoints();
         public abstract uint GetDeffencePoints();
 
+        public abstract AttackLog SpecialAttack(Unit target);
+
         public abstract void Update();
     }
 }

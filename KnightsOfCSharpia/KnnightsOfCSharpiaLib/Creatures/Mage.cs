@@ -28,6 +28,11 @@ namespace KnnightsOfCSharpiaLib.Creatures
             throw new NotImplementedException();
         }
 
+        public override AttackLog SpecialAttack(Unit target)
+        {
+            throw new NotImplementedException();
+        }
+
         //public override AttackLog Attack(Hero target)
         //{
         //    if (target.IsAlive)

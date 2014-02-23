@@ -19,6 +19,11 @@ namespace KnnightsOfCSharpiaLib.Creatures
             return this.Dexterity*Level;
         }
 
+        public override AttackLog SpecialAttack(Unit target)
+        {
+            throw new NotImplementedException();
+        }
+
         //public override AttackLog Attack(Hero target)
         //{
         //    if (target.IsAlive)
@@ -36,11 +41,6 @@ namespace KnnightsOfCSharpiaLib.Creatures
         public override AttackLog Defend(uint damage)
         {
             throw new NotImplementedException();
-        }
-
-        public void SpecialAttack()
-        {
-            throw new System.NotImplementedException();
         }
 
         public override AttackLog Attack(Unit target)
