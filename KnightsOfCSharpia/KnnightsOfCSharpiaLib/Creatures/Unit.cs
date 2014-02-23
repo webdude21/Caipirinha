@@ -1,5 +1,4 @@
 ﻿using KnnightsOfCSharpiaLib.Common;
-using KnnightsOfCSharpiaLib.Spells;
 using System;
 
 namespace KnnightsOfCSharpiaLib.Creatures
@@ -10,7 +9,9 @@ namespace KnnightsOfCSharpiaLib.Creatures
         public uint MaxHealth { get; set; }
         public uint CurrentHealth { get; set; }
         public uint Level { get; set; }
-        public uint Mana { get; protected set; }
+        public uint CurrentMana { get; set; }
+        public uint MaxMana { get; set; }
+        public bool IsAlive { get; set; }
 
         protected Unit(string name, uint level = 1)
         {

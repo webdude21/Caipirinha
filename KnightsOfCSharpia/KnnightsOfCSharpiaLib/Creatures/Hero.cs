@@ -9,9 +9,7 @@ namespace KnnightsOfCSharpiaLib.Creatures
         public uint Dexterity { get; set; }
         public uint Intelligence { get; set; }
         public uint Willpower { get; set; }
-        public uint CurrentMana { get; set; }
-        public uint MaxMana { get; set; }
-        public bool IsAlive { get; set; }
+
         public Equipment Equipment { get; private set; }
         // NasC0 - I added a SpellBookCollection to every unit, that holds all their skills
 
@@ -33,11 +31,6 @@ namespace KnnightsOfCSharpiaLib.Creatures
         public void UnEquipItem(Item item)
         {
             this.Equipment.RemoveItem(item);
-        }
-
-        public override uint GetAttackPoints()
-        {
-            return this.Strength * 2; //TODO: Add equipped items to attack power
         }
     }
 }

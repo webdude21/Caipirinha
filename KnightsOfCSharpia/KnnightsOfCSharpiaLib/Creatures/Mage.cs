@@ -6,8 +6,8 @@ namespace KnnightsOfCSharpiaLib.Creatures
 {
     public class Mage : Hero, IScalable
     {
-        public Mage(string name, uint strenght, uint dexterity, uint Intelligence, uint willpower)
-            : base(name, strenght, dexterity, Intelligence, willpower)
+        public Mage(string name, uint strenght, uint dexterity, uint intelligence, uint willpower)
+            : base(name, strenght, dexterity, intelligence, willpower)
         {
         }
 
@@ -18,6 +18,11 @@ namespace KnnightsOfCSharpiaLib.Creatures
         // Returns AttackLog, so we can see if the attack has passed
         // And if it passed, the details about it:
         // What type of damage is dealt, what ability was used, how much damage was dealt
+        public override uint GetAttackPoints()
+        {
+            throw new NotImplementedException();
+        }
+
         public override uint GetDeffencePoints()
         {
             throw new NotImplementedException();
