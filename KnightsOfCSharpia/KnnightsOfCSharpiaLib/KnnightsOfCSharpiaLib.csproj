@@ -69,7 +69,9 @@
     <Compile Include="WorriorType.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="FullLibClassDiagram.cd" />
     <None Include="Creatures\ClassDiagramCreatures.cd" />
+    <None Include="Items\ClassDiagramItems.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
