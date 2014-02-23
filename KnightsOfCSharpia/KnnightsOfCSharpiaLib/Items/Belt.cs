@@ -16,7 +16,7 @@
         }
 
         /// <summary>
-        /// Creates a Helmet with randomly generated properties and values, which are passed in as a parameter.
+        /// Creates a Belt with randomly generated properties and values, which are passed in as a parameter.
         /// Access modifier: internal, since we only want to be able to use this constructor from the current assembly.
         /// </summary>
         /// <param name="name">Name of the item.</param>
@@ -28,7 +28,7 @@
         /// After that, the selected properties are initialized using reflection.
         /// This constructor is generally used by the MakeRandom function!
         /// </param> 
-        public Belt(string name, ItemRarity rarity, List<KeyValuePair<PropertyInfo, int>> propertiesAndValues)
+        internal Belt(string name, ItemRarity rarity, List<KeyValuePair<PropertyInfo, int>> propertiesAndValues)
             : this(name, rarity)
         {
             foreach (var propAndVal in propertiesAndValues)
