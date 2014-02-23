@@ -1,4 +1,6 @@
-﻿namespace KnightsOfCSharpiaLib
+﻿using System.Text;
+
+namespace KnightsOfCSharpiaLib
 {
     using System;
     using System.Collections.Generic;
@@ -38,6 +40,19 @@
         public void Clear()
         {
             InventoryContent.Clear();
+        }
+
+        public override string ToString()
+        {
+            var stringBuilder = new StringBuilder();
+
+            foreach (var item in InventoryContent)
+            {
+                stringBuilder.Append(item.Name);
+                stringBuilder.Append(Environment.NewLine);
+            }
+
+            return stringBuilder.ToString().TrimEnd();
         }
     }
 }

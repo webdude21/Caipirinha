@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Reflection;
     using System.Text;
-    using KnightsOfCSharpiaLib.Common;
+    using Common;
     public class Item
     {   
         private const int MinModifierValue = 0;
