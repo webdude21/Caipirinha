@@ -2,20 +2,21 @@
 {
     using System.Collections.Generic;
     using System.Reflection;
-    public class Armour : Item
+
+    public class Slippers : Item
     {
-        public const ItemType ItemSlot = ItemType.Armour;
+        public const ItemType ItemSlot = ItemType.Feet;
 
-        public const int ItemSize = 6;
+        public const int ItemSize = 2;
 
-        public Armour(string name, ItemRarity rarity)
-            :base(name, ItemSlot, rarity, ItemSize)
+        public Slippers(string name, ItemRarity rarity)
+            : base(name, ItemSlot, rarity, ItemSize)
         {
-            
+
         }
 
         /// <summary>
-        /// Creates a Helmet with randomly generated properties and values, which are passed in as a parameter.
+        /// Creates Slippers with randomly generated properties and values, which are passed in as a parameter.
         /// Access modifier: internal, since we only want to be able to use this constructor from the current assembly.
         /// </summary>
         /// <param name="name">Name of the item.</param>
@@ -27,14 +28,13 @@
         /// After that, the selected properties are initialized using reflection.
         /// This constructor is generally used by the MakeRandom function!
         /// </param> 
-        public Armour(string name, ItemRarity rarity, List<KeyValuePair<PropertyInfo, int>> propertiesAndValues)
-            :this(name, rarity)
+        internal Slippers(string name, ItemRarity rarity, List<KeyValuePair<PropertyInfo, int>> propertiesAndValues)
+            : this(name, rarity)
         {
             foreach (var propAndVal in propertiesAndValues)
             {
                 propAndVal.Key.SetValue(this, propAndVal.Value);
             }
         }
-
     }
 }

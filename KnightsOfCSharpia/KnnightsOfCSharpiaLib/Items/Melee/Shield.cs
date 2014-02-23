@@ -3,20 +3,20 @@
     using System.Collections.Generic;
     using System.Reflection;
 
-    public class Sword : Item
+    public class Shield : Item
     {
-        public const ItemType ItemSlot = ItemType.Weapon;
+        public const ItemType ItemSlot = ItemType.Shield;
 
-        public const int ItemSize = 4;
+        public const int ItemSize = 2;
 
-        public Sword(string name, ItemRarity rarity)
-            :base(name, ItemSlot, rarity, ItemSize)
+        public Shield(string name, ItemRarity rarity)
+            : base(name, ItemSlot, rarity, ItemSize)
         {
-            
+
         }
 
         /// <summary>
-        /// Creates a Sword with randomly generated properties and values, which are passed in as a parameter.
+        /// Creates a Shield with randomly generated properties and values, which are passed in as a parameter.
         /// Access modifier: internal, since we only want to be able to use this constructor from the current assembly.
         /// </summary>
         /// <param name="name">Name of the item.</param>
@@ -27,9 +27,9 @@
         /// The base constructor takes care of the item Name, Type, Rarity and Size.
         /// After that, the selected properties are initialized using reflection.
         /// This constructor is generally used by the MakeRandom function!
-        /// </param> 
-        internal Sword(string name, ItemRarity rarity, List<KeyValuePair<PropertyInfo, int>> propertiesAndValues)
-            :this(name, rarity)
+        /// </param>
+        internal Shield(string name, ItemRarity rarity, List<KeyValuePair<PropertyInfo, int>> propertiesAndValues)
+            : this(name, rarity)
         {
             foreach (var propAndVal in propertiesAndValues)
             {

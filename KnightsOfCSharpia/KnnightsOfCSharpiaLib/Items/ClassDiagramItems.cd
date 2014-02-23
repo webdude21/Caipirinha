@@ -1,86 +1,114 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="KnightsOfCSharpiaLib.Items.Equipment">
-    <Position X="10.75" Y="0.5" Width="1.5" />
+    <Position X="14.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAACAAAAAgAAAAAgAAAAAAEAAAAAAAAAAA=</HashCode>
       <FileName>Items\Equipment.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Inventory">
-    <Position X="12.5" Y="0.5" Width="1.5" />
+    <Position X="16" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAEAAAAACgAAAAAAEAAAAAABEAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAEAAAAACgAAAAAAEAAAAAABEAAA=</HashCode>
       <FileName>Items\Inventory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Items.Sword">
-    <Position X="0.5" Y="1" Width="1.5" />
+    <Position X="0.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Items\Sword.cs</FileName>
+      <FileName>Items\Melee\Sword.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Items.Item">
-    <Position X="2.75" Y="0.75" Width="1.75" />
+    <Position X="2.75" Y="1.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAkAAAAAAAQgRAAAAEQAAAAQACAABAAgE=</HashCode>
       <FileName>Items\Item.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Items.Staff">
-    <Position X="0.5" Y="3.5" Width="1.5" />
+    <Position X="0.5" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Items\Staff.cs</FileName>
+      <FileName>Items\Caster\Staff.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Items.Boots">
-    <Position X="5" Y="4" Width="1.5" />
+    <Position X="5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Items\Boots.cs</FileName>
+      <FileName>Items\Melee\Boots.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Items.Gloves">
-    <Position X="6.75" Y="3.5" Width="1.5" />
+    <Position X="12" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Items\Gloves.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Items.Belt">
-    <Position X="8.5" Y="2.25" Width="1.5" />
+    <Position X="12" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Items\Belt.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Items.Armour">
-    <Position X="6.75" Y="1" Width="1.5" />
+    <Position X="6.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Items\Armour.cs</FileName>
+      <FileName>Items\Melee\Armour.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Items.Helmet">
     <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Items\Helmet.cs</FileName>
+      <FileName>Items\Melee\Helmet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KnightsOfCSharpiaLib.Items.Slippers">
+    <Position X="8.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\Caster\Slippers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KnightsOfCSharpiaLib.Items.Robe">
+    <Position X="10.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\Caster\Robe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KnightsOfCSharpiaLib.Items.Hood">
+    <Position X="8.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\Caster\Hood.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KnightsOfCSharpiaLib.Items.Shield">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\Melee\Shield.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="KnightsOfCSharpiaLib.Items.ItemRarity">
-    <Position X="10.75" Y="3.5" Width="1.5" />
+    <Position X="14.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Items\ItemRarity.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="KnightsOfCSharpiaLib.Items.ItemType">
-    <Position X="12.5" Y="3.5" Width="1.5" />
+    <Position X="16" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAAEAAIAAAAgAAAAgAAAAAAgAAAAAAAAEAAA=</HashCode>
+      <HashCode>AAIAAAAAAAEAQIAAAAAAAAAgAAAAAAgAAAAAAAAEAAA=</HashCode>
       <FileName>Items\ItemType.cs</FileName>
     </TypeIdentifier>
   </Enum>

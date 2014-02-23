@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace KnightsOfCSharpiaLib.Items
+﻿namespace KnightsOfCSharpiaLib.Items
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     public class Equipment
     {
         private readonly List<Item> items = new List<Item>();

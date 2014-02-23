@@ -1,11 +1,11 @@
-﻿using System.Text;
-
-namespace KnightsOfCSharpiaLib
+﻿namespace KnightsOfCSharpiaLib
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using Items;
+    using System.Text;
+    using KnightsOfCSharpiaLib.Items;
+
     public class Inventory
     {
         public Inventory(uint capacity = 100)
