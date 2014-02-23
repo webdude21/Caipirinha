@@ -43,6 +43,7 @@
                 {
                     throw new ArgumentException("Name", "The item has no name");
                 }
+
                 this.name = value;
             }
         }
@@ -65,6 +66,7 @@
                 {
                     throw new ArgumentException("StrengthModifier", "Value can't be negative");
                 }
+
                 this.strengthModifier = value;
             }
         }
@@ -81,6 +83,7 @@
                 {
                     throw new ArgumentException("DexterityModifier", "Value can't be negative");
                 }
+
                 this.dexterityModifier = value;
             }
         }
@@ -97,6 +100,7 @@
                 {
                     throw new ArgumentException("IntelligenceModifier", "Value can't be negative");
                 }
+
                 this.intelligenceModifier = value;
             }
         }
@@ -113,6 +117,7 @@
                 {
                     throw new ArgumentException("WillPowerModifier", "Value can't be negative");
                 }
+
                 this.willPowerModifier = value;
             }
         }

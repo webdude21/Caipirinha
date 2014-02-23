@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-
-namespace KnightsOfCSharpiaLib.Items
+﻿namespace KnightsOfCSharpiaLib.Items
 {
+    using System.Collections.Generic;
     public class Equipment
     {
         private List<Item> items;

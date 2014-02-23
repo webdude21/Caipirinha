@@ -1,20 +1,18 @@
-﻿using KnightsOfCSharpiaLib.Items;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace KnightsOfCSharpiaLib
+﻿namespace KnightsOfCSharpiaLib
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using KnightsOfCSharpiaLib.Items;
     public class Inventory
     {
-        public List<Item> InventoryContent { get; protected set; }
-
         public Inventory(uint capacity = 100)
         {
             InventoryContent = new List<Item>();
             Capacity = capacity;
         }
 
+        public List<Item> InventoryContent { get; protected set; }
         public uint Capacity { get; private set; }
 
         public uint UsedSize

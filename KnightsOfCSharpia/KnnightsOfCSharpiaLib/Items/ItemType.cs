@@ -8,6 +8,6 @@
         Head,
         Shield,
         Belt,
-        Shoes,
+        Feet,
     }
 }
