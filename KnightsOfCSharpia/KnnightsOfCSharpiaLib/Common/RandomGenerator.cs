@@ -1,4 +1,5 @@
-﻿using KnightsOfCSharpiaLib.Items;
+﻿using KnightsOfCSharpiaLib.Engine;
+using KnightsOfCSharpiaLib.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,25 @@ namespace KnightsOfCSharpiaLib.Common
     public static class RandomGenerator
     {
         private static readonly Random generator;
+
+        private static string[] warriorAbilityNames = new string[]
+        {
+            "Cleave",
+            "Mutilate",
+            "Slash",
+            "Rend",
+            "Charge"
+        };
+
+        private static string[] mageAbilityNames = new string[]
+        {
+            "Fireball",
+            "Frostbolt",
+            "Scorch",
+            "Immolate",
+            "Freeze",
+            "Arcane bolt"
+        };
 
         static RandomGenerator()
         {
@@ -79,6 +99,22 @@ namespace KnightsOfCSharpiaLib.Common
 
             // Casts the resulting item to Item for polymorphism and easier method use (otherwise this too will be a generic method, which defeats the purpose)
             return result as Item;
+        }
+
+        internal static string GetRandomAbilityName(DamageType type)
+        {
+            switch (type)
+            {
+                case DamageType.Physical:
+                    return warriorAbilityNames[GetRandomValue(0, warriorAbilityNames.Length)];
+                    break;
+                case DamageType.Magical:
+                    return mageAbilityNames[GetRandomValue(0, mageAbilityNames.Length)];
+                    break;
+                default:
+                    throw new ArgumentException("Invalid ability type passed!");
+                    break;
+            }
         }
     }
 }

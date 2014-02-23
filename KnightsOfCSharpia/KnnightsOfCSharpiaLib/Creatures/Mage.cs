@@ -1,82 +1,94 @@
 ﻿using KnightsOfCSharpiaLib.Common;
-using KnightsOfCSharpiaLib.Spells;
+using KnightsOfCSharpiaLib.Engine;
+using KnightsOfCSharpiaLib.Exceptions;
 using System;
 
 namespace KnightsOfCSharpiaLib.Creatures
 {
-    public class Mage : Hero, IScalable
+    public class Mage : Hero, IScalable, ICombatant
     {
-        public Mage(string name, uint strenght, uint dexterity, uint intelligence, uint willpower)
-            : base(name, strenght, dexterity, intelligence, willpower)
+        private const int SpecialAbilityManaCost = 70;
+        private const DamageType SpecialAbilityType = DamageType.Magical;
+
+        public Mage(string name)
+            : base(name)
         {
-            this.MaxMana = intelligence * 100;
-            this.MaxHealth = willpower * 100;
+            this.Strength = 2;
+            this.Dexterity = 3;
+            this.Intelligence = 4;
+            this.WillPower = 5;
+
+            this.MaxMana = this.Intelligence * 100;
+            this.MaxHealth = this.WillPower * 100;
         }
 
-        public int CurrentXp { get; private set; }
-
-        public int NeededXP { get; private set; }
-
-        // Returns AttackLog, so we can see if the attack has passed
-        // And if it passed, the details about it:
-        // What type of damage is dealt, what ability was used, how much damage was dealt
-        public override uint GetAttackPoints()
+        public override uint AttackPoints
         {
-            return this.Intelligence * Level;
+            get { return this.Intelligence * this.Level; }
         }
 
-        public override uint GetDeffencePoints()
+        public override uint DefensePoints(DamageType damageType)
         {
-            return this.Willpower * Level;
+            switch (damageType)
+            {
+                case DamageType.Physical:
+                    return (this.Dexterity * Level) / 3;
+                    break;
+                case DamageType.Magical:
+                    return (this.WillPower * Level) / 2;
+                    break;
+                default:
+                    throw new ArgumentException("Invalid damage type passed!");
+                    break;
+            }
         }
 
-        public override AttackLog SpecialAttack(Unit target)
+        public override AttackLog SpecialAttack(ICombatant target)
         {
-            throw new NotImplementedException();
+            if (this.CurrentMana < SpecialAbilityManaCost)
+            {
+                throw new InsufficientManaException();
+            }
+
+            var attackResult = target.Defend(new AttackLog(SpecialAbilityType, this.AttackPoints * this.Intelligence));
+
+            attackResult.AttackInformation = String.Format("{0} uses {1} on ", this.Name, RandomGenerator.GetRandomAbilityName(SpecialAbilityType)) + attackResult.AttackInformation;
+
+            this.CurrentMana -= SpecialAbilityManaCost;
+
+            return attackResult;
         }
 
-        //public override AttackLog Attack(Hero target)
-        //{
-        //    if (target.IsAlive)
-        //    {
-        //        // Here the computer generated oponents can decide what attack to use
-        //        // For now it's only basic attack
-        //        var spellUsed = this.Abilities["basic attack"];
-        //        var spellCastResult = spellUsed.Effect(this.GetAttackPoints());
-        //        this.CurrentMana -= spellUsed.ManaCost;
-
-        //        string result = target.Defend(spellCastResult);
-        //        return new AttackLog(true, String.Format("{0} uses {1} on {2}", this.Name, spellUsed.Name, result));
-        //    }
-        //    return AttackLog.AttackFailed;
-        //}
-
-        public void Cast(Spell spell)
+        public override AttackLog Attack(ICombatant target)
         {
-            throw new System.NotImplementedException();
+            var attackResult = target.Defend(new AttackLog(DamageType.Physical, this.AttackPoints));
+
+            attackResult.AttackInformation = String.Format("{0} uses basic attack on ", this.Name) + attackResult.AttackInformation;
+
+            return attackResult;
         }
 
-        public override AttackLog Attack(Unit target)
+        public override void LevelUp()
         {
-            throw new NotImplementedException();
-        }
+            base.LevelUp();
 
-        public void LevelUp()
-        {
-            this.Intelligence = this.Intelligence + 1;
-            this.Willpower = this.Willpower + 1;
+            this.Intelligence++;
+            this.WillPower++;
+
+            if (this.Level % 2 == 0)
+            {
+                this.Strength++;
+                this.Dexterity++;
+            }
+
             this.MaxHealth = this.MaxHealth + 50;
             this.MaxMana = this.MaxMana + 100;
         }
 
-        public override AttackLog Defend(uint damage)
-        {
-            throw new NotImplementedException();
-        }
 
         public override void Update()
         {
-            throw new NotImplementedException();
+            this.CurrentMana += 3 * this.Intelligence;
         }
     }
 }

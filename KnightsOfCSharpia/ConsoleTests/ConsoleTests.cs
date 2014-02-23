@@ -1,5 +1,4 @@
-﻿using KnightsOfCSharpiaLib;
-using KnightsOfCSharpiaLib.Common;
+﻿using KnightsOfCSharpiaLib.Common;
 using KnightsOfCSharpiaLib.Items;
 using System;
 using System.Collections.Generic;

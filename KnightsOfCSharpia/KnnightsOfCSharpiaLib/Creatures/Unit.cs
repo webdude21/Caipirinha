@@ -1,17 +1,17 @@
-﻿using KnightsOfCSharpiaLib.Common;
+﻿using KnightsOfCSharpiaLib.Engine;
 using System;
 
 namespace KnightsOfCSharpiaLib.Creatures
 {
-    public abstract class Unit
+    public abstract class Unit : ICombatant
     {
         private string name;
-        public uint MaxHealth { get; set; }
-        public uint CurrentHealth { get; set; }
-        public uint Level { get; set; }
-        public uint CurrentMana { get; set; }
-        public uint MaxMana { get; set; }
-        public bool IsAlive { get; set; }
+        public uint MaxHealth { get; protected set; }
+        public uint CurrentHealth { get; protected set; }
+        public uint Level { get; protected set; }
+        public uint CurrentMana { get; protected set; }
+        public uint MaxMana { get; protected set; }
+        public bool IsAlive { get; protected set; }
 
         protected Unit(string name, uint level = 1)
         {
@@ -19,6 +19,7 @@ namespace KnightsOfCSharpiaLib.Creatures
             this.Level = level;
             this.MaxHealth = Level * 100;
             this.CurrentHealth = this.MaxHealth;
+            this.IsAlive = true;
         }
 
         public string Name
@@ -33,16 +34,37 @@ namespace KnightsOfCSharpiaLib.Creatures
                 this.name = value;
             }
         }
+        public abstract uint AttackPoints { get; }
 
-        public abstract AttackLog Attack(Unit target);
+        public abstract uint DefensePoints(DamageType damageType);
 
-        public abstract AttackLog Defend(uint damage);
+        public abstract AttackLog Attack(ICombatant target);
 
-        public abstract uint GetAttackPoints();
-        public abstract uint GetDeffencePoints();
+        public virtual AttackLog Defend(AttackLog attack)
+        {
+            uint resultingDamage = attack.Damage - this.DefensePoints(attack.DamageType);
 
-        public abstract AttackLog SpecialAttack(Unit target);
+            attack.Damage = resultingDamage;
+
+            attack.AttackInformation = String.Format("{0} for {1} {2} damage", this.Name, attack.Damage, attack.DamageType);
+
+            this.TakeDamage(resultingDamage);
+
+            return attack;
+        }
+
+        public abstract AttackLog SpecialAttack(ICombatant target);
 
         public abstract void Update();
+
+        protected void TakeDamage(uint damage)
+        {
+            this.CurrentHealth -= damage;
+
+            if (this.CurrentHealth <= 0)
+            {
+                this.IsAlive = false;
+            }
+        }
     }
 }

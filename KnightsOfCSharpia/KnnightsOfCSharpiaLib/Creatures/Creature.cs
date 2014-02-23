@@ -2,7 +2,7 @@
 
 namespace KnightsOfCSharpiaLib.Creatures
 {
-    public abstract class Creature : Unit
+    public abstract class Creature : Unit, ICombatant
     {
         private const uint DefaultAttackPoints = 2;
         private const uint DefaultDefencePoints = 3;
@@ -12,16 +12,6 @@ namespace KnightsOfCSharpiaLib.Creatures
         protected Creature(String name, uint level = 1)
             : base(name, level)
         {
-        }
-
-        public override uint GetAttackPoints()
-        {
-            return Level * DefaultAttackPoints;
-        }
-
-        public override uint GetDeffencePoints()
-        {
-            return Level * DefaultDefencePoints;
         }
     }
 }

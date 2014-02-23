@@ -1,7 +1,4 @@
-﻿
-using KnightsOfCSharpiaLib.Common;
-using KnightsOfCSharpiaLib.Creatures;
-
+﻿using KnightsOfCSharpiaLib.Engine;
 namespace KnightsOfCSharpiaLib.Creatures
 {
     public class EnemyWarrior : Creature
@@ -11,22 +8,27 @@ namespace KnightsOfCSharpiaLib.Creatures
             this.Type = type.ToString();
         }
 
-        public override AttackLog Attack(Unit target)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override AttackLog Defend(uint damage)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public override AttackLog SpecialAttack(Unit target)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public override void Update()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override uint AttackPoints
+        {
+            get { throw new System.NotImplementedException(); }
+        }
+
+        public override uint DefensePoints(DamageType damageType)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override AttackLog Attack(ICombatant target)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override AttackLog SpecialAttack(ICombatant target)
         {
             throw new System.NotImplementedException();
         }

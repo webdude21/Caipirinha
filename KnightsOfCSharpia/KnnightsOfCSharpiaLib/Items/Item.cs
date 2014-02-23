@@ -11,10 +11,10 @@
         private const int MinModifierValue = 0;
 
         private string name;
-        private int strengthModifier;
-        private int dexterityModifier;
-        private int intelligenceModifier;
-        private int willPowerModifier;
+        private uint strengthModifier;
+        private uint dexterityModifier;
+        private uint intelligenceModifier;
+        private uint willPowerModifier;
 
         // Since when creating an object, the parent constructor is the first one that gets called (when specified)
         // Initialize all modifiers to 0 and then change the desired ones from the child constructor
@@ -54,7 +54,7 @@
 
         public int Size { get; set; }
 
-        public int StrengthModifier
+        public uint StrengthModifier
         {
             get
             {
@@ -71,7 +71,7 @@
             }
         }
 
-        public int DexterityModifier
+        public uint DexterityModifier
         {
             get
             {
@@ -88,7 +88,7 @@
             }
         }
 
-        public int IntelligenceModifier
+        public uint IntelligenceModifier
         {
             get
             {
@@ -105,7 +105,7 @@
             }
         }
         
-        public int WillPowerModifier
+        public uint WillPowerModifier
         {
             get
             {
@@ -144,7 +144,7 @@
             List<PropertyInfo> properties = variable.GetProperties().Where(x => x.Name.Contains("Modifier")).ToList();
 
             // A list which holds all modifiers and values (0 be default).
-            List<KeyValuePair<PropertyInfo, int>> propertiesAndValues = new List<KeyValuePair<PropertyInfo, int>>();
+            List<KeyValuePair<PropertyInfo, uint>> propertiesAndValues = new List<KeyValuePair<PropertyInfo, uint>>();
 
             // Get a list of unique indexes, so we can alter the value of that modifier.
             List<int> uniqueIndexes = RandomGenerator.GetUniqueValues(numberOfProperties, 0, properties.Count);
@@ -153,7 +153,7 @@
             // Currently, this returns more or less the first set property with value other than 0,
             // since all modifiers are either zero or 1 || 2 (1 for Common and 2 for Rare) * playerLevel
             string maxModifierName = string.Empty;
-            int maxModifier = int.MinValue;
+            uint maxModifier = uint.MinValue;
 
             // Iterate over all properties
             // If the uniqueIndexes collection contains the current index
@@ -161,16 +161,16 @@
             // After that, add the property and it's value in the collection.
             for (int i = 0; i < properties.Count; i++)
             {
-                int modifier = 0;
+                uint modifier = 0;
                 if (uniqueIndexes.Contains(i))
                 {
                     if (rarity == ItemRarity.Common)
                     {
-                        modifier = 1 * partyLevel;
+                        modifier = 1 * (uint)partyLevel;
                     }
                     else if (rarity == ItemRarity.Rare)
                     {
-                        modifier = 2 * partyLevel;
+                        modifier = 2 * (uint)partyLevel;
                     }
                 }
 
@@ -181,7 +181,7 @@
                     maxModifier = modifier;
                 }
 
-                propertiesAndValues.Add(new KeyValuePair<PropertyInfo, int>(properties[i], modifier));
+                propertiesAndValues.Add(new KeyValuePair<PropertyInfo, uint>(properties[i], modifier));
             }
 
             // Generate random name for the item
