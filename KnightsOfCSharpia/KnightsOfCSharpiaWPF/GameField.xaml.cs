@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using KnightsOfCSharpiaLib.Creatures;
+using KnightsOfCSharpiaLib.Items;
 
 namespace KnightsOfCSharpiaWPF
 {
@@ -22,10 +24,15 @@ namespace KnightsOfCSharpiaWPF
         public GameField()
         {
             InitializeComponent();
+
+            var player = new Warrior("Pesho", 20, 20, 10, 8);
+            player.Inventory.AddItem(new Boots("Кожени Ботуши", ItemRarity.Common));
+            player.Inventory.AddItem(new Belt("Кожен Колан", ItemRarity.Common));
+            Inventory.ItemsSource = player.Inventory;
         }
         protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)
         {
-            double ratio = 0.618;
+            const double ratio = 0.618;
             if (sizeInfo.WidthChanged)
             {
                 this.Width = sizeInfo.NewSize.Height / ratio;
@@ -34,6 +41,11 @@ namespace KnightsOfCSharpiaWPF
             {
                 this.Height = sizeInfo.NewSize.Width * ratio;
             }
+        }
+
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

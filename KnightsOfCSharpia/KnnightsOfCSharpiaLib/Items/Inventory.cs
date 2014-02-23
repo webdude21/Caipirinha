@@ -3,7 +3,9 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using Items;
+    using System.Text;
+    using KnightsOfCSharpiaLib.Items;
+
     public class Inventory
     {
         public Inventory(uint capacity = 100)
@@ -38,6 +40,19 @@
         public void Clear()
         {
             InventoryContent.Clear();
+        }
+
+        public override string ToString()
+        {
+            var stringBuilder = new StringBuilder();
+
+            foreach (var item in InventoryContent)
+            {
+                stringBuilder.Append(item.Name);
+                stringBuilder.Append(Environment.NewLine);
+            }
+
+            return stringBuilder.ToString().TrimEnd();
         }
     }
 }

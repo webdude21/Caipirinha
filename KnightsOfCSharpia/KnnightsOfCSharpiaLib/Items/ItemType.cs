@@ -4,7 +4,7 @@
     {
         Weapon,
         Arms,
-        Armour,
+        Chest,
         Head,
         Shield,
         Belt,

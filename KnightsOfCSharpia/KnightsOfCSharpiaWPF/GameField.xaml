@@ -32,7 +32,14 @@
             <RowDefinition Height="50*"/>
             <RowDefinition Height="50*"/>
         </Grid.RowDefinitions>
-    	<Image Grid.ColumnSpan="3" Margin="0" Grid.RowSpan="4" Source="creatures_Images/angel.png" Grid.Column="1" Grid.Row="3"/>
-    	<Button x:Name="inventoryButton" Content="Inventory" Grid.Column="6" Margin="25,10" Grid.Row="1" Background="#FFB22018" FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" Grid.ColumnSpan="2" FontSize="24"/>
+        <Image Grid.ColumnSpan="3" Margin="0" Grid.RowSpan="4" Source="creatures_Images/angel.png" Grid.Column="1" Grid.Row="3"/>
+        <Button x:Name="inventoryButton" Content="Inventory" Margin="25,10" Background="#FFB22018" FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" Grid.ColumnSpan="2" FontSize="24"/>
+        <ListBox x:Name="Inventory" Grid.ColumnSpan="2" Grid.Column="5" Margin="29,32,70,33" Grid.Row="2" Grid.RowSpan="2">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding Path=.}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>

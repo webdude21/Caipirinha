@@ -6,6 +6,7 @@
     using System.Reflection;
     using System.Text;
     using KnightsOfCSharpiaLib.Common;
+
     public class Item
     {   
         private const int MinModifierValue = 0;
