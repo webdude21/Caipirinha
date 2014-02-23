@@ -12,11 +12,10 @@ namespace KnightsOfCSharpia.Creatures
         public uint CurrentMana { get; set; }
         public uint MaxMana { get; set; }
 
-
         private Equipment equipment;
         // NasC0 - I added a SpellBookCollection to every unit, that holds all their skills
 
-        public Hero(string name, uint strength, uint dexterity, uint intelligence, uint willpower) : base(name)
+        protected Hero(string name, uint strength, uint dexterity, uint intelligence, uint willpower) : base(name)
         {
             Strength = strength;
             Dexterity = dexterity;
@@ -42,6 +41,10 @@ namespace KnightsOfCSharpia.Creatures
         public override uint GetAttackPoints()
         {
             return this.Strength * 2; //TODO: Add equipped items to attack power
+        }
+
+        protected virtual void LevelUp()
+        {
         }
     }
 }

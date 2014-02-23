@@ -38,5 +38,10 @@ namespace KnightsOfCSharpia.Creatures
         public abstract AttackLog Attack(Hero target);
 
         public abstract string Defend(SpellDamage attackSpell);
+
+        public virtual void Update()
+        {
+            
+        }
     }
 }

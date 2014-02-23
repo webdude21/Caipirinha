@@ -7,19 +7,19 @@ namespace KnightsOfCSharpia
 {
     public class Inventory
     {
-        private readonly List<Item> items = new List<Item>();
+        public List<Item> InventoryContent { get; protected set; }
 
         public Inventory(uint capacity = 100)
         {
+            InventoryContent = new List<Item>();
             Capacity = capacity;
         }
 
         public uint Capacity { get; private set; }
 
-
         public uint UsedSize
         {
-            get { return (uint)items.Sum(item => item.Size); }
+            get { return (uint)InventoryContent.Sum(item => item.Size); }
         }
 
         public void AddItem(Item item)
@@ -29,17 +29,17 @@ namespace KnightsOfCSharpia
                 throw new InvalidOperationException("The inventory is full!");
             }
 
-            items.Add(item);
+            InventoryContent.Add(item);
         }
 
         public void RemoveItem(Item item)
         {
-            items.Remove(item);
+            InventoryContent.Remove(item);
         }
 
         public void Clear()
         {
-            items.Clear();
+            InventoryContent.Clear();
         }
     }
 }

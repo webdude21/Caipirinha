@@ -6,20 +6,17 @@ namespace KnightsOfCSharpia.Creatures
     public class Warrior : Hero
     {
 
-        public Warrior(string name, uint strenght, uint dexterity, uint Intelligence, uint willpower)
-            : base(name, strenght, dexterity, Intelligence, willpower)
-        {
-            
-        }
+        public Warrior(string name, uint strenght, uint dexterity, uint intelligence, uint willpower)
+            : base(name, strenght, dexterity, intelligence, willpower) { }
 
         public override uint GetAttackPoints()
         {
-            throw new NotImplementedException();
+            return this.Strength*Level;
         }
 
         public override uint GetDeffencePoints()
         {
-            throw new NotImplementedException();
+            return this.Dexterity*Level;
         }
 
         public override AttackLog Attack(Hero target)
