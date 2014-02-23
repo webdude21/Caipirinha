@@ -1,6 +1,6 @@
-﻿namespace KnnightsOfCSharpiaLib
+﻿namespace KnnightsOfCSharpiaLib.Creatures
 {
-    public enum WorriorType
+    public enum WarriorType
     {
         Archer, Barberian, Brute, Dwarf, Earthmage, Knight, Ninja, Samurai, Skeleton
     }

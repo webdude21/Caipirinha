@@ -45,11 +45,11 @@
     <Compile Include="Creatures\Hero.cs" />
     <Compile Include="Creatures\IScalable.cs" />
     <Compile Include="Creatures\Mage.cs" />
-    <Compile Include="Creatures\MageTypes.cs" />
+    <Compile Include="Creatures\MageType.cs" />
     <Compile Include="Creatures\Unit.cs" />
     <Compile Include="Creatures\Warrior.cs" />
-    <Compile Include="EnemyMage.cs" />
-    <Compile Include="EnemyWorrior.cs" />
+    <Compile Include="Creatures\EnemyMage.cs" />
+    <Compile Include="Creatures\EnemyWarrior.cs" />
     <Compile Include="Engine\BattleEngine.cs" />
     <Compile Include="Creatures\IEnemy.cs" />
     <Compile Include="Items\Armour.cs" />
@@ -71,10 +71,10 @@
     <Compile Include="Spells\SpellBookCollection.cs" />
     <Compile Include="Spells\SpellDamage.cs" />
     <Compile Include="Spells\WarriorBasicAttack.cs" />
-    <Compile Include="WorriorType.cs" />
+    <Compile Include="Creatures\WarriorType.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="FullLibClassDiagram.cd" />
+    <None Include="FullClassDiagram.cd" />
     <None Include="Creatures\ClassDiagramCreatures.cd" />
     <None Include="Items\ClassDiagramItems.cd" />
   </ItemGroup>

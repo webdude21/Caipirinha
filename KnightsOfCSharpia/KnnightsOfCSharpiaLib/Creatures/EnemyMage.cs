@@ -1,11 +1,11 @@
 ﻿using KnnightsOfCSharpiaLib.Common;
 using KnnightsOfCSharpiaLib.Creatures;
 
-namespace KnnightsOfCSharpiaLib
+namespace KnnightsOfCSharpiaLib.Creatures
 {
     public class EnemyMage : Creature
     {
-        public EnemyMage(string name, uint level, MageTypes type) : base(name, level)
+        public EnemyMage(string name, uint level, MageType type) : base(name, level)
         {
             this.Type = type.ToString();
         }

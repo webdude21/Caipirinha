@@ -1,6 +1,6 @@
 ﻿namespace KnnightsOfCSharpiaLib.Creatures
 {
-    public enum MageTypes
+    public enum MageType
     {
         Angel, Firemage, Icemage, Necromancer, Summoner
     }

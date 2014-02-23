@@ -2,11 +2,11 @@
 using KnnightsOfCSharpiaLib.Common;
 using KnnightsOfCSharpiaLib.Creatures;
 
-namespace KnnightsOfCSharpiaLib
+namespace KnnightsOfCSharpiaLib.Creatures
 {
-    public class EnemyWorrior : Creature
+    public class EnemyWarrior : Creature
     {
-        public EnemyWorrior(string name, uint level, WorriorType type) : base(name, level)
+        public EnemyWarrior(string name, uint level, WarriorType type) : base(name, level)
         {
             this.Type = type.ToString();
         }
