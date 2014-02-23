@@ -1,18 +1,17 @@
-﻿namespace KnnightsOfCSharpiaLib.Items
+﻿namespace KnightsOfCSharpiaLib.Items
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
     using System.Text;
-    using KnnightsOfCSharpiaLib.Common;
+    using KnightsOfCSharpiaLib.Common;
     public class Item
-    {      
+    {   
+        private const int MinModifierValue = 0;
+
         private string name;
-        private ItemType type;
-        private ItemRarity rarity;
-        private int size;
-        private int strenghtModifier;
+        private int strengthModifier;
         private int dexterityModifier;
         private int intelligenceModifier;
         private int willPowerModifier;
@@ -26,21 +25,47 @@
             this.Rarity = rarity;
             this.Size = itemSize;
 
-            this.StrenghtModifier = 0;
-            this.DexterityModifier = 0;
-            this.IntelligenceModifier = 0;
-            this.WillPowerModifier = 0;
+            this.StrengthModifier = MinModifierValue;
+            this.DexterityModifier = MinModifierValue;
+            this.IntelligenceModifier = MinModifierValue;
+            this.WillPowerModifier = MinModifierValue;
         }
 
-        public int IntelligenceModifier
+        public string Name
         {
             get
             {
-                return this.intelligenceModifier;
+                return this.name;
             }
             set
             {
-                this.intelligenceModifier = value;
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentException("Name", "The item has no name");
+                }
+                this.name = value;
+            }
+        }
+
+        public ItemType Type { get; set; }
+
+        public ItemRarity Rarity { get; set; }
+
+        public int Size { get; set; }
+
+        public int StrengthModifier
+        {
+            get
+            {
+                return this.strengthModifier;
+            }
+            set
+            {
+                if (value < MinModifierValue)
+                {
+                    throw new ArgumentException("StrengthModifier", "Value can't be negative");
+                }
+                this.strengthModifier = value;
             }
         }
 
@@ -52,22 +77,30 @@
             }
             set
             {
+                if (value < MinModifierValue)
+                {
+                    throw new ArgumentException("DexterityModifier", "Value can't be negative");
+                }
                 this.dexterityModifier = value;
             }
         }
 
-        public int StrenghtModifier
+        public int IntelligenceModifier
         {
             get
             {
-                return this.strenghtModifier;
+                return this.intelligenceModifier;
             }
             set
             {
-                this.strenghtModifier = value;
+                if (value < MinModifierValue)
+                {
+                    throw new ArgumentException("IntelligenceModifier", "Value can't be negative");
+                }
+                this.intelligenceModifier = value;
             }
         }
-
+        
         public int WillPowerModifier
         {
             get
@@ -76,61 +109,17 @@
             }
             set
             {
+                if (value < MinModifierValue)
+                {
+                    throw new ArgumentException("WillPowerModifier", "Value can't be negative");
+                }
                 this.willPowerModifier = value;
-            }
-        }
-
-        public int Size
-        {
-            get
-            {
-                return this.size;
-            }
-            set
-            {
-                this.size = value;
-            }
-        }
-
-        public ItemRarity Rarity
-        {
-            get
-            {
-                return this.rarity;
-            }
-            set
-            {
-                this.rarity = value;
-            }
-        }
-
-        public ItemType Type
-        {
-            get
-            {
-                return this.type;
-            }
-            set
-            {
-                this.type = value;
-            }
-        }
-
-        public string Name
-        {
-            get
-            {
-                return this.name;
-            }
-            set
-            {
-                this.name = value;
             }
         }
 
         internal static T MakeRandom<T>(int partyLevel, ItemRarity rarity) where T : Item
         {
-            // Then, determine a random number of properties to modify
+            // Determine a random number of properties to modify
             // 2-4 for Rare items
             // 1-2 for Common items
             int numberOfProperties = 0;

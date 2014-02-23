@@ -1,7 +1,7 @@
-﻿using KnnightsOfCSharpiaLib.Common;
+﻿using KnightsOfCSharpiaLib.Common;
 using System;
 
-namespace KnnightsOfCSharpiaLib.Creatures
+namespace KnightsOfCSharpiaLib.Creatures
 {
     public class Warrior : Hero, IScalable
     {

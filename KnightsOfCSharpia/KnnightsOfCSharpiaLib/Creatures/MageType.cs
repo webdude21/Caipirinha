@@ -1,4 +1,4 @@
-﻿namespace KnnightsOfCSharpiaLib.Creatures
+﻿namespace KnightsOfCSharpiaLib.Creatures
 {
     public enum MageType
     {

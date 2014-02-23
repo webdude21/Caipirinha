@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KnnightsOfCSharpiaLib.Creatures
+namespace KnightsOfCSharpiaLib.Creatures
 {
     public abstract class Creature : Unit
     {

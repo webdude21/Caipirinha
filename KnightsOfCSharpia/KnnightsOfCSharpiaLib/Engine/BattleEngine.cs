@@ -1,4 +1,4 @@
-﻿namespace KnnightsOfCSharpiaLib.Engine
+﻿namespace KnightsOfCSharpiaLib.Engine
 {
     using System;
 

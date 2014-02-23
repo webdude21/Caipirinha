@@ -1,10 +1,10 @@
-﻿using KnnightsOfCSharpiaLib.Items;
+﻿using KnightsOfCSharpiaLib.Items;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace KnnightsOfCSharpiaLib.Common
+namespace KnightsOfCSharpiaLib.Common
 {
     /// <summary>
     /// A random generator class, which generates random numbers,

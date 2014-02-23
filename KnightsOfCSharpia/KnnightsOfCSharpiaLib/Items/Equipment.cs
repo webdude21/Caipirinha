@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace KnnightsOfCSharpiaLib.Items
+namespace KnightsOfCSharpiaLib.Items
 {
     public class Equipment
     {

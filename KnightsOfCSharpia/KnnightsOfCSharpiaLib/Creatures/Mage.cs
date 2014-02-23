@@ -1,8 +1,8 @@
-﻿using KnnightsOfCSharpiaLib.Common;
-using KnnightsOfCSharpiaLib.Spells;
+﻿using KnightsOfCSharpiaLib.Common;
+using KnightsOfCSharpiaLib.Spells;
 using System;
 
-namespace KnnightsOfCSharpiaLib.Creatures
+namespace KnightsOfCSharpiaLib.Creatures
 {
     public class Mage : Hero, IScalable
     {

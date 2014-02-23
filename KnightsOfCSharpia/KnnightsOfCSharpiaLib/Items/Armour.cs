@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KnnightsOfCSharpiaLib.Items
+namespace KnightsOfCSharpiaLib.Items
 {
     public class Armour : Item
     {

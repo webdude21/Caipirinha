@@ -48,9 +48,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KnnightsOfCSharpiaLib\KnnightsOfCSharpiaLib.csproj">
+    <ProjectReference Include="..\KnnightsOfCSharpiaLib\KnightsOfCSharpiaLib.csproj">
       <Project>{292ffa95-1f9d-4805-bcc5-87c91251b718}</Project>
-      <Name>KnnightsOfCSharpiaLib</Name>
+      <Name>KnightsOfCSharpiaLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

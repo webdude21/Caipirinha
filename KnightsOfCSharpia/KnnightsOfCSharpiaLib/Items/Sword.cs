@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
 
-namespace KnnightsOfCSharpiaLib.Items
+namespace KnightsOfCSharpiaLib.Items
 {
     public class Sword : Item
     {

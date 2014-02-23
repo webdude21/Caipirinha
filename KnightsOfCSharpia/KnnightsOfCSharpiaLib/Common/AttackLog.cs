@@ -1,4 +1,4 @@
-﻿namespace KnnightsOfCSharpiaLib.Common
+﻿namespace KnightsOfCSharpiaLib.Common
 {
     using System;
 

@@ -1,6 +1,6 @@
-﻿using KnnightsOfCSharpiaLib.Items;
+﻿using KnightsOfCSharpiaLib.Items;
 
-namespace KnnightsOfCSharpiaLib.Creatures
+namespace KnightsOfCSharpiaLib.Creatures
 {
     public abstract class Hero : Unit
     {

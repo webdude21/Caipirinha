@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnightsOfCSharpiaWPF", "KnightsOfCSharpiaWPF\KnightsOfCSharpiaWPF.csproj", "{0CCBEC99-90CE-4F33-84FE-AFA43B99DF29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnnightsOfCSharpiaLib", "KnnightsOfCSharpiaLib\KnnightsOfCSharpiaLib.csproj", "{292FFA95-1F9D-4805-BCC5-87C91251B718}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnightsOfCSharpiaLib", "KnnightsOfCSharpiaLib\KnightsOfCSharpiaLib.csproj", "{292FFA95-1F9D-4805-BCC5-87C91251B718}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTests", "ConsoleTests\ConsoleTests.csproj", "{F60E66BB-FBE4-4BD0-8A04-7FE7C669B1B3}"
 EndProject

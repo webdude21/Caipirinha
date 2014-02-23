@@ -1,8 +1,8 @@
 ﻿
-using KnnightsOfCSharpiaLib.Common;
-using KnnightsOfCSharpiaLib.Creatures;
+using KnightsOfCSharpiaLib.Common;
+using KnightsOfCSharpiaLib.Creatures;
 
-namespace KnnightsOfCSharpiaLib.Creatures
+namespace KnightsOfCSharpiaLib.Creatures
 {
     public class EnemyWarrior : Creature
     {

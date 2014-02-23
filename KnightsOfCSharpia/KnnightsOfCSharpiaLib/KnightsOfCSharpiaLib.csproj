@@ -7,7 +7,7 @@
     <ProjectGuid>{292FFA95-1F9D-4805-BCC5-87C91251B718}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KnnightsOfCSharpiaLib</RootNamespace>
+    <RootNamespace>KnightsOfCSharpiaLib</RootNamespace>
     <AssemblyName>KnnightsOfCSharpiaLib</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
