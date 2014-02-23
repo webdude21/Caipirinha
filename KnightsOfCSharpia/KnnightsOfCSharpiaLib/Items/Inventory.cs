@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using KnightsOfCSharpiaLib.Items;
+    using Items;
     public class Inventory
     {
         public Inventory(uint capacity = 100)
