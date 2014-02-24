@@ -1,79 +1,83 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="KnnightsOfCSharpiaLib.Creatures.Creature">
-    <Position X="9.5" Y="1" Width="2" />
+  <Class Name="KnightsOfCSharpiaLib.Creatures.Creature">
+    <Position X="1.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAyAAAAAAAAE=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAAAAAAE=</HashCode>
       <FileName>Creatures\Creature.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="KnnightsOfCSharpiaLib.Creatures.Hero">
-    <Position X="3.25" Y="0.5" Width="1.5" />
+  <Class Name="KnightsOfCSharpiaLib.Creatures.EnemyMage">
+    <Position X="0.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAAAAACAAAAAAAAAAAAAAAQAAABAAAAAAAAAAAAEACQ=</HashCode>
-      <FileName>Creatures\Hero.cs</FileName>
+      <HashCode>AAQAAAAAAAAAAAAAAEAAAAAIAIAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Creatures\EnemyMage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="KnightsOfCSharpiaLib.Creatures.EnemyWarrior">
+    <Position X="3" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAEAAAAAIAIAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Creatures\EnemyWarrior.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KnnightsOfCSharpiaLib.Creatures.Mage">
-    <Position X="1.5" Y="4" Width="2" />
+  <Class Name="KnightsOfCSharpiaLib.Creatures.Hero">
+    <Position X="8.25" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAEAAAAAAAAAAAEAAAAABAIABAACAACAAAAAAQAE=</HashCode>
+      <HashCode>BAAAAACAAAAAAAAAAAAAAAQBAABBAACAAAAAAACEACA=</HashCode>
+      <FileName>Creatures\Hero.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="KnightsOfCSharpiaLib.Creatures.Mage">
+    <Position X="7" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAEAAAAAJAIAAAAAAAAAAAQAAIAA=</HashCode>
       <FileName>Creatures\Mage.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="KnnightsOfCSharpiaLib.Creatures.Warrior">
-    <Position X="4.5" Y="4" Width="2" />
+  <Class Name="KnightsOfCSharpiaLib.Creatures.Unit">
+    <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAEAAAAABAIABAACAACAAAAAAQAE=</HashCode>
+      <HashCode>AQQAAAAAAAAACAAAAEAAAAQIAIAEAAAhAAAAgQAAYAA=</HashCode>
+      <FileName>Creatures\Unit.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="KnightsOfCSharpiaLib.Creatures.Warrior">
+    <Position X="9.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAEAAAAAJAIAAAAAAAAAAAQAAIAA=</HashCode>
       <FileName>Creatures\Warrior.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="KnnightsOfCSharpiaLib.Creatures.Unit">
-    <Position X="7.25" Y="0.5" Width="1.5" />
+  <Interface Name="KnightsOfCSharpiaLib.Creatures.IScalable">
+    <Position X="11.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQQAAAAAAAAACAAAAEAAAAQAAIAEAAAhACAAAAAAYAE=</HashCode>
-      <FileName>Creatures\Unit.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="KnnightsOfCSharpiaLib.Creatures.EnemyMage" Collapsed="true">
-    <Position X="12.25" Y="1.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAEAAAAAAAIAAAAAAAAAAAAAAQAA=</HashCode>
-      <FileName>Creatures\EnemyMage.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="KnnightsOfCSharpiaLib.Creatures.EnemyWarrior" Collapsed="true">
-    <Position X="12.25" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAEAAAAAAAIAAAAAAAAAAAAAAQAA=</HashCode>
-      <FileName>Creatures\EnemyWarrior.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Interface Name="KnnightsOfCSharpiaLib.Creatures.IScalable" Collapsed="true">
-    <Position X="0.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAABAACAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAABAACAAAAAAACAAAA=</HashCode>
       <FileName>Creatures\IScalable.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="KnnightsOfCSharpiaLib.Creatures.IEnemy" Collapsed="true">
-    <Position X="0.5" Y="1.5" Width="1.5" />
+  <Interface Name="KnightsOfCSharpiaLib.Creatures.IEnemy">
+    <Position X="11.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Creatures\IEnemy.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Enum Name="KnnightsOfCSharpiaLib.Creatures.MageType" Collapsed="true">
-    <Position X="1.5" Y="7.75" Width="1.5" />
+  <Enum Name="KnightsOfCSharpiaLib.Creatures.MageType">
+    <Position X="5.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAIAAAAQCAAAAAAAAAAAAAIAAAAAAAAAAAAAABA=</HashCode>
       <FileName>Creatures\MageType.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="KnnightsOfCSharpiaLib.Creatures.WarriorType" Collapsed="true">
-    <Position X="4.5" Y="7.75" Width="1.5" />
+  <Enum Name="KnightsOfCSharpiaLib.Creatures.WarriorType">
+    <Position X="11.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEAABAAAkAEAAAAAAAAYAAAAAAEAAAAAAAAAAAQAAAA=</HashCode>
       <FileName>Creatures\WarriorType.cs</FileName>
