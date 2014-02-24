@@ -24,11 +24,6 @@ namespace KnightsOfCSharpiaWPF
         public GameField()
         {
             InitializeComponent();
-
-            var player = new Warrior("Pesho");
-            player.Inventory.AddItem(new Boots("Кожени Ботуши", ItemRarity.Common));
-            player.Inventory.AddItem(new Belt("Кожен Колан", ItemRarity.Common));
-            // Inventory.ItemsSource = player.Inventory;
         }
         protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)
         {
@@ -43,9 +38,10 @@ namespace KnightsOfCSharpiaWPF
             }
         }
 
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void inventoryButton_Click(object sender, RoutedEventArgs e)
         {
-
+            var inventory = new Inventory();
+            inventory.Show();
         }
     }
 }

@@ -1,20 +1,21 @@
-﻿namespace KnightsOfCSharpiaLib
+﻿using System.Collections.ObjectModel;
+
+namespace KnightsOfCSharpiaLib
 {
+    using Items;
     using System;
-    using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    using KnightsOfCSharpiaLib.Items;
 
     public class Inventory
     {
         public Inventory(uint capacity = 100)
         {
-            InventoryContent = new List<Item>();
+            InventoryContent = new ObservableCollection<Item>();
             Capacity = capacity;
         }
 
-        public List<Item> InventoryContent { get; protected set; }
+        public ObservableCollection<Item> InventoryContent { get; protected set; }
         public uint Capacity { get; private set; }
 
         public uint UsedSize

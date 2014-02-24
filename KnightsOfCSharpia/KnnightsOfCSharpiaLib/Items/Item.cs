@@ -213,5 +213,11 @@
 
             return instance as T;
         }
+
+        public override string ToString()
+        {
+
+            return this.name;
+        }
     }
 }

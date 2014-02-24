@@ -19,6 +19,10 @@ class ConsoleTests
         }
 
         Mage playerMage = new Mage("Pesho");
+        playerMage.Inventory.AddItem(new Boots("Кожени Ботуши", ItemRarity.Common));
+        playerMage.Inventory.AddItem(new Boots("Кожен боздуган", ItemRarity.Common));
+        playerMage.Inventory.AddItem(new Belt("Кожен Колан", ItemRarity.Common));
+        Console.WriteLine(playerMage.Inventory);
 
         EnemyMage enemyMage = new EnemyMage("Gosho", 1, MageType.Icemage);
 

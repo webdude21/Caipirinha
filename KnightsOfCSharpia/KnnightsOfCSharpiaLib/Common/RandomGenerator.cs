@@ -8,8 +8,8 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
-    using KnightsOfCSharpiaLib.Engine;
-    using KnightsOfCSharpiaLib.Items;
+    using Engine;
+    using Items;
 
     public static class RandomGenerator
     {
@@ -106,13 +106,10 @@
             {
                 case DamageType.Physical:
                     return warriorAbilityNames[GetRandomValue(0, warriorAbilityNames.Length)];
-                    break;
                 case DamageType.Magical:
                     return mageAbilityNames[GetRandomValue(0, mageAbilityNames.Length)];
-                    break;
                 default:
                     throw new ArgumentException("Invalid ability type passed!");
-                    break;
             }
         }
     }

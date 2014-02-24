@@ -35,13 +35,10 @@
             {
                 case DamageType.Physical:
                     return (this.Dexterity * Level) / 3;
-                    break;
                 case DamageType.Magical:
                     return (this.WillPower * Level) / 2;
-                    break;
                 default:
                     throw new ArgumentException("Invalid damage type passed!");
-                    break;
             }
         }
 
