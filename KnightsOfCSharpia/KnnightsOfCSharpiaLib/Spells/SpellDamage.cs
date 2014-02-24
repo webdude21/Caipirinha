@@ -4,7 +4,7 @@
 
     public struct SpellDamage
     {
-        public SpellDamage(string name, uint damage, DamageTypeEnum damageType)
+        public SpellDamage(string name, uint damage, DamageType damageType)
             :this()
         {
             this.SpellName = name;
@@ -16,6 +16,6 @@
 
         public uint SpellDamageModifier { get; private set; }
 
-        public DamageTypeEnum DamageType { get; private set; }
+        public DamageType DamageType { get; private set; }
     }
 }

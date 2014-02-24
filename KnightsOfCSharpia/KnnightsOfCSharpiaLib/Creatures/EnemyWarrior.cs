@@ -1,6 +1,7 @@
-﻿using KnightsOfCSharpiaLib.Engine;
-namespace KnightsOfCSharpiaLib.Creatures
+﻿namespace KnightsOfCSharpiaLib.Creatures
 {
+    using KnightsOfCSharpiaLib.Engine;
+
     public class EnemyWarrior : Creature
     {
         public EnemyWarrior(string name, uint level, WarriorType type) : base(name, level)

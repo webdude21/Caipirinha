@@ -1,16 +1,9 @@
-﻿using KnightsOfCSharpiaLib.Items;
-
-namespace KnightsOfCSharpiaLib.Creatures
+﻿namespace KnightsOfCSharpiaLib.Creatures
 {
+    using KnightsOfCSharpiaLib.Items;
+
     public abstract class Hero : Unit, IScalable, ICombatant
     {
-        public uint Strength { get; protected set; }
-        public uint Dexterity { get; protected set; }
-        public uint Intelligence { get; protected set; }
-        public uint WillPower { get; protected set; }
-
-        public Equipment Equipment { get; private set; }
-
         protected Hero(string name)
             : base(name)
         {
@@ -18,6 +11,13 @@ namespace KnightsOfCSharpiaLib.Creatures
             this.NeededXP = 100;
             this.CurrentXp = 0;
         }
+
+        public uint Strength { get; protected set; }
+        public uint Dexterity { get; protected set; }
+        public uint Intelligence { get; protected set; }
+        public uint WillPower { get; protected set; }
+
+        public Equipment Equipment { get; private set; }
 
         public uint CurrentXp { get; private set; }
 
@@ -40,6 +40,7 @@ namespace KnightsOfCSharpiaLib.Creatures
             this.Intelligence -= item.IntelligenceModifier;
             this.WillPower -= item.WillPowerModifier;
         }
+
         public void AddXP(uint xp)
         {
             this.CurrentXp += xp;
@@ -57,4 +58,3 @@ namespace KnightsOfCSharpiaLib.Creatures
         }
     }
 }
-

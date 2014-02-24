@@ -1,8 +1,8 @@
 ﻿namespace KnightsOfCSharpiaLib.Engine
 {
-    using KnightsOfCSharpiaLib.Creatures;
-    using KnightsOfCSharpiaLib.Exceptions;
     using System;
+    using KnightsOfCSharpiaLib.Creatures;
+    using KnightsOfCSharpiaLib.Exceptions;    
 
     public class BattleEngine
     {

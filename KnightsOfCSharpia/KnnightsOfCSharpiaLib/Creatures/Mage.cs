@@ -1,10 +1,10 @@
-﻿using KnightsOfCSharpiaLib.Common;
-using KnightsOfCSharpiaLib.Engine;
-using KnightsOfCSharpiaLib.Exceptions;
-using System;
-
-namespace KnightsOfCSharpiaLib.Creatures
+﻿namespace KnightsOfCSharpiaLib.Creatures
 {
+    using System;
+    using KnightsOfCSharpiaLib.Common;
+    using KnightsOfCSharpiaLib.Engine;
+    using KnightsOfCSharpiaLib.Exceptions;
+
     public class Mage : Hero, IScalable, ICombatant
     {
         private const int SpecialAbilityManaCost = 70;
@@ -84,8 +84,7 @@ namespace KnightsOfCSharpiaLib.Creatures
             this.MaxHealth = this.MaxHealth + 50;
             this.MaxMana = this.MaxMana + 100;
         }
-
-
+        
         public override void Update()
         {
             this.CurrentMana += 3 * this.Intelligence;

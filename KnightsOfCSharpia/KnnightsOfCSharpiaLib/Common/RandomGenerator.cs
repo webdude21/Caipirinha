@@ -1,17 +1,16 @@
-﻿using KnightsOfCSharpiaLib.Engine;
-using KnightsOfCSharpiaLib.Items;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-
-namespace KnightsOfCSharpiaLib.Common
+﻿namespace KnightsOfCSharpiaLib.Common
 {
     /// <summary>
     /// A random generator class, which generates random numbers,
-    /// sequences of unique values
-    /// and items.
+    /// sequences of unique values and items.
     /// </summary>
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Reflection;
+    using KnightsOfCSharpiaLib.Engine;
+    using KnightsOfCSharpiaLib.Items;
+
     public static class RandomGenerator
     {
         private static readonly Random generator;

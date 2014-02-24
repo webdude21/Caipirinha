@@ -1,12 +1,7 @@
-﻿using KnightsOfCSharpiaLib.Engine;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace KnightsOfCSharpiaLib.Creatures
+﻿namespace KnightsOfCSharpiaLib.Creatures
 {
+    using KnightsOfCSharpiaLib.Engine;
+
     public interface ICombatant
     {
         bool IsAlive { get; }

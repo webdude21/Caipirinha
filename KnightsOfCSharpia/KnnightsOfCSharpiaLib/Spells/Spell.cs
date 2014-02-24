@@ -1,14 +1,7 @@
-﻿using KnightsOfCSharpiaLib.Items;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace KnightsOfCSharpiaLib.Spells
+﻿namespace KnightsOfCSharpiaLib.Spells
 {
     public abstract class Spell
     {
-
         public Spell(bool affectsEnemy, bool affectsCaster, int manaCost, string name, string description)
         {
             

@@ -2,6 +2,10 @@
 {
     public enum MageType
     {
-        Angel, Firemage, Icemage, Necromancer, Summoner
+        Angel,
+        Firemage,
+        Icemage,
+        Necromancer,
+        Summoner
     }
 }
