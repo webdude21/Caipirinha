@@ -35,7 +35,7 @@
             string attackResult = string.Empty;
             if (this.playerTurn)
             {
-                if (string.IsNullOrWhiteSpace(desiredAttack) || desiredAttack != "special" || desiredAttack != "basic")
+                if (string.IsNullOrWhiteSpace(desiredAttack))
                 {
                     throw new ArgumentException("Invalid parameter passed in!");
                 }
@@ -45,7 +45,7 @@
                     case "special":
                         try
                         {
-                            attackResult = EnemyToon.Defend(PlayerToon.SpecialAttack(EnemyToon)).AttackInformation;   
+                            attackResult = PlayerToon.SpecialAttack(EnemyToon).AttackInformation;
                         }
                         catch (InsufficientManaException ex)
                         {
@@ -53,7 +53,7 @@
                         }
                         break;
                     case "basic":
-                        attackResult = EnemyToon.Defend(PlayerToon.Attack(EnemyToon)).AttackInformation;
+                        attackResult = PlayerToon.Attack(EnemyToon).AttackInformation;
                         break;
                     default:
                         break;
@@ -67,11 +67,18 @@
 
                 if (attackChance <= 50)
                 {
-                    attackResult = PlayerToon.Defend(EnemyToon.Attack(PlayerToon)).AttackInformation;
+                    attackResult = EnemyToon.Attack(PlayerToon).AttackInformation;
                 }
                 else
                 {
-                    attackResult = PlayerToon.Defend(EnemyToon.SpecialAttack(PlayerToon)).AttackInformation;
+                    try
+                    {
+                        attackResult = EnemyToon.SpecialAttack(PlayerToon).AttackInformation;
+                    }
+                    catch (InsufficientManaException)
+                    {
+                        attackResult = EnemyToon.Attack(PlayerToon).AttackInformation;
+                    }
                 }
 
                 this.playerTurn = true;

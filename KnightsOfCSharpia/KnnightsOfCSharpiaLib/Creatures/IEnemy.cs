@@ -2,6 +2,6 @@
 {
     public interface IEnemy
     {
-        int XPYield { get; }
+        uint XPYield { get; }
     }
 }

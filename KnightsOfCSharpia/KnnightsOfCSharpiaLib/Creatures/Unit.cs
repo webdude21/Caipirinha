@@ -11,7 +11,7 @@
             this.Name = name;
             this.Level = level;
             this.MaxHealth = Level * 100;
-            this.CurrentHealth = this.MaxHealth;
+            this.CurrentHealth = (int)this.MaxHealth;
             this.IsAlive = true;
         }
 
@@ -30,11 +30,11 @@
 
         public uint MaxHealth { get; protected set; }
 
-        public uint CurrentHealth { get; protected set; }
+        public int CurrentHealth { get; protected set; }
 
         public uint Level { get; protected set; }
 
-        public uint CurrentMana { get; protected set; }
+        public int CurrentMana { get; protected set; }
 
         public uint MaxMana { get; protected set; }
 
@@ -65,7 +65,7 @@
 
         protected void TakeDamage(uint damage)
         {
-            this.CurrentHealth -= damage;
+            this.CurrentHealth -= (int)damage;
 
             if (this.CurrentHealth <= 0)
             {

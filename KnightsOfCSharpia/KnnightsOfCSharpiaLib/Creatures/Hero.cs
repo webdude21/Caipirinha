@@ -56,5 +56,15 @@
             this.CurrentXp -= this.NeededXP;
             this.NeededXP = (uint)(this.NeededXP * 1.4);
         }
+
+        public override void Update()
+        {
+            this.CurrentMana += (int)this.Intelligence * 3;
+
+            if (this.CurrentMana > this.MaxMana)
+            {
+                this.CurrentMana = (int)this.MaxMana;
+            }
+        }
     }
 }

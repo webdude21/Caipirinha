@@ -18,8 +18,10 @@
             this.Intelligence = 2;
             this.WillPower = 3;
 
-            this.MaxMana = this.Intelligence * 100;
-            this.MaxHealth = this.WillPower * 100;
+            this.MaxMana = 100 + this.Intelligence * 10;
+            this.CurrentMana = (int)this.MaxMana;
+            this.MaxHealth += this.Dexterity * 10;
+            this.CurrentHealth = (int)this.MaxHealth;
         }
 
         public override uint AttackPoints
@@ -56,8 +58,9 @@
                 this.WillPower++;
             }
 
-            this.MaxHealth = this.MaxHealth + 100;
-            this.MaxMana = this.MaxMana + 50;
+            this.MaxHealth += 100;
+            this.CurrentHealth = (int)this.MaxHealth;
+            this.MaxMana += 50;
         }
         
         public override AttackLog Attack(ICombatant target)
@@ -83,11 +86,6 @@
             this.CurrentMana -= SpecialAbilityManaCost;
 
             return attackResult;
-        }
-
-        public override void Update()
-        {
-            this.CurrentMana += this.Intelligence * 3;
         }
 
     }

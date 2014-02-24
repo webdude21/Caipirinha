@@ -18,8 +18,10 @@
             this.Intelligence = 4;
             this.WillPower = 5;
 
-            this.MaxMana = this.Intelligence * 100;
-            this.MaxHealth = this.WillPower * 100;
+            this.MaxMana = 100 + this.Intelligence * 20;
+            this.CurrentMana = (int)this.MaxMana;
+            this.MaxHealth += this.WillPower * 10;
+            this.CurrentHealth = (int)this.MaxHealth;
         }
 
         public override uint AttackPoints
@@ -82,12 +84,8 @@
             }
 
             this.MaxHealth = this.MaxHealth + 50;
+            this.CurrentHealth = (int)this.MaxHealth;
             this.MaxMana = this.MaxMana + 100;
-        }
-        
-        public override void Update()
-        {
-            this.CurrentMana += 3 * this.Intelligence;
         }
     }
 }
