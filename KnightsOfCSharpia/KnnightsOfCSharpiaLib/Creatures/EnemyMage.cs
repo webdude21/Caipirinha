@@ -1,7 +1,7 @@
-﻿using KnightsOfCSharpiaLib.Engine;
-
-namespace KnightsOfCSharpiaLib.Creatures
+﻿namespace KnightsOfCSharpiaLib.Creatures
 {
+    using KnightsOfCSharpiaLib.Engine;
+
     public class EnemyMage : Creature, ICombatant
     {
         public EnemyMage(string name, uint level, MageType type) : base(name, level)

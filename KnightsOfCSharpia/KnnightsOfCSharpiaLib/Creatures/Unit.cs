@@ -1,18 +1,11 @@
-﻿using KnightsOfCSharpiaLib.Engine;
-using System;
-
-namespace KnightsOfCSharpiaLib.Creatures
+﻿namespace KnightsOfCSharpiaLib.Creatures
 {
+    using System;
+    using KnightsOfCSharpiaLib.Engine;
+
     public abstract class Unit : ICombatant
     {
         private string name;
-        public uint MaxHealth { get; protected set; }
-        public uint CurrentHealth { get; protected set; }
-        public uint Level { get; protected set; }
-        public uint CurrentMana { get; protected set; }
-        public uint MaxMana { get; protected set; }
-        public bool IsAlive { get; protected set; }
-
         protected Unit(string name, uint level = 1)
         {
             this.Name = name;
@@ -34,8 +27,21 @@ namespace KnightsOfCSharpiaLib.Creatures
                 this.name = value;
             }
         }
-        public abstract uint AttackPoints { get; }
 
+        public uint MaxHealth { get; protected set; }
+
+        public uint CurrentHealth { get; protected set; }
+
+        public uint Level { get; protected set; }
+
+        public uint CurrentMana { get; protected set; }
+
+        public uint MaxMana { get; protected set; }
+
+        public bool IsAlive { get; protected set; }
+
+        public abstract uint AttackPoints { get; }
+        
         public abstract uint DefensePoints(DamageType damageType);
 
         public abstract AttackLog Attack(ICombatant target);

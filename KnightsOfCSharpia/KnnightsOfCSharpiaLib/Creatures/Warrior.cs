@@ -1,10 +1,10 @@
-﻿using KnightsOfCSharpiaLib.Common;
-using KnightsOfCSharpiaLib.Engine;
-using KnightsOfCSharpiaLib.Exceptions;
-using System;
-
-namespace KnightsOfCSharpiaLib.Creatures
+﻿namespace KnightsOfCSharpiaLib.Creatures
 {
+    using System;
+    using KnightsOfCSharpiaLib.Common;
+    using KnightsOfCSharpiaLib.Engine;
+    using KnightsOfCSharpiaLib.Exceptions;
+
     public class Warrior : Hero, IScalable, ICombatant
     {
         private const int SpecialAbilityManaCost = 50;
@@ -59,8 +59,7 @@ namespace KnightsOfCSharpiaLib.Creatures
             this.MaxHealth = this.MaxHealth + 100;
             this.MaxMana = this.MaxMana + 50;
         }
-
-
+        
         public override AttackLog Attack(ICombatant target)
         {
             var attackResult = target.Defend(new AttackLog(DamageType.Physical, this.AttackPoints));
