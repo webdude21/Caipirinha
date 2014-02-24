@@ -15,5 +15,7 @@
         AttackLog SpecialAttack(ICombatant target);
 
         AttackLog Defend(AttackLog attack);
+
+        void Update();
     }
 }

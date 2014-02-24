@@ -2,7 +2,8 @@
 {
     using System;
     using KnightsOfCSharpiaLib.Creatures;
-    using KnightsOfCSharpiaLib.Exceptions;    
+    using KnightsOfCSharpiaLib.Exceptions;
+    using KnightsOfCSharpiaLib.Common;    
 
     public class BattleEngine
     {
@@ -19,16 +20,67 @@
 
         public ICombatant EnemyToon { get; private set; }
 
-        public string NextAttack()
+        /// <summary>
+        /// Initiates the next skirmish and returns the result of fight in a string representation.
+        /// </summary>
+        /// <param name="desiredAttack">Specifies the type of attack the player selected. If no attack is specified, and it's the player's turn, throws an exception.</param>
+        /// <returns>String specifying the result of the attack or throws an exception if it's the player's turn and invalid attack parameter is passed in.</returns>
+        public string NextAttack(string desiredAttack = null)
         {
             if ((this.PlayerToon.IsAlive && this.EnemyToon.IsAlive) == false)
             {
                 throw new CombatantsDeadException();
             }
 
-            // TODO: Implement attack logic and figure out a way for the user to input the desired attack type.
+            string attackResult = string.Empty;
+            if (this.playerTurn)
+            {
+                if (string.IsNullOrWhiteSpace(desiredAttack) || desiredAttack != "special" || desiredAttack != "basic")
+                {
+                    throw new ArgumentException("Invalid parameter passed in!");
+                }
 
-            return string.Empty;
+                switch (desiredAttack)
+                {
+                    case "special":
+                        try
+                        {
+                            attackResult = EnemyToon.Defend(PlayerToon.SpecialAttack(EnemyToon)).AttackInformation;   
+                        }
+                        catch (InsufficientManaException ex)
+                        {
+                            throw ex;
+                        }
+                        break;
+                    case "basic":
+                        attackResult = EnemyToon.Defend(PlayerToon.Attack(EnemyToon)).AttackInformation;
+                        break;
+                    default:
+                        break;
+                }
+
+                this.playerTurn = false;
+            }
+            else if (!this.playerTurn)
+            {
+                int attackChance = RandomGenerator.GetRandomValue(0, 101);
+
+                if (attackChance <= 50)
+                {
+                    attackResult = PlayerToon.Defend(EnemyToon.Attack(PlayerToon)).AttackInformation;
+                }
+                else
+                {
+                    attackResult = PlayerToon.Defend(EnemyToon.SpecialAttack(PlayerToon)).AttackInformation;
+                }
+
+                this.playerTurn = true;
+                
+                this.PlayerToon.Update();
+                this.EnemyToon.Update();
+            }
+
+            return attackResult;
         }
     }
 }
