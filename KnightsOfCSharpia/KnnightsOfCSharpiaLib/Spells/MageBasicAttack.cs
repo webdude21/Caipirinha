@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace KnightsOfCSharpiaLib.Spells
+﻿namespace KnightsOfCSharpiaLib.Spells
 {
     public class MageBasicAttack : Spell
     {
@@ -14,10 +8,10 @@ namespace KnightsOfCSharpiaLib.Spells
         public MageBasicAttack()
             : base(true, false, 0, SpellName, SpellDescription)
         {
-            this.DamageType = DamageTypeEnum.Physical;
+            this.DamageType = DamageType.Physical;
         }
 
-        public DamageTypeEnum DamageType { get; private set; }
+        public DamageType DamageType { get; private set; }
 
         // Returns a SpellDamage log which can be used when calling the creature Defend abilit;
         // In this case, this spell deals no extra damage outside the casterModifier

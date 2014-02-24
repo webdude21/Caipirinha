@@ -1,4 +1,4 @@
-﻿namespace KnightsOfCSharpiaLib.Engine
+﻿namespace KnightsOfCSharpiaLib.Spells
 {
     public enum DamageType
     {

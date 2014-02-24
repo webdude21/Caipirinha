@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using System.Reflection;
+
     public class Armour : Item
     {
         public const ItemType ItemSlot = ItemType.Chest;

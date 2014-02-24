@@ -10,10 +10,10 @@
         public WarriorBasicAttack()
             :base(true, false, 0, SpellName, SpellDescription)
         {
-            this.DamageType = DamageTypeEnum.Physical;
+            this.DamageType = DamageType.Physical;
         }
 
-        public DamageTypeEnum DamageType { get; private set; }
+        public DamageType DamageType { get; private set; }
 
         public override SpellDamage Effect(uint casterModifier)
         {
