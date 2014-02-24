@@ -26,6 +26,8 @@
                 throw new CombatantsDeadException();
             }
 
+            // TODO: Implement attack logic and figure out a way for the user to input the desired attack type.
+
             return string.Empty;
         }
     }
