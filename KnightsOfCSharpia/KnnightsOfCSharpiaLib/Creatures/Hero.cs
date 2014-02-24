@@ -10,8 +10,10 @@
             this.Equipment = new Equipment();
             this.NeededXP = 100;
             this.CurrentXp = 0;
+            this.Inventory = new Inventory();
         }
 
+        public Inventory Inventory { get; protected set; }
         public uint Strength { get; protected set; }
         public uint Dexterity { get; protected set; }
         public uint Intelligence { get; protected set; }

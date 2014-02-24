@@ -25,10 +25,10 @@ namespace KnightsOfCSharpiaWPF
         {
             InitializeComponent();
 
-            var player = new Warrior("Pesho", 20, 20, 10, 8);
+            var player = new Warrior("Pesho");
             player.Inventory.AddItem(new Boots("Кожени Ботуши", ItemRarity.Common));
             player.Inventory.AddItem(new Belt("Кожен Колан", ItemRarity.Common));
-            Inventory.ItemsSource = player.Inventory;
+            // Inventory.ItemsSource = player.Inventory;
         }
         protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)
         {
