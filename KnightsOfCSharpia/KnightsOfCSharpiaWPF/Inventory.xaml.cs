@@ -29,7 +29,9 @@ namespace KnightsOfCSharpiaWPF
             player.Inventory.AddItem(new Boots("Кожени Ботуши", ItemRarity.Common));
             player.Inventory.AddItem(new Boots("Кожен боздуган", ItemRarity.Common));
             player.Inventory.AddItem(new Belt("Кожен Колан", ItemRarity.Common));
+            player.EquipItem(new Armour("Желязна Броня", ItemRarity.Rare));
             InventoryListBox.ItemsSource = player.Inventory.InventoryContent;
+            EquipmentListBox.ItemsSource = player.Equipment.Items;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

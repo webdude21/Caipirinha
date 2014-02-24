@@ -4,39 +4,45 @@
         xmlns:creatures="clr-namespace:KnightsOfCSharpiaLib.Creatures;assembly=KnightsOfCSharpiaLib"
         xmlns:knightsOfCSharpiaLib="clr-namespace:KnightsOfCSharpiaLib;assembly=KnightsOfCSharpiaLib"
         xmlns:items="clr-namespace:KnightsOfCSharpiaLib.Items;assembly=KnightsOfCSharpiaLib"
-        Title="Inventory" Height="300" Width="611" Loaded="Window_Loaded">
+        Title="Inventory" Height="300" Width="600" Loaded="Window_Loaded" Background="Gray"
+        Window.ResizeMode="NoResize">
     <Grid>
         <Grid.Resources>
             <DataTemplate x:Key="InventoryTemplate" DataType="items:Item">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
-                    </Grid.RowDefinitions>
-                    <TextBlock Grid.Row="0" Text="{Binding Path=.Name}"/>
-                    <TextBlock Grid.Row="1" Text="{Binding Path=.DexterityModifier}"/>
-                    <TextBlock Grid.Row="2" Text="{Binding Path=.StrengthModifier}"/>
-                </Grid>
+                <TextBlock 
+                    FontSize="20"
+                    Text="{Binding Path=.Name}"
+                    ToolTip="{Binding Path=.ItemSpecs}" SnapsToDevicePixels="False" FontWeight="Bold"
+                    />
             </DataTemplate>
         </Grid.Resources>
         <Grid Margin="0,0,0,0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200*"/>
+                <ColumnDefinition Width="180*"/>
+                <ColumnDefinition Width="180*"/>
+                <ColumnDefinition Width="100*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
+                <RowDefinition Height="20*"/>
                 <RowDefinition Height="100*"/>
             </Grid.RowDefinitions>
-        	<ListBox x:Name="InventoryListBox" 
-                     ItemTemplate="{DynamicResource InventoryTemplate}"
-			HorizontalAlignment="Left" 
+            <Label Content="Items in the inventory" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" FontSize="20"/>
+            <Label Content="Equped Items" HorizontalAlignment="Center" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="20" Grid.Column="1"/>
+            <ListBox x:Name="InventoryListBox" 
+            Grid.Column="0" 
+            Grid.Row="1"
+            ItemTemplate="{DynamicResource InventoryTemplate}"
+			HorizontalAlignment="Center" 
 			VerticalAlignment="Top" 
-			Grid.RowSpan="8" 
-			Background="#FF645276"
-			/>
+			Background="GreenYellow" FontSize="14"/>
+            <ListBox x:Name="EquipmentListBox" 
+            Grid.Column="1" 
+            Grid.Row="1"
+            ItemTemplate="{DynamicResource InventoryTemplate}"
+			HorizontalAlignment="Center" 
+			VerticalAlignment="Top" 
+			Background="GreenYellow" FontSize="14"/>
+
         </Grid>
     </Grid>
 </Window>

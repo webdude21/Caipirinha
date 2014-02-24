@@ -8,14 +8,10 @@
     using KnightsOfCSharpiaLib.Common;
 
     public class Item
-    {   
+    {
         private const int MinModifierValue = 0;
 
         private string name;
-        private uint strengthModifier;
-        private uint dexterityModifier;
-        private uint intelligenceModifier;
-        private uint willPowerModifier;
 
         // Since when creating an object, the parent constructor is the first one that gets called (when specified)
         // Initialize all modifiers to 0 and then change the desired ones from the child constructor
@@ -55,73 +51,13 @@
 
         public int Size { get; set; }
 
-        public uint StrengthModifier
-        {
-            get
-            {
-                return this.strengthModifier;
-            }
-            set
-            {
-                if (value < MinModifierValue)
-                {
-                    throw new ArgumentException("StrengthModifier", "Value can't be negative");
-                }
+        public uint StrengthModifier { get; set; }
 
-                this.strengthModifier = value;
-            }
-        }
+        public uint DexterityModifier { get; set; }
 
-        public uint DexterityModifier
-        {
-            get
-            {
-                return this.dexterityModifier;
-            }
-            set
-            {
-                if (value < MinModifierValue)
-                {
-                    throw new ArgumentException("DexterityModifier", "Value can't be negative");
-                }
+        public uint IntelligenceModifier { get; set; }
 
-                this.dexterityModifier = value;
-            }
-        }
-
-        public uint IntelligenceModifier
-        {
-            get
-            {
-                return this.intelligenceModifier;
-            }
-            set
-            {
-                if (value < MinModifierValue)
-                {
-                    throw new ArgumentException("IntelligenceModifier", "Value can't be negative");
-                }
-
-                this.intelligenceModifier = value;
-            }
-        }
-        
-        public uint WillPowerModifier
-        {
-            get
-            {
-                return this.willPowerModifier;
-            }
-            set
-            {
-                if (value < MinModifierValue)
-                {
-                    throw new ArgumentException("WillPowerModifier", "Value can't be negative");
-                }
-
-                this.willPowerModifier = value;
-            }
-        }
+        public uint WillPowerModifier { get; set; }
 
         internal static T MakeRandom<T>(int partyLevel, ItemRarity rarity) where T : Item
         {
@@ -214,10 +150,46 @@
             return instance as T;
         }
 
+        public string ItemSpecs
+        {
+            get { return this.ToString(); }
+        }
+
         public override string ToString()
         {
+            var stringBuilder = new StringBuilder();
 
-            return this.name;
+            stringBuilder.Append(string.Format("This is the {0} item '{1}'. ", this.Rarity.ToString().ToLower(), this.name));
+            stringBuilder.Append(Environment.NewLine);
+            stringBuilder.Append(string.Format("Its type is {0}, and it takes {1} space(s) in the inventory. ", 
+                this.GetType().Name.ToLower(), this.Size));
+            if (StrengthModifier > 0 || WillPowerModifier > 0 || IntelligenceModifier > 0 || DexterityModifier > 0)
+            {
+                stringBuilder.Append(Environment.NewLine);
+                stringBuilder.Append("This item affects the following attributes: ");
+                stringBuilder.Append(Environment.NewLine);
+                if (StrengthModifier > 0)
+                {
+                    stringBuilder.Append(string.Format("Strenght +{0}", this.StrengthModifier));
+                    stringBuilder.Append(Environment.NewLine);
+                }
+                if (DexterityModifier > 0)
+                {
+                    stringBuilder.Append(string.Format("Dexterity +{0}", this.DexterityModifier));
+                    stringBuilder.Append(Environment.NewLine);
+                }
+                if (IntelligenceModifier > 0)
+                {
+                    stringBuilder.Append(string.Format("Intelligence +{0}", this.IntelligenceModifier));
+                    stringBuilder.Append(Environment.NewLine);
+                } 
+                if (WillPowerModifier > 0)
+                {
+                    stringBuilder.Append(string.Format("WillPower +{0}", this.WillPowerModifier));
+                }
+            }
+
+            return stringBuilder.ToString();
         }
     }
 }
