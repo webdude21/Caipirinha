@@ -50,6 +50,7 @@
     <Compile Include="Creatures\Warrior.cs" />
     <Compile Include="Creatures\EnemyMage.cs" />
     <Compile Include="Creatures\EnemyWarrior.cs" />
+    <Compile Include="Engine\AttackLog.cs" />
     <Compile Include="Engine\BattleEngine.cs" />
     <Compile Include="Creatures\IEnemy.cs" />
     <Compile Include="Engine\DamageType.cs" />
