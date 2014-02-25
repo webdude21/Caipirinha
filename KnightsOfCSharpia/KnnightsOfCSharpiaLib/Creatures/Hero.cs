@@ -19,7 +19,7 @@
         public uint Intelligence { get; protected set; }
         public uint WillPower { get; protected set; }
 
-        public Equipment Equipment { get; private set; }
+        public Equipment Equipment { get; protected set; }
 
         public uint CurrentXp { get; private set; }
 
@@ -27,6 +27,10 @@
 
         public void EquipItem(Item item)
         {
+            if (item == null)
+            {
+                return;
+            }
             this.Equipment.AddItem(item);
             this.Strength += item.StrengthModifier;
             this.Dexterity += item.DexterityModifier;

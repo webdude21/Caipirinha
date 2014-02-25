@@ -72,6 +72,7 @@
     <Compile Include="Items\Caster\Slippers.cs" />
     <Compile Include="Items\Caster\Staff.cs" />
     <Compile Include="Items\Melee\Sword.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Spells\DamageType.cs" />
     <Compile Include="Spells\MageBasicAttack.cs" />

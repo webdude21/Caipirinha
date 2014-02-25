@@ -22,10 +22,25 @@ namespace KnightsOfCSharpiaWPF
     /// </summary>
     public partial class Inventory
     {
+        public Hero player;
+
         public Inventory()
         {
             InitializeComponent();
-                        var player = new Warrior("Pesho");
+
+            player = new Warrior("Pesho");
+            player.Inventory.AddItem(new Boots("Кожени Ботуши", ItemRarity.Common));
+            player.Inventory.AddItem(new Boots("Кожен боздуган", ItemRarity.Common));
+            player.Inventory.AddItem(new Belt("Кожен Колан", ItemRarity.Common));
+            player.Inventory.AddItem(new Boots("Кожени Ботуши", ItemRarity.Common));
+            player.Inventory.AddItem(new Boots("Кожен боздуган", ItemRarity.Common));
+            player.Inventory.AddItem(new Belt("Кожен Колан", ItemRarity.Common));
+            player.Inventory.AddItem(new Boots("Кожени Ботуши", ItemRarity.Common));
+            player.Inventory.AddItem(new Boots("Кожен боздуган", ItemRarity.Common));
+            player.Inventory.AddItem(new Belt("Кожен Колан", ItemRarity.Common));
+            player.Inventory.AddItem(new Boots("Кожени Ботуши", ItemRarity.Common));
+            player.Inventory.AddItem(new Boots("Кожен боздуган", ItemRarity.Common));
+            player.Inventory.AddItem(new Belt("Кожен Колан", ItemRarity.Common));
             player.Inventory.AddItem(new Boots("Кожени Ботуши", ItemRarity.Common));
             player.Inventory.AddItem(new Boots("Кожен боздуган", ItemRarity.Common));
             player.Inventory.AddItem(new Belt("Кожен Колан", ItemRarity.Common));
@@ -37,6 +52,59 @@ namespace KnightsOfCSharpiaWPF
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void EquipButtonClickItem(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                player.EquipItem((Item)InventoryListBox.SelectedItem);
+                RefreshData();
+            }
+            catch (InvalidOperationException)
+            {
+                MessageBox.Show(
+                    "You can only equip one item of each type. You can unequip an item of the same type and equip the one you want.",
+                    "Item operation error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }      
+        }
+
+        private void UnequipButtonClickItem(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var selectedItem = (Item)EquipmentListBox.SelectedItem;
+                player.Inventory.AddItem(selectedItem);
+                player.UnEquipItem(selectedItem);
+                RefreshData();
+            }
+            catch (InvalidOperationException)
+            {
+                MessageBox.Show(
+                    "There's not enough space in the inventory to fit the item you're trying to unequip" +
+                    " You can 'drop' something and then try again.",
+                    "Item operation error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
+        }
+
+        private void EquipmentListBox_SourceUpdated(object sender, DataTransferEventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void InventoryListBox_SourceUpdated(object sender, DataTransferEventArgs e)
+        {
+            RefreshData();
+        }
+
+        private void RefreshData()
+        {
+            EquipmentListBox.Items.Refresh();
+            InventoryListBox.Items.Refresh();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
         }
     }
 }

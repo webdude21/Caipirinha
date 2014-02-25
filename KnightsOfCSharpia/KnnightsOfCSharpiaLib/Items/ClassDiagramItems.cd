@@ -3,9 +3,10 @@
   <Class Name="KnightsOfCSharpiaLib.Items.Equipment">
     <Position X="14.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAAgAAAAAgAAAAAAEAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAACAAAIAgAAAAAgAAAAAAEAAAAAAAAAAA=</HashCode>
       <FileName>Items\Equipment.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Inventory">
     <Position X="16" Y="0.5" Width="1.5" />
@@ -24,7 +25,7 @@
   <Class Name="KnightsOfCSharpiaLib.Items.Item">
     <Position X="2.75" Y="1.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAgAAAAAAkAAAAAAAQgRAAAAEQAAAAQACAABAAgE=</HashCode>
+      <HashCode>AAAAAgACAAAAkAAEAAAAAAQAAAAEQAAAAQACAABAAAE=</HashCode>
       <FileName>Items\Item.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -60,7 +61,7 @@
     <Position X="6.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Items\Melee\Armour.cs</FileName>
+      <FileName>Items\Armour.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Items.Helmet">

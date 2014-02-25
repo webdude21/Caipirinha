@@ -25,6 +25,10 @@ namespace KnightsOfCSharpiaLib
 
         public void AddItem(Item item)
         {
+            if (item == null)
+            {
+                return;
+            }
             if (item.Size + this.UsedSize > Capacity)
             {
                 throw new InvalidOperationException("The inventory is full!");

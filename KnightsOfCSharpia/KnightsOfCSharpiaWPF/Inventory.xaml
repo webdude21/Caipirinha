@@ -4,13 +4,13 @@
         xmlns:creatures="clr-namespace:KnightsOfCSharpiaLib.Creatures;assembly=KnightsOfCSharpiaLib"
         xmlns:knightsOfCSharpiaLib="clr-namespace:KnightsOfCSharpiaLib;assembly=KnightsOfCSharpiaLib"
         xmlns:items="clr-namespace:KnightsOfCSharpiaLib.Items;assembly=KnightsOfCSharpiaLib"
-        Title="Inventory" Height="300" Width="600" Loaded="Window_Loaded" Background="Gray"
+        Title="Inventory" Height="400" Width="600" Loaded="Window_Loaded" Background="Gray"
         Window.ResizeMode="NoResize">
     <Grid>
         <Grid.Resources>
             <DataTemplate x:Key="InventoryTemplate" DataType="items:Item">
                 <TextBlock 
-                    FontSize="20"
+                    FontSize="16"
                     Text="{Binding Path=.Name}"
                     ToolTip="{Binding Path=.ItemSpecs}" SnapsToDevicePixels="False" FontWeight="Bold"
                     />
@@ -18,31 +18,31 @@
         </Grid.Resources>
         <Grid Margin="0,0,0,0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="180*"/>
-                <ColumnDefinition Width="180*"/>
-                <ColumnDefinition Width="100*"/>
+                <ColumnDefinition Width="200*"/>
+                <ColumnDefinition Width="200*"/>
+                <ColumnDefinition Width="140*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="20*"/>
-                <RowDefinition Height="100*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
-            <Label Content="Items in the inventory" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" FontSize="20"/>
-            <Label Content="Equped Items" HorizontalAlignment="Center" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="20" Grid.Column="1"/>
+            <Label Content="Items in the inventory" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" FontSize="18"/>
+            <Label Content="Equped Items" HorizontalAlignment="Center" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="18" Grid.Column="1"/>
             <ListBox x:Name="InventoryListBox" 
             Grid.Column="0" 
             Grid.Row="1"
-            ItemTemplate="{DynamicResource InventoryTemplate}"
-			HorizontalAlignment="Center" 
-			VerticalAlignment="Top" 
-			Background="GreenYellow" FontSize="14"/>
+            ItemTemplate="{DynamicResource InventoryTemplate}" 
+			Background="LightGray" FontSize="14" SourceUpdated="InventoryListBox_SourceUpdated"/>
             <ListBox x:Name="EquipmentListBox" 
             Grid.Column="1" 
             Grid.Row="1"
-            ItemTemplate="{DynamicResource InventoryTemplate}"
-			HorizontalAlignment="Center" 
-			VerticalAlignment="Top" 
-			Background="GreenYellow" FontSize="14"/>
-
+            ItemTemplate="{DynamicResource InventoryTemplate}" 
+			Background="LightGray" FontSize="14" SourceUpdated="EquipmentListBox_SourceUpdated"/>
+            <StackPanel Grid.Column="2" Grid.Row="1">
+                <Button Content="Equip item" FontSize="16" Margin="15,10" Click="EquipButtonClickItem"/>
+                <Button Content="Unequip item" FontSize="16" Margin="15,10" Click="UnequipButtonClickItem" />
+                <Button Content ="Drop item" FontSize="16" Margin="15,10" Click="Button_Click"/>
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>
