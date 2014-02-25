@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using KnightsOfCSharpiaLib.Creatures;
 using KnightsOfCSharpiaLib.Items;
 
@@ -92,10 +81,19 @@ namespace KnightsOfCSharpiaWPF
             InventoryListBox.Items.Refresh();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void DropButtonClick(object sender, RoutedEventArgs e)
         {
             var selectedItem = (Item)InventoryListBox.SelectedItem;
-            player.Inventory.RemoveItem(selectedItem);
+            if (selectedItem != null)
+            {
+                player.Inventory.RemoveItem(selectedItem);
+            }
+            else
+            {
+                selectedItem = (Item) EquipmentListBox.SelectedItem;
+                player.UnEquipItem(selectedItem);
+            }
+            
         }
     }
 }

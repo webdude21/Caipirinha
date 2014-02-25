@@ -40,6 +40,10 @@
 
         public void UnEquipItem(Item item)
         {
+            if (item == null)
+            {
+                return;
+            }
             this.Equipment.RemoveItem(item);
             this.Strength -= item.StrengthModifier;
             this.Dexterity -= item.DexterityModifier;

@@ -5,6 +5,7 @@
         xmlns:knightsOfCSharpiaLib="clr-namespace:KnightsOfCSharpiaLib;assembly=KnightsOfCSharpiaLib"
         xmlns:items="clr-namespace:KnightsOfCSharpiaLib.Items;assembly=KnightsOfCSharpiaLib"
         Title="Inventory" Height="400" Width="600" Loaded="Window_Loaded" Background="Gray"
+        WindowStartupLocation="CenterScreen"
         Window.ResizeMode="NoResize">
     <Grid>
         <Grid.Resources>
@@ -26,8 +27,12 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Label Content="Items in the inventory" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" FontSize="18"/>
-            <Label Content="Equped Items" HorizontalAlignment="Center" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="18" Grid.Column="1"/>
+            <Label Content="Items in the inventory" HorizontalAlignment="Center" 
+                   Margin="0" VerticalAlignment="Center" FontSize="18"
+                   FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" FontWeight="ExtraBold"/>
+            <Label Content="Equped Items" HorizontalAlignment="Center" Margin="10,0,0,0"
+                   FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" FontWeight="ExtraBold"
+                   VerticalAlignment="Center" FontSize="18" Grid.Column="1"/>
             <ListBox x:Name="InventoryListBox" 
             Grid.Column="0" 
             Grid.Row="1"
@@ -39,9 +44,21 @@
             ItemTemplate="{DynamicResource InventoryTemplate}" 
 			Background="LightGray" FontSize="14" SourceUpdated="EquipmentListBox_SourceUpdated"/>
             <StackPanel Grid.Column="2" Grid.Row="1">
-                <Button Content="Equip item" FontSize="16" Margin="15,10" Click="EquipButtonClickItem"/>
-                <Button Content="Unequip item" FontSize="16" Margin="15,10" Click="UnequipButtonClickItem" />
-                <Button Content ="Drop item" FontSize="16" Margin="15,10" Click="Button_Click"/>
+                <Button Content="Equip item" 
+                        Background="#FFB22018"
+                        FontSize="16" Margin="15,10" 
+                        FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" FontWeight="ExtraBold"
+                        Click="EquipButtonClickItem"/>
+                <Button Content="Unequip item" 
+                        Background="#FFB22018"
+                        FontSize="16" Margin="15,10" 
+                        FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" FontWeight="ExtraBold"
+                        Click="UnequipButtonClickItem" />
+                <Button Content ="Drop item" 
+                        Background="#FFB22018"
+                        FontSize="16" Margin="15,10" 
+                        FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" FontWeight="ExtraBold"
+                        Click="DropButtonClick"/>
             </StackPanel>
         </Grid>
     </Grid>
