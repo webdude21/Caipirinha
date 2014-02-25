@@ -1,4 +1,8 @@
-﻿namespace KnightsOfCSharpiaLib.Creatures
+﻿using System;
+using System.Collections.ObjectModel;
+using System.Text;
+
+namespace KnightsOfCSharpiaLib.Creatures
 {
     using KnightsOfCSharpiaLib.Items;
 
@@ -11,6 +15,11 @@
             this.NeededXP = 100;
             this.CurrentXp = 0;
             this.Inventory = new Inventory();
+        }
+
+        public string Statistics
+        {
+            get { return this.ToString(); }
         }
 
         public Inventory Inventory { get; protected set; }
@@ -75,6 +84,29 @@
             {
                 this.CurrentMana = (int)this.MaxMana;
             }
+        }
+
+        public override string ToString()
+        {
+            var stringBuilder = new StringBuilder();
+            stringBuilder.Append(string.Format("Name: {0}", this.Name));
+            stringBuilder.Append(Environment.NewLine);
+            stringBuilder.Append(string.Format("Level: {0}", this.Level));
+            stringBuilder.Append(Environment.NewLine);
+            stringBuilder.Append(string.Format("XP: {0}/{1}", this.CurrentXp, this.NeededXP));
+            stringBuilder.Append(Environment.NewLine);
+            stringBuilder.Append(string.Format("Health: {0}/{1}", this.CurrentHealth, this.MaxHealth));
+            stringBuilder.Append(Environment.NewLine);
+            stringBuilder.Append(string.Format("Mana: {0}/{1}", this.CurrentMana, this.MaxMana));
+            stringBuilder.Append(Environment.NewLine);
+            stringBuilder.Append(string.Format("Strenght: {0}", this.Strength));
+            stringBuilder.Append(Environment.NewLine);
+            stringBuilder.Append(string.Format("Dexterity: {0}", this.Dexterity));
+            stringBuilder.Append(Environment.NewLine);
+            stringBuilder.Append(string.Format("Intelligence: {0}", this.Intelligence));
+            stringBuilder.Append(Environment.NewLine);
+            stringBuilder.Append(string.Format("WillPower: {0}", this.WillPower));
+            return stringBuilder.ToString();
         }
     }
 }

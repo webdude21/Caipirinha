@@ -1,18 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using KnightsOfCSharpiaLib.Creatures;
+using System;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using KnightsOfCSharpiaLib.Creatures;
-using KnightsOfCSharpiaLib.Items;
 
 namespace KnightsOfCSharpiaWPF
 {
@@ -21,9 +9,11 @@ namespace KnightsOfCSharpiaWPF
     /// </summary>
     public partial class GameField : Window
     {
-        public GameField()
+        public Hero Player { get; set; }
+        public GameField(Hero player)
         {
             InitializeComponent();
+            this.Player = player;
         }
         protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)
         {
@@ -40,8 +30,18 @@ namespace KnightsOfCSharpiaWPF
 
         private void inventoryButton_Click(object sender, RoutedEventArgs e)
         {
-            var inventory = new Inventory();
+            var inventory = new Inventory(Player);
             inventory.Show();
+        }
+
+        private void AttackButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void DefendButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

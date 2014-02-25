@@ -11,20 +11,14 @@ namespace KnightsOfCSharpiaWPF
     /// </summary>
     public partial class Inventory
     {
-        public Hero player;
+        public Hero Player { get; set; }
 
-        public Inventory()
+        public Inventory(Hero player)
         {
             InitializeComponent();
-
-            player = new Warrior("Pesho");
-            player.Inventory.AddItem(new Boots("Кожени Ботуши", ItemRarity.Common));
-            player.Inventory.AddItem(new Belt("Кожен Колан", ItemRarity.Common));
-            player.Inventory.AddItem(new Gloves("Кожен ръкавици", ItemRarity.Common));
-            player.Inventory.AddItem(new Armour("Стоманена Броня", ItemRarity.Rare));
-            player.EquipItem(new Armour("Желязна Броня", ItemRarity.Rare));
-            InventoryListBox.ItemsSource = player.Inventory.InventoryContent;
-            EquipmentListBox.ItemsSource = player.Equipment.Items;
+            this.Player = player;
+            InventoryListBox.ItemsSource = Player.Inventory.InventoryContent;
+            EquipmentListBox.ItemsSource = Player.Equipment.Items;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -37,8 +31,8 @@ namespace KnightsOfCSharpiaWPF
             try
             {
                 var selectedItem = (Item)InventoryListBox.SelectedItem;
-                player.EquipItem(selectedItem);
-                player.Inventory.RemoveItem(selectedItem);
+                Player.EquipItem(selectedItem);
+                Player.Inventory.RemoveItem(selectedItem);
             }
             catch (InvalidOperationException)
             {
@@ -53,8 +47,8 @@ namespace KnightsOfCSharpiaWPF
             try
             {
                 var selectedItem = (Item)EquipmentListBox.SelectedItem;
-                player.Inventory.AddItem(selectedItem);
-                player.UnEquipItem(selectedItem);
+                Player.Inventory.AddItem(selectedItem);
+                Player.UnEquipItem(selectedItem);
             }
             catch (InvalidOperationException)
             {
@@ -86,12 +80,12 @@ namespace KnightsOfCSharpiaWPF
             var selectedItem = (Item)InventoryListBox.SelectedItem;
             if (selectedItem != null)
             {
-                player.Inventory.RemoveItem(selectedItem);
+                Player.Inventory.RemoveItem(selectedItem);
             }
             else
             {
                 selectedItem = (Item) EquipmentListBox.SelectedItem;
-                player.UnEquipItem(selectedItem);
+                Player.UnEquipItem(selectedItem);
             }
             
         }
