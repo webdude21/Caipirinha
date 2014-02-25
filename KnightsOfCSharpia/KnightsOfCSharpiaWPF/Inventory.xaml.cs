@@ -30,20 +30,9 @@ namespace KnightsOfCSharpiaWPF
 
             player = new Warrior("Pesho");
             player.Inventory.AddItem(new Boots("Кожени Ботуши", ItemRarity.Common));
-            player.Inventory.AddItem(new Boots("Кожен боздуган", ItemRarity.Common));
             player.Inventory.AddItem(new Belt("Кожен Колан", ItemRarity.Common));
-            player.Inventory.AddItem(new Boots("Кожени Ботуши", ItemRarity.Common));
-            player.Inventory.AddItem(new Boots("Кожен боздуган", ItemRarity.Common));
-            player.Inventory.AddItem(new Belt("Кожен Колан", ItemRarity.Common));
-            player.Inventory.AddItem(new Boots("Кожени Ботуши", ItemRarity.Common));
-            player.Inventory.AddItem(new Boots("Кожен боздуган", ItemRarity.Common));
-            player.Inventory.AddItem(new Belt("Кожен Колан", ItemRarity.Common));
-            player.Inventory.AddItem(new Boots("Кожени Ботуши", ItemRarity.Common));
-            player.Inventory.AddItem(new Boots("Кожен боздуган", ItemRarity.Common));
-            player.Inventory.AddItem(new Belt("Кожен Колан", ItemRarity.Common));
-            player.Inventory.AddItem(new Boots("Кожени Ботуши", ItemRarity.Common));
-            player.Inventory.AddItem(new Boots("Кожен боздуган", ItemRarity.Common));
-            player.Inventory.AddItem(new Belt("Кожен Колан", ItemRarity.Common));
+            player.Inventory.AddItem(new Gloves("Кожен ръкавици", ItemRarity.Common));
+            player.Inventory.AddItem(new Armour("Стоманена Броня", ItemRarity.Rare));
             player.EquipItem(new Armour("Желязна Броня", ItemRarity.Rare));
             InventoryListBox.ItemsSource = player.Inventory.InventoryContent;
             EquipmentListBox.ItemsSource = player.Equipment.Items;
@@ -58,8 +47,9 @@ namespace KnightsOfCSharpiaWPF
         {
             try
             {
-                player.EquipItem((Item)InventoryListBox.SelectedItem);
-                RefreshData();
+                var selectedItem = (Item)InventoryListBox.SelectedItem;
+                player.EquipItem(selectedItem);
+                player.Inventory.RemoveItem(selectedItem);
             }
             catch (InvalidOperationException)
             {
@@ -76,7 +66,6 @@ namespace KnightsOfCSharpiaWPF
                 var selectedItem = (Item)EquipmentListBox.SelectedItem;
                 player.Inventory.AddItem(selectedItem);
                 player.UnEquipItem(selectedItem);
-                RefreshData();
             }
             catch (InvalidOperationException)
             {
@@ -105,6 +94,8 @@ namespace KnightsOfCSharpiaWPF
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            var selectedItem = (Item)InventoryListBox.SelectedItem;
+            player.Inventory.RemoveItem(selectedItem);
         }
     }
 }

@@ -1,24 +1,17 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using KnightsOfCSharpiaLib.Annotations;
+﻿using System.Collections.ObjectModel;
 
 namespace KnightsOfCSharpiaLib.Items
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
 
-    public class Equipment : INotifyPropertyChanged
+    public class Equipment
     {
-        private readonly List<Item> items = new List<Item>();
-
-        public List<Item> Items
+        public Equipment()
         {
-            get
-            {
-                return new List<Item>(this.items);
-            }
+            this.Items = new ObservableCollection<Item>();
         }
+        public ObservableCollection<Item> Items { get; protected set; }
 
         public void AddItem(Item item)
         {
@@ -26,27 +19,16 @@ namespace KnightsOfCSharpiaLib.Items
             {
                 return;
             }
-            if (this.items.Any(x => item != null && (x.Type == item.Type)))
+            if (this.Items.Any(x => item != null && (x.Type == item.Type)))
             {
                 throw new InvalidOperationException("You can equip only one item of each type!");
             }
-            this.items.Add(item);
-            OnPropertyChanged();
+            this.Items.Add(item);
         }
 
         public void RemoveItem(Item item)
         {
-            this.items.Remove(item);
-            OnPropertyChanged();
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChangedEventHandler handler = PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+            this.Items.Remove(item);
         }
     }
 }

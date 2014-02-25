@@ -3,10 +3,9 @@
   <Class Name="KnightsOfCSharpiaLib.Items.Equipment">
     <Position X="14.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAIAgAAAAAgAAAAAAEAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAACAAAAAgAAAAAgAAAAAAEAAAAAAAAAAA=</HashCode>
       <FileName>Items\Equipment.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Inventory">
     <Position X="16" Y="0.5" Width="1.5" />

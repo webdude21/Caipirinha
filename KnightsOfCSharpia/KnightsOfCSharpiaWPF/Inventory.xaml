@@ -12,7 +12,7 @@
                 <TextBlock 
                     FontSize="16"
                     Text="{Binding Path=.Name}"
-                    ToolTip="{Binding Path=.ItemSpecs}" SnapsToDevicePixels="False" FontWeight="Bold"
+                    ToolTip="{Binding Path=.ItemSpecs}" FontWeight="Bold"
                     />
             </DataTemplate>
         </Grid.Resources>
