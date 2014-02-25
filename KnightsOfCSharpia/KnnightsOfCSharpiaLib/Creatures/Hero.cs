@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.ObjectModel;
 using System.Text;
 
 namespace KnightsOfCSharpiaLib.Creatures
 {
-    using KnightsOfCSharpiaLib.Items;
+    using Items;
 
     public abstract class Hero : Unit, IScalable, ICombatant
     {
@@ -19,7 +18,10 @@ namespace KnightsOfCSharpiaLib.Creatures
 
         public string Statistics
         {
-            get { return this.ToString(); }
+            get
+            {
+                return this.ToString();
+            }
         }
 
         public Inventory Inventory { get; protected set; }

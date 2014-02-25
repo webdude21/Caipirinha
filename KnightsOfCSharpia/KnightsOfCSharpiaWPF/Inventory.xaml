@@ -37,12 +37,12 @@
             Grid.Column="0" 
             Grid.Row="1"
             ItemTemplate="{DynamicResource InventoryTemplate}" 
-			Background="LightGray" FontSize="14" SourceUpdated="InventoryListBox_SourceUpdated"/>
+			Background="LightGray" FontSize="14"/>
             <ListBox x:Name="EquipmentListBox" 
             Grid.Column="1" 
             Grid.Row="1"
             ItemTemplate="{DynamicResource InventoryTemplate}" 
-			Background="LightGray" FontSize="14" SourceUpdated="EquipmentListBox_SourceUpdated"/>
+			Background="LightGray" FontSize="14"/>
             <StackPanel Grid.Column="2" Grid.Row="1">
                 <Button Content="Equip item" 
                         Background="#FFB22018"

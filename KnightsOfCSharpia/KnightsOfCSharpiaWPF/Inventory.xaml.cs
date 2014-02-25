@@ -59,21 +59,6 @@ namespace KnightsOfCSharpiaWPF
             }
         }
 
-        private void EquipmentListBox_SourceUpdated(object sender, DataTransferEventArgs e)
-        {
-            RefreshData();
-        }
-
-        private void InventoryListBox_SourceUpdated(object sender, DataTransferEventArgs e)
-        {
-            RefreshData();
-        }
-
-        private void RefreshData()
-        {
-            EquipmentListBox.Items.Refresh();
-            InventoryListBox.Items.Refresh();
-        }
 
         private void DropButtonClick(object sender, RoutedEventArgs e)
         {

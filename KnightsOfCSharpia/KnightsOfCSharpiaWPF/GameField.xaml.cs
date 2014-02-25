@@ -1,6 +1,7 @@
 ﻿using KnightsOfCSharpiaLib.Creatures;
 using System;
 using System.Windows;
+using KnightsOfCSharpiaLib.Engine;
 
 namespace KnightsOfCSharpiaWPF
 {
@@ -10,11 +11,44 @@ namespace KnightsOfCSharpiaWPF
     public partial class GameField : Window
     {
         public Hero Player { get; set; }
+        public Creature Enemy { get; set; }
+
+        public string GetStats
+        {
+            get { return this.Player.Statistics; }
+        }
         public GameField(Hero player)
         {
-            InitializeComponent();
             this.Player = player;
+            InitializeComponent();
         }
+
+        public void StartBattle()
+        {
+            Enemy = new EnemyMage("Gosho", 1, MageType.Icemage);
+
+            var currentBattle = new BattleEngine(Player, Enemy);
+
+            bool playerTurn = true;
+
+            while (true)
+            {
+                string command = string.Empty;
+
+                if (playerTurn)
+                {
+                    command = Console.ReadLine();
+                    playerTurn = false;
+                }
+                else
+                {
+                    playerTurn = true;
+                }
+
+                Console.WriteLine(currentBattle.NextAttack(command));
+            }
+        }
+
         protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)
         {
             const double ratio = 0.618;

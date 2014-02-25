@@ -1,7 +1,7 @@
 ﻿namespace KnightsOfCSharpiaLib.Creatures
 {
     using System;
-    using KnightsOfCSharpiaLib.Engine;
+    using Engine;
 
     public abstract class Unit : ICombatant
     {
