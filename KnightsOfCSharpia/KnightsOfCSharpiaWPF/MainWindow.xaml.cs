@@ -1,6 +1,5 @@
 ﻿using System.Windows;
-using KnightsOfCSharpiaLib.Creatures;
-using KnightsOfCSharpiaLib.Items;
+using System.Windows.Controls.Primitives;
 
 namespace KnightsOfCSharpiaWPF
 {
@@ -12,22 +11,14 @@ namespace KnightsOfCSharpiaWPF
         public MainWindow()
         {
             InitializeComponent();
-            InitilizeGameVariables();
         }
 
-        public void InitilizeGameVariables()
-        {
-        }
 
         private void newGameButton_Click(object sender, RoutedEventArgs e)
         {
             var charSelect = new CharacterSelect();
             this.Close();
             charSelect.Show();
-
-            //BattleField battleField = new BattleField(new Mage("Pesho"));
-            //this.Close();
-            //battleField.Show();
         }
 
         protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)
@@ -41,6 +32,17 @@ namespace KnightsOfCSharpiaWPF
             {
                 this.Height = sizeInfo.NewSize.Width * ratio;
             }
+        }
+
+        private void MusicButton_Checked(object sender, RoutedEventArgs e)
+        {
+            Music.Music.Open();
+            Music.Music.Play();
+        }
+
+        private void MusicButton_Unchecked(object sender, RoutedEventArgs e)
+        {
+            Music.Music.Close();
         }
     }
 }

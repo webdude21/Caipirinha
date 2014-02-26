@@ -1,7 +1,5 @@
 ﻿namespace KnightsOfCSharpiaLib.Engine
 {
-    using System;
-
     public struct AttackLog
     {
 

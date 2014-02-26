@@ -1,7 +1,5 @@
 ﻿namespace KnightsOfCSharpiaLib.Spells
 {
-    using System;
-
     public class WarriorBasicAttack : Spell
     {
         private const string SpellName = "Basic attack";

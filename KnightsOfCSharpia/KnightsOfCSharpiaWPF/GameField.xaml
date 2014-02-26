@@ -2,8 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:items="clr-namespace:KnightsOfCSharpiaLib.Items;assembly=KnightsOfCSharpiaLib"
-    xmlns:creatures="clr-namespace:KnightsOfCSharpiaLib.Creatures;assembly=KnightsOfCSharpiaLib" x:Name="GameFieldWindow"
+    x:Name="GameFieldWindow"
     mc:Ignorable="d" x:Class="KnightsOfCSharpiaWPF.GameField"
         Title="Kngiths Of CSharpia" Height="548.951908166386" Width="800" MinHeight="548.951908166386"
         MinWidth="800" WindowStartupLocation="CenterScreen">
@@ -16,6 +15,7 @@
     </Window.Resources>
     <Grid Background="{DynamicResource clearing}">
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25*"/>
             <ColumnDefinition Width="50*"/>
             <ColumnDefinition Width="50*"/>
             <ColumnDefinition Width="50*"/>
@@ -24,6 +24,11 @@
             <ColumnDefinition Width="50*"/>
             <ColumnDefinition Width="50*"/>
             <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="25*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50*"/>
@@ -34,30 +39,18 @@
             <RowDefinition Height="50*"/>
             <RowDefinition Height="50*"/>
             <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="inventoryButton" Content="Inventory" Margin="10" Background="#FFB22018" 
-                FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" Grid.ColumnSpan="2" FontSize="24" Click="inventoryButton_Click" Grid.Column="0" ToolTip="Edit the inventory of our Hero" Grid.Row="0"/>
-        <Button x:Name="Battle" Content="To Battle!" Margin="10" Background="#FFB22018" 
-                FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" Grid.ColumnSpan="2" FontSize="24" Grid.Column="0" ToolTip="Attack the enemy" Grid.Row="1" Click="Battle_Click"/>
-        <TextBlock Name="StatTextBlock" Grid.ColumnSpan="4" Grid.Column="4" Grid.Row="1" TextWrapping="Wrap" Text="{Binding Player.Statistics, BindsDirectlyToSource=True, 
-                   ElementName=GameFieldWindow, Mode=OneWay, NotifyOnSourceUpdated=True}" Margin="0,0,20,0" Grid.RowSpan="6" FontSize="24" FontFamily="Comic Sans MS" TextAlignment="Right"/>
-        <Grid.Resources>
-            <ResourceDictionary x:Name="CreatursDictionary">
-                <ImageBrush x:Key="Angel"  ImageSource="creatures_Images\angel.png"/>
-                <ImageBrush x:Key="Archer" ImageSource="creatures_Images\archer.png"/>
-                <ImageBrush x:Key="Barberian"  ImageSource="creatures_Images\barberian.png"/>
-                <ImageBrush x:Key="Brute" ImageSource="creatures_Images\brute.png"/>
-                <ImageBrush x:Key="Dwarf"  ImageSource="creatures_Images\dwarf.png"/>
-                <ImageBrush x:Key="Earthmage" ImageSource="creatures_Images\earthmage.png"/>
-                <ImageBrush x:Key="Firemage"  ImageSource="creatures_Images\firemage.png"/>
-                <ImageBrush x:Key="Icemage" ImageSource="creatures_Images\icemage.png"/>
-                <ImageBrush x:Key="Knight" ImageSource="creatures_Images\knight.png"/>
-                <ImageBrush x:Key="Necromancer"  ImageSource="creatures_Images\necromancer.png"/>
-                <ImageBrush x:Key="Ninja" ImageSource="creatures_Images\ninja.png"/>
-                <ImageBrush x:Key="Samurai"  ImageSource="creatures_Images\samurai.png"/>
-                <ImageBrush x:Key="Skeleton" ImageSource="creatures_Images\skeleton.png"/>
-                <ImageBrush x:Key="Summoner" ImageSource="creatures_Images\summoner.png"/>
-            </ResourceDictionary>
-        </Grid.Resources>
+        <Button x:Name="inventoryButton" Content="Inventory" Background="#FFB22018" 
+                FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" Grid.ColumnSpan="5" FontSize="48" Click="inventoryButton_Click" Grid.Column="1" ToolTip="Edit the inventory of our Hero" Grid.Row="1" Grid.RowSpan="2"/>
+        <Button x:Name="Battle" Content="To Battle!" Background="#FFB22018" 
+                FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" Grid.ColumnSpan="5" FontSize="48" Grid.Column="1" ToolTip="Attack the enemy" Grid.Row="4" Click="Battle_Click" Grid.RowSpan="2"/>
+        <TextBlock Name="StatTextBlock" Grid.ColumnSpan="6" Grid.Column="7" Grid.Row="1" TextWrapping="Wrap" Text="{Binding Player.Statistics, BindsDirectlyToSource=True, 
+                   ElementName=GameFieldWindow, Mode=OneWay, NotifyOnSourceUpdated=True}" Margin="60,0,0,0" Grid.RowSpan="11" FontSize="30" FontFamily="Comic Sans MS" TextAlignment="Right"/>
     </Grid>
 </Window>

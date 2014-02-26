@@ -1,7 +1,5 @@
 ﻿using KnightsOfCSharpiaLib.Creatures;
-using System;
 using System.Windows;
-using KnightsOfCSharpiaLib.Engine;
 
 namespace KnightsOfCSharpiaWPF
 {
