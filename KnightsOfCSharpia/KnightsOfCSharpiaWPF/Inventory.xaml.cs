@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows;
-using System.Windows.Data;
 using KnightsOfCSharpiaLib.Creatures;
 using KnightsOfCSharpiaLib.Items;
 
@@ -15,10 +14,8 @@ namespace KnightsOfCSharpiaWPF
 
         public Inventory(Hero player)
         {
-            InitializeComponent();
             this.Player = player;
-            InventoryListBox.ItemsSource = Player.Inventory.InventoryContent;
-            EquipmentListBox.ItemsSource = Player.Equipment.Items;
+            InitializeComponent();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

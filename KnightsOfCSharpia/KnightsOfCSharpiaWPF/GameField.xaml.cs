@@ -26,7 +26,6 @@ namespace KnightsOfCSharpiaWPF
         public void StartBattle()
         {
             Enemy = new EnemyMage("Gosho", 1, MageType.Icemage);
-
             var currentBattle = new BattleEngine(Player, Enemy);
 
             bool playerTurn = true;

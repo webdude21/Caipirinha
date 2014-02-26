@@ -38,5 +38,13 @@
                     throw new ArgumentException("Invalid damage type parameter passed!");
             }
         }
+
+        public string GetImageName
+        {
+            get
+            {
+                return @"creatures_Images\" + this.Type.ToLower() + ".png";
+            }
+        }
     }
 }
