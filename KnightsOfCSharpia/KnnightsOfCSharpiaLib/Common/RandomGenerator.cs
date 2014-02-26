@@ -84,9 +84,17 @@ using KnightsOfCSharpiaLib.Creatures;
         /// </summary>
         /// <param name="partyLevel">The level of the party for which the item is dropped</param>
         /// <returns></returns>
-        public static Item GenerateRandomItem(int partyLevel)
+        public static LootCollection GenerateRandomItem(uint partyLevel)
         {
-            // There's a 10% chance for a Rare item drop.
+            LootCollection result = new LootCollection();
+
+            // 50% chance for loot drop
+            if (generator.Next() % 2 == 1)
+            {
+                return result;
+            }
+            
+            // There's a 20% chance for a Rare item drop.
             ItemRarity rarity;
             if (RandomGenerator.GetRandomValue(0, 101) <= 20)
             {
@@ -97,23 +105,38 @@ using KnightsOfCSharpiaLib.Creatures;
                 rarity = ItemRarity.Common;
             }
 
-            // Using reflection, get all child classes of Item, i.e. Helmet
-            var targetAssembly = Assembly.GetExecutingAssembly();
-            var childrenOfItemClass = targetAssembly.GetTypes().Where(x => x.IsSubclassOf(typeof(Item))).ToList();
+            int generatedItemsNumber;
 
-            // Select a random class from them.
-            int randomIndexOfChildren = RandomGenerator.GetRandomValue(0, childrenOfItemClass.Count);
-            Type selectedType = childrenOfItemClass[randomIndexOfChildren];
+            if (rarity == ItemRarity.Rare)
+            {
+                generatedItemsNumber = 1;
+            }
+            else
+            {
+                generatedItemsNumber = GetRandomValue(1, 4);
+            }
 
-            // Invoke the MakeRandom method of the class, which creates an item based on the parameters provided
-            // In this case, we provide partyLevel and rarity of the item, and the static method of the item handles the rest.
-            MethodInfo method = typeof(Item).GetMethod("MakeRandom", BindingFlags.NonPublic | BindingFlags.Static).MakeGenericMethod(selectedType);
+            for (int i = 0; i < generatedItemsNumber; i++)
+            {
+                // Using reflection, get all child classes of Item, i.e. Helmet
+                var targetAssembly = Assembly.GetExecutingAssembly();
+                var childrenOfItemClass = targetAssembly.GetTypes().Where(x => x.IsSubclassOf(typeof(Item))).ToList();
 
-            // Returns an Object type of the desired item
-            var result = method.Invoke(null, new object[] { partyLevel, rarity });
+                // Select a random class from them.
+                int randomIndexOfChildren = RandomGenerator.GetRandomValue(0, childrenOfItemClass.Count);
+                Type selectedType = childrenOfItemClass[randomIndexOfChildren];
 
-            // Casts the resulting item to Item for polymorphism and easier method use (otherwise this too will be a generic method, which defeats the purpose)
-            return result as Item;
+                // Invoke the MakeRandom method of the class, which creates an item based on the parameters provided
+                // In this case, we provide partyLevel and rarity of the item, and the static method of the item handles the rest.
+                MethodInfo method = typeof(Item).GetMethod("MakeRandom", BindingFlags.NonPublic | BindingFlags.Static).MakeGenericMethod(selectedType);
+
+                // Returns an Object type of the desired item
+                var generatedItem = method.Invoke(null, new object[] { (int)partyLevel, rarity });
+
+                result.AddItem(generatedItem as Item);
+            }
+
+            return result;
         }
 
         public static Creature GetRandomEnemy(uint level)

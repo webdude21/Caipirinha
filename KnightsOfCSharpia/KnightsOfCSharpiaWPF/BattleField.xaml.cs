@@ -99,6 +99,15 @@ namespace KnightsOfCSharpiaWPF
                 else
                 {
                     this.playerHero.AddXP(this.enemyCreature.XPYield);
+
+                    var loot = RandomGenerator.GenerateRandomItem(this.playerHero.Level);
+
+                    if (loot.Contents.Count != 0)
+                    {
+                        Loot lootField = new Loot(this.playerHero, loot);
+                        lootField.ShowDialog();
+                    }
+
                     GameField gameField = new GameField(this.playerHero);
                     this.Close();
                     gameField.Show();

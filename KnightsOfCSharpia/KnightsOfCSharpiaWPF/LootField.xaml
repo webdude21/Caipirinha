@@ -1,10 +1,10 @@
-﻿<Window x:Name="window" x:Class="KnightsOfCSharpiaWPF.Inventory"
+﻿<Window x:Name="window" x:Class="KnightsOfCSharpiaWPF.Loot"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:creatures="clr-namespace:KnightsOfCSharpiaLib.Creatures;assembly=KnightsOfCSharpiaLib"
         xmlns:knightsOfCSharpiaLib="clr-namespace:KnightsOfCSharpiaLib;assembly=KnightsOfCSharpiaLib"
         xmlns:items="clr-namespace:KnightsOfCSharpiaLib.Items;assembly=KnightsOfCSharpiaLib"
-        Title="Inventory" Height="400" Width="600" Loaded="Window_Loaded" Background="Gray"
+        Title="Loot" Height="400" Width="600" Background="Gray"
         WindowStartupLocation="CenterScreen"
         Window.ResizeMode="NoResize">
     <Grid>
@@ -37,28 +37,25 @@
             Grid.Column="0" 
             Grid.Row="1"
             ItemTemplate="{DynamicResource InventoryTemplate}" 
-			Background="LightGray" FontSize="14" ItemsSource="{Binding Player.Inventory.InventoryContent, ElementName=window}"/>
-            <ListBox x:Name="EquipmentListBox" 
+			Background="LightGray" FontSize="14" ItemsSource="{Binding Player.Inventory.InventoryContent}"/>
+            <ListBox x:Name="LootListBox" 
             Grid.Column="1" 
             Grid.Row="1"
             ItemTemplate="{DynamicResource InventoryTemplate}" 
-			Background="LightGray" FontSize="14" ItemsSource="{Binding Player.Equipment.Items, ElementName=window}"/>
+			Background="LightGray" FontSize="14" ItemsSource="{Binding Path=LootContainer.Contents}"/>
             <StackPanel Grid.Column="2" Grid.Row="1">
-                <Button Content="Equip item" 
+                <Button Content="Take Item" 
                         Background="#FFB22018"
                         FontSize="16" Margin="15,10" 
-                        FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" FontWeight="ExtraBold"
-                        Click="EquipButtonClickItem"/>
-                <Button Content="Unequip item" 
+                        FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" FontWeight="ExtraBold" Click="Button_Click"/>
+                <Button Content="Take All" 
                         Background="#FFB22018"
                         FontSize="16" Margin="15,10" 
-                        FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" FontWeight="ExtraBold"
-                        Click="UnequipButtonClickItem" />
+                        FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" FontWeight="ExtraBold" Click="Button_Click_1"/>
                 <Button Content ="Drop item" 
                         Background="#FFB22018"
                         FontSize="16" Margin="15,10" 
-                        FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" FontWeight="ExtraBold"
-                        Click="DropButtonClick"/>
+                        FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" FontWeight="ExtraBold" Click="Button_Click_2"/>
             </StackPanel>
         </Grid>
     </Grid>

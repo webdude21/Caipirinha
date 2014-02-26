@@ -59,6 +59,7 @@
     <Compile Include="Exceptions\InsufficientManaException.cs" />
     <Compile Include="Items\Armour.cs" />
     <Compile Include="Items\Belt.cs" />
+    <Compile Include="Items\LootCollection.cs" />
     <Compile Include="Items\Melee\Boots.cs" />
     <Compile Include="Items\Equipment.cs" />
     <Compile Include="Items\Gloves.cs" />
