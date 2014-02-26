@@ -1,10 +1,5 @@
 ﻿using KnightsOfCSharpiaLib.Common;
-using KnightsOfCSharpiaLib.Items;
 using KnightsOfCSharpiaLib.Creatures;
-using KnightsOfCSharpiaLib.Engine;
-using System;
-using System.Collections.Generic;
-using Newtonsoft.Json;
 
 class ConsoleTests
 {
