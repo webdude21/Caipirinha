@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="KnightsOfCSharpia.Common.RandomGenerator" Collapsed="true">
+    <Position X="10.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAABAAAgAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\RandomGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KnightsOfCSharpia.Creatures.Creature" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAIAAAAAAAAAAAAAAQAE=</HashCode>
+      <FileName>Creatures\Creature.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KnightsOfCSharpia.Creatures.Hero" Collapsed="true">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BQAAIQAAAAAAgEAAAAAAAAgAAAAEAAAgQABgIAAEIAE=</HashCode>
+      <FileName>Creatures\Hero.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KnightsOfCSharpia.Creatures.Mage" Collapsed="true">
+    <Position X="5.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAECAAAAAAAAACAAAAAAAAIBAAAAAAAAAAAAAQCA=</HashCode>
+      <FileName>Creatures\Mage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KnightsOfCSharpia.Creatures.Player" Collapsed="true">
+    <Position X="13.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Creatures\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KnightsOfCSharpia.Creatures.Unit" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAACAAAAAgAAAQIAIEEAAADAAAAAgAAQAE=</HashCode>
+      <FileName>Creatures\Unit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KnightsOfCSharpia.Creatures.Warrior" Collapsed="true">
+    <Position X="3" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAACEAAAAAAAIBAAAAAAAAAAAAAQCA=</HashCode>
+      <FileName>Creatures\Warrior.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KnightsOfCSharpia.Items.Boots" Collapsed="true">
+    <Position X="5.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\Boots.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KnightsOfCSharpia.Items.Helmet" Collapsed="true">
+    <Position X="7.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\Helmet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KnightsOfCSharpia.Items.Item" Collapsed="true">
+    <Position X="6.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BACAAgQIgAAAgAAAAIAAAgQQACAFUCAgAUAiAAIAIoE=</HashCode>
+      <FileName>Items\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KnightsOfCSharpia.Equipment" Collapsed="true">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\Equipment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KnightsOfCSharpia.Inventory" Collapsed="true">
+    <Position X="12" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAEoAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\Inventory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KnightsOfCSharpia.Spells.MageBasicAttack" Collapsed="true">
+    <Position X="2.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAgAIAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Spells\MageBasicAttack.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KnightsOfCSharpia.Spells.Spell" Collapsed="true">
+    <Position X="1.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAggAAAAAAAABAQAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Spells\Spell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KnightsOfCSharpia.Spells.SpellBookCollection" Collapsed="true">
+    <Position X="12" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAACAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Spells\SpellBookCollection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="KnightsOfCSharpia.Spells.WarriorBasicAttack" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAgAIAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Spells\WarriorBasicAttack.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="KnightsOfCSharpia.Common.AttackLog" Collapsed="true">
+    <Position X="10.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAQAAAIAAAEAAAAAAAQAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\AttackLog.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="KnightsOfCSharpia.Spells.SpellDamage" Collapsed="true">
+    <Position X="12" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAIAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Spells\SpellDamage.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="KnightsOfCSharpia.Items.ItemRarity" Collapsed="true">
+    <Position X="12" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\ItemRarity.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="KnightsOfCSharpia.Items.ItemType" Collapsed="true">
+    <Position X="13.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAIAAAAgAAAAgAAAAAAgAAAAAAAAEAAA=</HashCode>
+      <FileName>Items\ItemType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="KnightsOfCSharpia.Spells.DamageTypeEnum" Collapsed="true">
+    <Position X="10.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAA=</HashCode>
+      <FileName>Spells\DamageTypeEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
