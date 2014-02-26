@@ -39,23 +39,8 @@
                 FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" Grid.ColumnSpan="2" FontSize="24" Click="inventoryButton_Click" Grid.Column="0" ToolTip="Edit the inventory of our Hero" Grid.Row="0"/>
         <Button x:Name="Battle" Content="To Battle!" Margin="10" Background="#FFB22018" 
                 FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" Grid.ColumnSpan="2" FontSize="24" Grid.Column="0" ToolTip="Attack the enemy" Grid.Row="1" Click="Battle_Click"/>
-        <TextBlock Name="StatTextBlock" Grid.ColumnSpan="3" Grid.Column="5" Grid.Row="1" 
-                   Grid.RowSpan="5" TextWrapping="Wrap" Text="{Binding Player.Statistics, BindsDirectlyToSource=True, 
-                   ElementName=GameFieldWindow, Mode=OneWay, NotifyOnSourceUpdated=True}"
-                   Padding="0,0,25,4" Margin="0,0,25,0" VerticalAlignment="Top" 
-                   HorizontalAlignment="Right" FontFamily="Comic Sans MS" FontSize="20" UseLayoutRounding="False"/>
-        <Grid
-            Name="CreatureGrid"
-            Grid.ColumnSpan="2" 
-            Grid.Column="2" 
-            Margin="0,0,0,0" 
-            Grid.Row="3" Grid.RowSpan="4" 
-            Background="{Binding Enemy.GetImageName, 
-                   ElementName=GameFieldWindow, Mode=OneWay, NotifyOnSourceUpdated=True}" />
-        <Image Grid.ColumnSpan="2" Grid.Column="5" HorizontalAlignment="Left" 
-               Source="{Binding Enemy.GetImageName, 
-                   ElementName=GameFieldWindow, Mode=OneWay, NotifyOnSourceUpdated=True}"
-               Height="100" Grid.Row="5" Grid.RowSpan="2" VerticalAlignment="Top" Width="100"/>
+        <TextBlock Name="StatTextBlock" Grid.ColumnSpan="4" Grid.Column="4" Grid.Row="1" TextWrapping="Wrap" Text="{Binding Player.Statistics, BindsDirectlyToSource=True, 
+                   ElementName=GameFieldWindow, Mode=OneWay, NotifyOnSourceUpdated=True}" Margin="0,0,20,0" Grid.RowSpan="6" FontSize="24" FontFamily="Comic Sans MS" TextAlignment="Right"/>
         <Grid.Resources>
             <ResourceDictionary x:Name="CreatursDictionary">
                 <ImageBrush x:Key="Angel"  ImageSource="creatures_Images\angel.png"/>

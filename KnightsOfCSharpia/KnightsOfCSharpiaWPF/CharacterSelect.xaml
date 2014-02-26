@@ -1,15 +1,50 @@
 ﻿<Window x:Class="KnightsOfCSharpiaWPF.CharacterSelect"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="CharacterSelect" Height="548.951908166386" Width="800"
-        WindowStartupLocation="CenterScreen" Background="Gray">
-    <Grid>
-        <TextBox Name="HeroName" HorizontalAlignment="Left" Margin="319,81,0,416" TextWrapping="Wrap" Text="Hero" TextAlignment="Center" VerticalAlignment="Center" Width="175" Height="21"/>
-        <Label Content="Character Name" HorizontalAlignment="Left" Margin="361,41,0,0" VerticalAlignment="Top"/>
-        <Image Name="MageImage" Source="creatures_Images/summoner.png" Margin="40,205,590,10" MouseEnter="MageImage_MouseEnter" MouseLeave="MageImage_MouseLeave" MouseDown="MageImage_MouseDown" RenderTransformOrigin="0.5,0.5">
-        </Image>
-        <Image Name="KnightImage" Source="creatures_Images/knight_flipped.png" Margin="546,205,40,49" MouseEnter="KnightImage_MouseEnter" MouseLeave="KnightImage_MouseLeave" MouseDown="KnightImage_MouseDown" RenderTransformOrigin="0.5,0.5"></Image>
-        <Button x:Name="inventoryButton" Content="Select Character" Margin="300,369,283,75" Background="#FFB22018" 
-                FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" FontSize="24" Grid.Column="0" ToolTip="Edit the inventory of our Hero" Grid.Row="0" Click="inventoryButton_Click"/>
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Height="548.951908166386" Width="800"
+		Title="Kngiths Of CSharpia - Select Character" MinWidth="800" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary x:Name="images">
+            <ImageBrush x:Key="clearing" ImageSource="Backgrounds_Images\clearing.png"/>
+            <ImageBrush x:Key="autumn"  ImageSource="Backgrounds_Images\autumn.png"/>
+            <ImageBrush x:Key="forest" ImageSource="Backgrounds_Images\forest.png"/>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Background="{DynamicResource autumn}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
+        <TextBox Name="HeroName" TextWrapping="Wrap" Text="Hero" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TextAlignment="Center" Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="4" FontSize="24" FontFamily="Comic Sans MS" FontWeight="Bold" Background="#59FFFFFF" SelectionOpacity="0.8"/>
+        <TextBlock Text="Character Name:" Grid.Column="4" RenderTransformOrigin="0.591,1.243" Grid.Row="1" Grid.ColumnSpan="4" FontSize="18.667" FontFamily="Comic Sans MS" Background="#02FFFFFF" TextAlignment="Center" IsEnabled="False"/>
+        <Image Name="MageImage" Source="creatures_Images/summoner.png" MouseEnter="MageImage_MouseEnter" MouseLeave="MageImage_MouseLeave" MouseDown="MageImage_MouseDown" Grid.RowSpan="6" Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="7"/>
+        <Image Name="KnightImage" Source="creatures_Images/knight_flipped.png" MouseEnter="KnightImage_MouseEnter" MouseLeave="KnightImage_MouseLeave" MouseDown="KnightImage_MouseDown"  Grid.ColumnSpan="3" Grid.RowSpan="6" Grid.Column="8" Grid.Row="7"/>
+        <Button x:Name="SelectCharacterButton" Content="Select Character" Background="#FFB22018" 
+                FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" FontSize="24" Grid.Column="4" ToolTip="Edit the inventory of our Hero" Grid.Row="12" Click="inventoryButton_Click" Grid.ColumnSpan="4"/>
     </Grid>
 </Window>
