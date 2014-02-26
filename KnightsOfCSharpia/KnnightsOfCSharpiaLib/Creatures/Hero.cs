@@ -88,6 +88,21 @@ namespace KnightsOfCSharpiaLib.Creatures
             }
         }
 
+        public virtual void UpdateAfterBattle()
+        {
+            this.CurrentHealth += this.Strength * 5 + this.Level * 10;
+            if (this.CurrentHealth > this.MaxHealth)
+            {
+                this.CurrentHealth = (int)this.MaxHealth;
+            }
+
+            this.CurrentMana += this.Intelligence * 5 + this.Level * 10;
+            if (this.CurrentMana > this.MaxMana)
+            {
+                this.CurrentMana = (int)this.MaxMana;
+            }
+        }
+
         public override string ToString()
         {
             var stringBuilder = new StringBuilder();

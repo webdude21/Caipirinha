@@ -98,6 +98,7 @@ namespace KnightsOfCSharpiaWPF
                 }
                 else
                 {
+                    this.playerHero.UpdateAfterBattle();
                     this.playerHero.AddXP(this.enemyCreature.XPYield);
 
                     var loot = RandomGenerator.GenerateRandomItem(this.playerHero.Level);
