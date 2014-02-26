@@ -5,7 +5,7 @@
     using KnightsOfCSharpiaLib.Exceptions;
     using KnightsOfCSharpiaLib.Common;    
 
-    public class BattleEngine
+    public class BattleEngine : IBattleSystem
     {
         private bool playerTurn;
 

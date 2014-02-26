@@ -54,6 +54,7 @@
     <Compile Include="Engine\BattleEngine.cs" />
     <Compile Include="Creatures\IEnemy.cs" />
     <Compile Include="Engine\DamageType.cs" />
+    <Compile Include="Engine\IBattleSystem.cs" />
     <Compile Include="Exceptions\CombatantsDeadException.cs" />
     <Compile Include="Exceptions\InsufficientManaException.cs" />
     <Compile Include="Items\Armour.cs" />

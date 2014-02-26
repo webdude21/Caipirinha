@@ -9,8 +9,6 @@ namespace KnightsOfCSharpiaWPF
     /// </summary>
     public partial class MainWindow
     {
-        public Hero Player { get; set; }
-
         public MainWindow()
         {
             InitializeComponent();
@@ -19,19 +17,17 @@ namespace KnightsOfCSharpiaWPF
 
         public void InitilizeGameVariables()
         {
-            Player = new Warrior("Pesho");
-            Player.Inventory.AddItem(new Boots("Кожени Ботуши", ItemRarity.Common));
-            Player.Inventory.AddItem(new Belt("Кожен Колан", ItemRarity.Common));
-            Player.Inventory.AddItem(new Gloves("Кожен ръкавици", ItemRarity.Common));
-            Player.Inventory.AddItem(new Armour("Стоманена Броня", ItemRarity.Rare));
-            Player.EquipItem(new Armour("Желязна Броня", ItemRarity.Rare));
         }
 
         private void newGameButton_Click(object sender, RoutedEventArgs e)
         {
-            var gamefield = new GameField(Player);
+            var charSelect = new CharacterSelect();
             this.Close();
-            gamefield.Show();
+            charSelect.Show();
+
+            //BattleField battleField = new BattleField(new Mage("Pesho"));
+            //this.Close();
+            //battleField.Show();
         }
 
         protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)

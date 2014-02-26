@@ -39,11 +39,11 @@
             }
         }
 
-        public string GetImageName
+        public override string GetImageName
         {
             get
             {
-                return @"creatures_Images\" + this.Type.ToLower() + ".png";
+                return @"creatures_Images\" + this.Type.ToLower() + "_flipped.png";
             }
         }
     }

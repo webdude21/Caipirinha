@@ -29,6 +29,14 @@
             get { return this.Intelligence * this.Level; }
         }
 
+        public override string GetImageName
+        {
+            get
+            {
+                return @"creatures_Images\summoner.png";
+            }
+        }
+
         public override uint DefensePoints(DamageType damageType)
         {
             switch (damageType)

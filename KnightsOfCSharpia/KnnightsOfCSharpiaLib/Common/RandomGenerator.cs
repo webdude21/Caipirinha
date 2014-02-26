@@ -10,6 +10,7 @@
     using System.Reflection;
     using Engine;
     using Items;
+using KnightsOfCSharpiaLib.Creatures;
 
     public static class RandomGenerator
     {
@@ -32,6 +33,21 @@
             "Immolate",
             "Freeze",
             "Arcane bolt"
+        };
+
+        private readonly static string[] enemyNames = new string[]
+        {
+            "Crush Bane",
+            "Thorn Seer",
+            "Speed Zephyr",
+            "Smash Mace",
+            "Mace",
+            "Hunter",
+            "Dreven",
+            "Frug",
+            "Yerghug",
+            "Buordud",
+            "Clog"
         };
 
         static RandomGenerator()
@@ -100,6 +116,30 @@
             return result as Item;
         }
 
+        public static Creature GetRandomEnemy(uint level)
+        {
+            Creature enemy;
+
+            if (generator.Next() % 2 == 0)
+            {
+                int enumCount = Enum.GetValues(typeof(MageType)).Length;
+
+                MageType mageType = (MageType)GetRandomValue(0, enumCount);
+
+                enemy = new EnemyMage(GetRandomEnemyName(), level, mageType);
+            }
+            else
+            {
+                int enumCount = Enum.GetValues(typeof(WarriorType)).Length;
+
+                WarriorType warriorType = (WarriorType)GetRandomValue(0, enumCount);
+
+                enemy = new EnemyWarrior(GetRandomEnemyName(), level, warriorType);
+            }
+
+            return enemy;
+        }
+
         internal static string GetRandomAbilityName(DamageType type)
         {
             switch (type)
@@ -111,6 +151,11 @@
                 default:
                     throw new ArgumentException("Invalid ability type passed!");
             }
+        }
+
+        private static string GetRandomEnemyName()
+        {
+            return enemyNames[GetRandomValue(0, enemyNames.Length)];
         }
     }
 }

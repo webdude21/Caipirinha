@@ -37,6 +37,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -45,6 +47,11 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="Telerik.Windows.Controls, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls.DataVisualization, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Data, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -54,6 +61,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="BattleField.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CharacterSelect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GameField.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -69,6 +84,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BattleField.xaml.cs">
+      <DependentUpon>BattleField.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CharacterSelect.xaml.cs">
+      <DependentUpon>CharacterSelect.xaml</DependentUpon>
     </Compile>
     <Compile Include="GameField.xaml.cs">
       <DependentUpon>GameField.xaml</DependentUpon>
@@ -141,6 +162,22 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="SampleData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="creatures_Images\angel_flipped.png" />
+    <Resource Include="creatures_Images\archer_flipped.png" />
+    <Resource Include="creatures_Images\barberian_flipped.png" />
+    <Resource Include="creatures_Images\brute_flipped.png" />
+    <Resource Include="creatures_Images\dwarf_flipped.png" />
+    <Resource Include="creatures_Images\earthmage_flipped.png" />
+    <Resource Include="creatures_Images\firemage_flipped.png" />
+    <Resource Include="creatures_Images\icemage_flipped.png" />
+    <Resource Include="creatures_Images\knight_flipped.png" />
+    <Resource Include="creatures_Images\necromancer_flipped.png" />
+    <Resource Include="creatures_Images\ninja_flipped.png" />
+    <Resource Include="creatures_Images\samurai_flipped.png" />
+    <Resource Include="creatures_Images\skeleton_flipped.png" />
+    <Resource Include="creatures_Images\summoner_flipped.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.5\Microsoft.Expression.Blend.WPF.targets" />

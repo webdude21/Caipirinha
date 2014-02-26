@@ -2,10 +2,14 @@
 {
     using System;
     using Engine;
+    using System.Text;
 
     public abstract class Unit : ICombatant
     {
         private string name;
+        private int currentHealth;
+        private int currentMana;
+
         protected Unit(string name, uint level = 1)
         {
             this.Name = name;
@@ -28,13 +32,55 @@
             }
         }
 
+        public string ShortStatistics
+        {
+            get
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.AppendFormat("{0}\n", this.Name);
+                sb.AppendFormat("HP: {0}/{1}", this.CurrentHealth, this.MaxHealth);
+                sb.AppendFormat("Mana: {0}/{1}", this.CurrentMana, this.MaxMana);
+
+                return sb.ToString();
+            }
+        }
+
         public uint MaxHealth { get; protected set; }
 
-        public int CurrentHealth { get; protected set; }
+        public int CurrentHealth
+        {
+            get
+            {
+                return this.currentHealth;
+            }
+            protected set
+            {
+                this.currentHealth = value;
+
+                if (this.currentHealth < 0)
+                {
+                    this.currentHealth = 0;
+                }
+            }
+        }
 
         public uint Level { get; protected set; }
 
-        public int CurrentMana { get; protected set; }
+        public int CurrentMana 
+        {
+            get
+            {
+                return this.currentMana;
+            }
+            protected set
+            {
+                this.currentMana = value;
+                if (this.currentMana < 0)
+                {
+                    this.currentMana = 0;
+                }
+            }
+        }
 
         public uint MaxMana { get; protected set; }
 
@@ -43,6 +89,8 @@
         public abstract uint AttackPoints { get; }
         
         public abstract uint DefensePoints(DamageType damageType);
+
+        public abstract string GetImageName { get; }
 
         public abstract AttackLog Attack(ICombatant target);
 

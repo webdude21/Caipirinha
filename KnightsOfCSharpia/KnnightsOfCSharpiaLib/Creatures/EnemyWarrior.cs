@@ -44,7 +44,7 @@
         {
             var attackResult = target.Defend(new AttackLog(DamageType.Physical, this.AttackPoints));
 
-            attackResult.AttackInformation = string.Format("{0} uses basic attack on", this.Name) + attackResult.AttackInformation;
+            attackResult.AttackInformation = string.Format("{0} uses basic attack on ", this.Name) + attackResult.AttackInformation;
 
             return attackResult;
         }

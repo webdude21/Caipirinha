@@ -29,6 +29,14 @@
             get { return this.Strength * this.Level; }
         }
 
+        public override string GetImageName
+        {
+            get
+            {
+                return @"creatures_Images\knight.png";
+            }
+        }
+
         public override uint DefensePoints(DamageType damageType)
         {
             switch (damageType)

@@ -101,13 +101,13 @@ namespace KnightsOfCSharpiaLib.Creatures
             stringBuilder.Append(Environment.NewLine);
             stringBuilder.Append(string.Format("Mana: {0}/{1}", this.CurrentMana, this.MaxMana));
             stringBuilder.Append(Environment.NewLine);
-            stringBuilder.Append(string.Format("Strenght: {0}", this.Strength));
+            stringBuilder.Append(string.Format("Strength: {0}", this.Strength));
             stringBuilder.Append(Environment.NewLine);
             stringBuilder.Append(string.Format("Dexterity: {0}", this.Dexterity));
             stringBuilder.Append(Environment.NewLine);
             stringBuilder.Append(string.Format("Intelligence: {0}", this.Intelligence));
             stringBuilder.Append(Environment.NewLine);
-            stringBuilder.Append(string.Format("WillPower: {0}", this.WillPower));
+            stringBuilder.Append(string.Format("Will Power: {0}", this.WillPower));
             return stringBuilder.ToString();
         }
     }
