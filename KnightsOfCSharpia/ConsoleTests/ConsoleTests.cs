@@ -1,5 +1,10 @@
 ﻿using KnightsOfCSharpiaLib.Common;
+using KnightsOfCSharpiaLib.Items;
 using KnightsOfCSharpiaLib.Creatures;
+using KnightsOfCSharpiaLib.Engine;
+using System;
+using System.Collections.Generic;
+using Newtonsoft.Json;
 
 class ConsoleTests
 {
@@ -9,6 +14,6 @@ class ConsoleTests
 
         Mage pesho = new Mage("Pesho");
 
-        pesho.SaveState();
+        pesho.Inventory.AddItem(loot.Contents[0]);
     }
 }

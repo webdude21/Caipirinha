@@ -7,6 +7,10 @@ namespace KnightsOfCSharpiaLib.Creatures
 
     public abstract class Hero : Unit, IScalable, ICombatant
     {
+        public delegate void LevelUpHandler();
+
+        public event LevelUpHandler LevelUpEvent;
+
         protected Hero(string name)
             : base(name)
         {
@@ -67,6 +71,11 @@ namespace KnightsOfCSharpiaLib.Creatures
             this.CurrentXp += xp;
             if (this.CurrentXp > this.NeededXP)
             {
+                if (this.LevelUpEvent != null)
+                {
+                    this.LevelUpEvent();
+                }
+
                 this.LevelUp();
             }
         }
@@ -101,11 +110,6 @@ namespace KnightsOfCSharpiaLib.Creatures
             {
                 this.CurrentMana = (int)this.MaxMana;
             }
-        }
-
-        public virtual string SaveState()
-        {
-            return string.Empty;
         }
 
         public override string ToString()
