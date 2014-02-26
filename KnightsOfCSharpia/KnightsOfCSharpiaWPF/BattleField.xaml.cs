@@ -25,6 +25,7 @@ namespace KnightsOfCSharpiaWPF
             InitializeComponent();
             this.DataContext = this;
             this.playerHero = playerCharacter;
+            this.playerHero.LevelUpEvent += PlayerLevelUp;
 
             this.PlayerCharacter.Source = new BitmapImage(new Uri(this.playerHero.GetImageName, UriKind.RelativeOrAbsolute));
 
@@ -33,6 +34,11 @@ namespace KnightsOfCSharpiaWPF
             this.EnemyCharacter.Source = new BitmapImage(new Uri(this.enemyCreature.GetImageName, UriKind.RelativeOrAbsolute));
 
             this.skirmish = new BattleEngine(this.playerHero, this.enemyCreature);
+        }
+
+        public void PlayerLevelUp()
+        {
+            MessageBox.Show(String.Format("Congratulations, you have gained a level!\n You are now level {0}!", this.playerHero.Level + 1));
         }
 
         private string PlayerShortStatistics
@@ -121,6 +127,7 @@ namespace KnightsOfCSharpiaWPF
                     }
 
                     GameField gameField = new GameField(this.playerHero);
+                    this.playerHero.LevelUpEvent -= PlayerLevelUp;
                     this.Close();
                     gameField.Show();
                 }

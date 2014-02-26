@@ -32,19 +32,6 @@
             }
         }
 
-        public string ShortStatistics
-        {
-            get
-            {
-                StringBuilder sb = new StringBuilder();
-                sb.AppendFormat("{0}\n", this.Name);
-                sb.AppendFormat("HP: {0}/{1}", this.CurrentHealth, this.MaxHealth);
-                sb.AppendFormat("Mana: {0}/{1}", this.CurrentMana, this.MaxMana);
-
-                return sb.ToString();
-            }
-        }
-
         public uint MaxHealth { get; protected set; }
 
         public int CurrentHealth
