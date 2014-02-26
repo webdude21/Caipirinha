@@ -36,7 +36,6 @@ namespace KnightsOfCSharpiaWPF
 
         private void MusicButton_Checked(object sender, RoutedEventArgs e)
         {
-            Music.Music.Open();
             Music.Music.Play();
         }
 

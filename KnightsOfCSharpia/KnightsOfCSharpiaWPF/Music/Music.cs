@@ -22,7 +22,6 @@ namespace KnightsOfCSharpiaWPF.Music
         {
             try
             {
-                Open(Path);
                 musicThread = new Thread(new ThreadStart(Play));
 
             }
@@ -80,12 +79,11 @@ be disabled!", (Path + "Combat.mp3")), "You don't have permission to access this
 
         public static void Play()
         {
-            if (isOpen)
-            {
-                command = "play MediaFile";
-                    command += " REPEAT";
-                mciSendString(command, null, 0, IntPtr.Zero);
-            }
+            Open(Path);
+            command = "play MediaFile";
+            command += " REPEAT";
+            mciSendString(command, null, 0, IntPtr.Zero);
+
         }
     }
 }
