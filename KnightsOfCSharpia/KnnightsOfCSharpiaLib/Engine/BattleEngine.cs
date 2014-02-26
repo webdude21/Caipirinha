@@ -27,7 +27,7 @@
         /// <returns>String specifying the result of the attack or throws an exception if it's the player's turn and invalid attack parameter is passed in.</returns>
         public string NextAttack(string desiredAttack = null)
         {
-            if (this.PlayerToon.IsAlive && this.EnemyToon.IsAlive)
+            if ((this.PlayerToon.IsAlive && this.EnemyToon.IsAlive) == false)
             {
                 throw new CombatantsDeadException();
             }
