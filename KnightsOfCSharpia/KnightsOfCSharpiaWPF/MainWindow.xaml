@@ -28,8 +28,5 @@
         <Button x:Name="SettingsButton" Content="Settings" Grid.Column="1" Margin="30,10" 
                 FontSize="48" FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" 
                 FontWeight="ExtraBold" BorderThickness="5" Background="#FFB22018" Grid.Row="1"/>
-        <Button x:Name="creditsButton" Content="Credits" Grid.Column="1" Margin="30,10" FontSize="48" 
-                FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" FontWeight="ExtraBold" 
-                BorderThickness="5" Background="#FFB22018" Grid.Row="2"/>
     </Grid>
 </Window>

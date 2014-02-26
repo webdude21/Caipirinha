@@ -70,22 +70,33 @@ namespace KnightsOfCSharpiaWPF
         {
             this.NextSkirmish("special");
         }
-
+        protected override void OnRenderSizeChanged(SizeChangedInfo sizeInfo)
+        {
+            const double ratio = 0.618;
+            if (sizeInfo.WidthChanged)
+            {
+                this.Width = sizeInfo.NewSize.Height / ratio;
+            }
+            else
+            {
+                this.Height = sizeInfo.NewSize.Width * ratio;
+            }
+        }
         private void NextSkirmish(string attackType)
         {
             try
             {
                 string result = this.skirmish.NextAttack(attackType);
-                this.PlayerBattleLog.Content = result;
+                this.PlayerBattleLog.Text = result;
                 this.EnemyStatistics.Text = this.EnemyShortStatistics;
 
                 result = this.skirmish.NextAttack(null);
-                this.EnemyBattleLog.Content = result;
+                this.EnemyBattleLog.Text = result;
                 this.PlayerStaistics.Text = this.PlayerShortStatistics;
             }
             catch (InsufficientManaException)
             {
-                this.PlayerBattleLog.Content = "You don't have enough mana to cast this!";
+                this.PlayerBattleLog.Text = "You don't have enough mana to cast this!";
             }
             catch (CombatantsDeadException)
             {
