@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="KnightsOfCSharpiaLib.Common.RandomGenerator" Collapsed="true">
-    <Position X="25.75" Y="13.5" Width="1.5" />
+    <Position X="15.75" Y="14.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACAABAAAAAAAAAAAQAAAAAgAAAAAACABAAAAAAACAA=</HashCode>
+      <HashCode>AACAABAAAAAAAAACAQAABAAgAAAAAACABgAAAAAACAA=</HashCode>
       <FileName>Common\RandomGenerator.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Creatures.Creature">
-    <Position X="3" Y="10.75" Width="1.5" />
+    <Position X="3" Y="9.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAQAAABAAIAAQAAgAAAQAQAAAAAAA=</HashCode>
       <FileName>Creatures\Creature.cs</FileName>
@@ -16,7 +16,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Creatures.EnemyMage">
-    <Position X="2" Y="14.75" Width="1.5" />
+    <Position X="2" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAEAAAQAAAIAAAAAEAAIAAQAAAAA=</HashCode>
       <FileName>Creatures\EnemyMage.cs</FileName>
@@ -24,7 +24,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Creatures.EnemyWarrior">
-    <Position X="4.25" Y="14.75" Width="1.5" />
+    <Position X="4.25" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAEAAAQAAAIAAAACEAAIAAQAAAAA=</HashCode>
       <FileName>Creatures\EnemyWarrior.cs</FileName>
@@ -32,53 +32,61 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Creatures.Hero">
-    <Position X="9.5" Y="9.5" Width="1.5" />
+    <Position X="9.5" Y="8" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="KnightsOfCSharpiaLib.Creatures.Hero.LevelUpHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Creatures\Hero.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
     <TypeIdentifier>
-      <HashCode>BAQAAACAAAAAAAAEAAAAAAQBAABBAACAAAAAAgCEACA=</HashCode>
+      <HashCode>BBQAAACAAAAAAAAEEAAAAAQBAABBAACAAAAAAgCEACA=</HashCode>
       <FileName>Creatures\Hero.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Creatures.Mage">
-    <Position X="10.75" Y="14.75" Width="1.5" />
+    <Position X="10.75" Y="14.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAJAIAAAAAAAAAAAQAAIAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAEAABAAJAIAAAAAAAAAAAQAAIAA=</HashCode>
       <FileName>Creatures\Mage.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Creatures.Unit">
-    <Position X="6.25" Y="9.5" Width="1.5" />
+    <Position X="6.25" Y="8" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQQAAAAAAAAACAAAAEAAAAQIAIAEAAAhAAAAgQAAYAA=</HashCode>
+      <HashCode>AQQAAAAAAAAACAAAAEAABAQIAIAEAAAhAAAggQAAYAA=</HashCode>
       <FileName>Creatures\Unit.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Creatures.Warrior">
-    <Position X="8.5" Y="14.75" Width="1.5" />
+    <Position X="8.5" Y="14.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAJAIAAAAAAAAAAAQAAIAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAEAABAAJAIAAAAAAAAAAAQAAIAA=</HashCode>
       <FileName>Creatures\Warrior.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Engine.BattleEngine">
-    <Position X="21" Y="13.5" Width="1.5" />
+    <Position X="13.5" Y="13" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAQAAAAAgAAgAAAAAAAAAAAAgAAA=</HashCode>
       <FileName>Engine\BattleEngine.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Exceptions.CombatantsDeadException">
-    <Position X="25.75" Y="14.75" Width="1.5" />
+    <Position X="15.75" Y="15" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Exceptions\CombatantsDeadException.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Exceptions.InsufficientManaException">
-    <Position X="25.75" Y="16" Width="1.5" />
+    <Position X="15.75" Y="16.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Exceptions\InsufficientManaException.cs</FileName>
@@ -168,14 +176,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Items.Shield">
-    <Position X="0.75" Y="3.25" Width="1.5" />
+    <Position X="0.75" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Items\Melee\Shield.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Items.Sword">
-    <Position X="0.75" Y="1.25" Width="1.5" />
+    <Position X="0.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Items\Melee\Sword.cs</FileName>
@@ -189,112 +197,91 @@
     </TypeIdentifier>
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Annotations.PathReferenceAttribute">
-    <Position X="23.25" Y="8.5" Width="1.5" />
+    <Position X="16.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Properties\Annotations.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Annotations.AspMvcAreaAttribute">
-    <Position X="21" Y="10.5" Width="1.5" />
+    <Position X="14.25" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Properties\Annotations.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Annotations.AspMvcPartialViewAttribute">
-    <Position X="25.5" Y="10.5" Width="1.5" />
+    <Position X="16.25" Y="10.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Properties\Annotations.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Annotations.AspMvcViewAttribute">
-    <Position X="23.25" Y="10.5" Width="1.5" />
+    <Position X="16.5" Y="8.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Properties\Annotations.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="KnightsOfCSharpiaLib.Spells.MageBasicAttack">
-    <Position X="21" Y="4.5" Width="1.5" />
+  <Class Name="KnightsOfCSharpiaLib.Items.LootCollection" Collapsed="true">
+    <Position X="14.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAgAIAAAIAAAAAAAAAAAAA=</HashCode>
-      <FileName>Spells\MageBasicAttack.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="KnightsOfCSharpiaLib.Spells.Spell">
-    <Position X="22.25" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAIAAAggAAAAAAAABAQAAAAAAAAAAAAAAgAAAAA=</HashCode>
-      <FileName>Spells\Spell.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="KnightsOfCSharpiaLib.Spells.SpellBookCollection">
-    <Position X="25.5" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>gAAAAAAAAAAAAAAACAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Spells\SpellBookCollection.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="KnightsOfCSharpiaLib.Spells.WarriorBasicAttack">
-    <Position X="23.5" Y="4.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAgAAAAAAAAAAAAgAIAAAIAAAAAAAAAAAAA=</HashCode>
-      <FileName>Spells\WarriorBasicAttack.cs</FileName>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAgAAAAAAEAAAAAABAAAA=</HashCode>
+      <FileName>Items\LootCollection.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Struct Name="KnightsOfCSharpiaLib.Engine.AttackLog">
-    <Position X="21" Y="16" Width="1.5" />
+    <Position X="13.5" Y="15.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Engine\AttackLog.cs</FileName>
     </TypeIdentifier>
   </Struct>
-  <Struct Name="KnightsOfCSharpiaLib.Spells.SpellDamage">
-    <Position X="27.25" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAIAAAAgAAAAAAAAAAAA=</HashCode>
-      <FileName>Spells\SpellDamage.cs</FileName>
-    </TypeIdentifier>
-  </Struct>
   <Interface Name="KnightsOfCSharpiaLib.Creatures.ICombatant">
-    <Position X="12" Y="9.5" Width="1.5" />
+    <Position X="12" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQQAAAAAAAAAAAAAAEAAAAAIAIAAAAAAAAAAAQAAQAA=</HashCode>
       <FileName>Creatures\ICombatant.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="KnightsOfCSharpiaLib.Creatures.IEnemy">
-    <Position X="0.5" Y="10.75" Width="1.5" />
+    <Position X="0.5" Y="9.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
       <FileName>Creatures\IEnemy.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="KnightsOfCSharpiaLib.Creatures.IScalable">
-    <Position X="14.75" Y="14.75" Width="1.5" />
+    <Position X="14" Y="10.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAABAACAAAAAAACAAAA=</HashCode>
       <FileName>Creatures\IScalable.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Interface Name="KnightsOfCSharpiaLib.Engine.IBattleSystem" Collapsed="true">
+    <Position X="14.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\IBattleSystem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Enum Name="KnightsOfCSharpiaLib.Creatures.MageType">
-    <Position X="12.5" Y="14.75" Width="1.5" />
+    <Position X="11.75" Y="11.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAIAAAAQCAAAAAAAAAAAAAIAAAAAAAAAAAAAABA=</HashCode>
       <FileName>Creatures\MageType.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="KnightsOfCSharpiaLib.Creatures.WarriorType">
-    <Position X="6.75" Y="14.75" Width="1.5" />
+    <Position X="6.75" Y="13.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEAABAAAkAEAAAAAAAAYAAAAAAEAAAAAAAAAAAQAAAA=</HashCode>
       <FileName>Creatures\WarriorType.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="KnightsOfCSharpiaLib.Engine.DamageType">
-    <Position X="22.75" Y="16" Width="1.5" />
+    <Position X="15.75" Y="13" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAA=</HashCode>
       <FileName>Engine\DamageType.cs</FileName>
@@ -312,13 +299,6 @@
     <TypeIdentifier>
       <HashCode>AAIAAAAAAAEAQIAAAAAAAAAgAAAAAAgAAAAAAAAEAAA=</HashCode>
       <FileName>Items\ItemType.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
-  <Enum Name="KnightsOfCSharpiaLib.Spells.DamageType">
-    <Position X="25.5" Y="4.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAABAAAAAAA=</HashCode>
-      <FileName>Spells\DamageType.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />
