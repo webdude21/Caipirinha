@@ -88,6 +88,7 @@
     <None Include="FullClassDiagram.cd" />
     <None Include="Creatures\ClassDiagramCreatures.cd" />
     <None Include="Items\ClassDiagramItems.cd" />
+    <None Include="packages.config" />
     <None Include="Spells\ClassDiagramSpells.cd" />
   </ItemGroup>
   <ItemGroup />
