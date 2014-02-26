@@ -1,7 +1,5 @@
 ﻿namespace KnightsOfCSharpiaLib.Spells
 {
-    using System;
-
     public struct SpellDamage
     {
         public SpellDamage(string name, uint damage, DamageType damageType)

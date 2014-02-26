@@ -22,11 +22,11 @@
 		Source="КOCS_Images/OF CSHAPRIA.png" 
 		Margin="10" RenderTransformOrigin="0.5,0.5" 
 		HorizontalAlignment="Left" VerticalAlignment="Top" Grid.RowSpan="6" Grid.Row="0" Grid.ColumnSpan="2"/>
-        <Button x:Name="newGameButton"  Content="New Game" Grid.Column="1" Margin="30,10" 
-                FontSize="48" FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" 
+        <Button x:Name="NewGameButton"  Content="New Game" Grid.Column="1" Margin="30,10" 
+                FontSize="36" FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" 
                 FontWeight="ExtraBold" BorderThickness="5" Background="#FFB22018" Click="newGameButton_Click"/>
-        <Button x:Name="SettingsButton" Content="Settings" Grid.Column="1" Margin="30,10" 
-                FontSize="48" FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" 
-                FontWeight="ExtraBold" BorderThickness="5" Background="#FFB22018" Grid.Row="1"/>
+        <ToggleButton x:Name="MusicButton" Content="Music On/Off" Grid.Column="1" Margin="30,10" 
+                FontSize="36" FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" 
+                FontWeight="ExtraBold" BorderThickness="5" Background="#FFB22018" Grid.Row="1" Checked="MusicButton_Checked" IsChecked="True" Unchecked="MusicButton_Unchecked"/>
     </Grid>
 </Window>
