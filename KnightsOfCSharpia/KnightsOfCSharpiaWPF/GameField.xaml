@@ -52,5 +52,7 @@
                 FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" Grid.ColumnSpan="5" FontSize="48" Grid.Column="1" ToolTip="Attack the enemy" Grid.Row="4" Click="Battle_Click" Grid.RowSpan="2"/>
         <TextBlock Name="StatTextBlock" Grid.ColumnSpan="6" Grid.Column="7" Grid.Row="1" TextWrapping="Wrap" Text="{Binding Player.Statistics, BindsDirectlyToSource=True, 
                    ElementName=GameFieldWindow, Mode=OneWay, NotifyOnSourceUpdated=True}" Margin="60,0,0,0" Grid.RowSpan="11" FontSize="30" FontFamily="Comic Sans MS" TextAlignment="Right"/>
+        <Button x:Name="SaveCharacter" Content="Save Hero" Background="#FFB22018" 
+        	FontFamily="/KnightsOfCSharpiaWPF;component/Fonts/#Old English Text MT" Grid.ColumnSpan="5" FontSize="48" Grid.Column="1" ToolTip="Save your character" Grid.Row="7" Grid.RowSpan="2" Click="SaveCharacter_Click"/>
     </Grid>
 </Window>

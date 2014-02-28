@@ -4,7 +4,9 @@
     using KnightsOfCSharpiaLib.Common;
     using KnightsOfCSharpiaLib.Engine;
     using KnightsOfCSharpiaLib.Exceptions;
+    using Newtonsoft.Json;
 
+    [JsonObject(MemberSerialization.OptIn)]
     public class Mage : Hero, IScalable, ICombatant
     {
         private const int SpecialAbilityManaCost = 70;

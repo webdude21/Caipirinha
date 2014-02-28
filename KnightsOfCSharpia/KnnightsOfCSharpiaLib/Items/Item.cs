@@ -6,9 +6,66 @@
     using System.Reflection;
     using System.Text;
     using KnightsOfCSharpiaLib.Common;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
 
+    [JsonObject(MemberSerialization.OptIn)]
     public class Item
     {
+        internal static Item ParseFromJson(string json)
+        {
+            JObject jsonObject = JObject.Parse(json);
+
+            Item result;
+
+            if (jsonObject["Name"].ToString().ToLower().Contains("sword"))
+            {
+                result = JsonConvert.DeserializeObject<Sword>(jsonObject.ToString());
+            }
+            else if (jsonObject["Name"].ToString().ToLower().Contains("shield"))
+            {
+                result = JsonConvert.DeserializeObject<Shield>(jsonObject.ToString());
+            }
+            else if (jsonObject["Name"].ToString().ToLower().Contains("helmet"))
+            {
+                result = JsonConvert.DeserializeObject<Helmet>(jsonObject.ToString());
+            }
+            else if (jsonObject["Name"].ToString().ToLower().Contains("boots"))
+            {
+                result = JsonConvert.DeserializeObject<Boots>(jsonObject.ToString());
+            }
+            else if (jsonObject["Name"].ToString().ToLower().Contains("hood"))
+            {
+                result = JsonConvert.DeserializeObject<Hood>(jsonObject.ToString());
+            }
+            else if (jsonObject["Name"].ToString().ToLower().Contains("robe"))
+            {
+                result = JsonConvert.DeserializeObject<Robe>(jsonObject.ToString());
+            }
+            else if (jsonObject["Name"].ToString().ToLower().Contains("slippers"))
+            {
+                result = JsonConvert.DeserializeObject<Slippers>(jsonObject.ToString());
+            }
+            else if (jsonObject["Name"].ToString().ToLower().Contains("staff"))
+            {
+                result = JsonConvert.DeserializeObject<Staff>(jsonObject.ToString());
+            }
+            else if (jsonObject["Name"].ToString().ToLower().Contains("armour"))
+            {
+                result = JsonConvert.DeserializeObject<Armour>(jsonObject.ToString());
+            }
+            else if (jsonObject["Name"].ToString().ToLower().Contains("belt"))
+            {
+                result = JsonConvert.DeserializeObject<Belt>(jsonObject.ToString());
+            }
+            else
+            {
+                result = JsonConvert.DeserializeObject<Gloves>(jsonObject.ToString());
+            }
+
+            return result;
+        }
+
         private const int MinModifierValue = 0;
 
         private string name;
@@ -28,6 +85,7 @@
             this.WillPowerModifier = MinModifierValue;
         }
 
+        [JsonProperty(Order=1)]
         public string Name
         {
             get
@@ -45,18 +103,25 @@
             }
         }
 
+        [JsonProperty(Order=2)]
         public ItemType Type { get; set; }
 
+        [JsonProperty(Order=3)]
         public ItemRarity Rarity { get; set; }
 
+        [JsonProperty(Order=4)]
         public int Size { get; set; }
 
+        [JsonProperty(Order=5)]
         public uint StrengthModifier { get; set; }
 
+        [JsonProperty(Order=6)]
         public uint DexterityModifier { get; set; }
 
+        [JsonProperty(Order=7)]
         public uint IntelligenceModifier { get; set; }
 
+        [JsonProperty(Order=8)]
         public uint WillPowerModifier { get; set; }
 
         internal static T MakeRandom<T>(int partyLevel, ItemRarity rarity) where T : Item
@@ -139,11 +204,6 @@
             }
 
             string itemName = String.Format("{0} of {1}", variable.Name, modifierName);
-
-            // Get the size of the item (how much slots in the inventory it takes) and the equipment slot it occupies
-            int itemSize = (int)variable.GetField("ItemSize", BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy).GetValue(null);
-
-            ItemType itemSlot = (ItemType)variable.GetField("ItemSlot", BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy).GetValue(null);
 
             object instance = Activator.CreateInstance(variable, itemName, rarity, propertiesAndValues);
 

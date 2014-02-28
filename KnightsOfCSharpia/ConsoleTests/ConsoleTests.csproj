@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{292FFA95-1F9D-4805-BCC5-87C91251B718}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{9320CCFD-4DE2-45BF-83D9-B75A59B78861}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KnightsOfCSharpiaLib</RootNamespace>
-    <AssemblyName>KnightsOfCSharpiaLib</AssemblyName>
+    <RootNamespace>ConsoleTests</RootNamespace>
+    <AssemblyName>ConsoleTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,52 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Creatures\ICombatant.cs" />
-    <Compile Include="Common\RandomGenerator.cs" />
-    <Compile Include="Creatures\Creature.cs" />
-    <Compile Include="Creatures\Hero.cs" />
-    <Compile Include="Creatures\IScalable.cs" />
-    <Compile Include="Creatures\Mage.cs" />
-    <Compile Include="Creatures\MageType.cs" />
-    <Compile Include="Creatures\Unit.cs" />
-    <Compile Include="Creatures\Warrior.cs" />
-    <Compile Include="Creatures\EnemyMage.cs" />
-    <Compile Include="Creatures\EnemyWarrior.cs" />
-    <Compile Include="Engine\AttackLog.cs" />
-    <Compile Include="Engine\BattleEngine.cs" />
-    <Compile Include="Creatures\IEnemy.cs" />
-    <Compile Include="Engine\DamageType.cs" />
-    <Compile Include="Engine\IBattleSystem.cs" />
-    <Compile Include="Exceptions\CombatantsDeadException.cs" />
-    <Compile Include="Exceptions\InsufficientManaException.cs" />
-    <Compile Include="Items\Armour.cs" />
-    <Compile Include="Items\Belt.cs" />
-    <Compile Include="Items\LootCollection.cs" />
-    <Compile Include="Items\Melee\Boots.cs" />
-    <Compile Include="Items\Equipment.cs" />
-    <Compile Include="Items\Gloves.cs" />
-    <Compile Include="Items\Melee\Helmet.cs" />
-    <Compile Include="Items\Caster\Hood.cs" />
-    <Compile Include="Items\Inventory.cs" />
-    <Compile Include="Items\Item.cs" />
-    <Compile Include="Items\ItemRarity.cs" />
-    <Compile Include="Items\ItemType.cs" />
-    <Compile Include="Items\Caster\Robe.cs" />
-    <Compile Include="Items\Melee\Shield.cs" />
-    <Compile Include="Items\Caster\Slippers.cs" />
-    <Compile Include="Items\Caster\Staff.cs" />
-    <Compile Include="Items\Melee\Sword.cs" />
-    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="ConsoleTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Creatures\WarriorType.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="FullClassDiagram.cd" />
-    <None Include="Creatures\ClassDiagramCreatures.cd" />
-    <None Include="Items\ClassDiagramItems.cd" />
-    <None Include="packages.config" />
+    <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\KnnightsOfCSharpiaLib\KnightsOfCSharpiaLib.csproj">
+      <Project>{292ffa95-1f9d-4805-bcc5-87c91251b718}</Project>
+      <Name>KnightsOfCSharpiaLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

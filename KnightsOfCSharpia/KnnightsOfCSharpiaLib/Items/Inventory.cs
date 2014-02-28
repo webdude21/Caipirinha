@@ -3,10 +3,12 @@
 namespace KnightsOfCSharpiaLib
 {
     using Items;
+    using Newtonsoft.Json;
     using System;
     using System.Linq;
     using System.Text;
 
+    [JsonObject(MemberSerialization.OptIn)]
     public class Inventory
     {
         public Inventory(uint capacity = 100)
@@ -15,7 +17,10 @@ namespace KnightsOfCSharpiaLib
             Capacity = capacity;
         }
 
+        [JsonProperty]
         public ObservableCollection<Item> InventoryContent { get; protected set; }
+
+        [JsonProperty(Order=1)]
         public uint Capacity { get; private set; }
 
         public uint UsedSize

@@ -1,4 +1,5 @@
 ﻿using KnightsOfCSharpiaLib.Creatures;
+using System.IO;
 using System.Windows;
 
 namespace KnightsOfCSharpiaWPF
@@ -45,6 +46,13 @@ namespace KnightsOfCSharpiaWPF
             BattleField battleField = new BattleField(this.Player);
             this.Close();
             battleField.Show();
+        }
+
+        private void SaveCharacter_Click(object sender, RoutedEventArgs e)
+        {
+            SaveCharacterDialog saveDialog = new SaveCharacterDialog(this.Player);
+            saveDialog.Owner = this;
+            saveDialog.ShowDialog();
         }
     }
 }

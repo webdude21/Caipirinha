@@ -2,15 +2,19 @@
 
 namespace KnightsOfCSharpiaLib.Items
 {
+    using Newtonsoft.Json;
     using System;
     using System.Linq;
 
+    [JsonObject(MemberSerialization.OptIn)]
     public class Equipment
     {
         public Equipment()
         {
             this.Items = new ObservableCollection<Item>();
         }
+
+        [JsonProperty]
         public ObservableCollection<Item> Items { get; protected set; }
 
         public void AddItem(Item item)

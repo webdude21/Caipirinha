@@ -43,5 +43,12 @@ namespace KnightsOfCSharpiaWPF
         {
             Music.Music.Close();
         }
+
+        private void LoadSave_Click(object sender, RoutedEventArgs e)
+        {
+            LoadState loadGame = new LoadState(this);
+            loadGame.Owner = this;
+            loadGame.ShowDialog();
+        }
     }
 }

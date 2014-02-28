@@ -4,9 +4,59 @@ using System.Text;
 namespace KnightsOfCSharpiaLib.Creatures
 {
     using Items;
+    using Newtonsoft.Json;
+    using Newtonsoft.Json.Linq;
+    using System.Collections.Generic;
 
+    [JsonObject(MemberSerialization.OptIn)]
     public abstract class Hero : Unit, IScalable, ICombatant
     {
+        public static Hero LoadState(string json)
+        {
+            int typeNameEndIndex = json.IndexOf(Environment.NewLine.ToString());
+
+            string typeName = json.Substring(0, typeNameEndIndex - 2);
+            string parsableJson = json.Remove(0, typeNameEndIndex - 1);
+
+            JObject jsonObject = JObject.Parse(parsableJson);
+
+            JToken inventory = jsonObject["Inventory"];
+            JToken equipment = jsonObject["Equipment"];
+
+            jsonObject.Remove("Inventory");
+            jsonObject.Remove("Equipment");
+
+            Hero result;
+
+            if (typeName == "Warrior")
+            {
+                result = JsonConvert.DeserializeObject<Warrior>(jsonObject.ToString());
+            }
+            else
+            {
+                result = JsonConvert.DeserializeObject<Mage>(jsonObject.ToString());
+            }
+
+            foreach (var item in inventory["InventoryContent"])
+            {
+                result.Inventory.AddItem(Item.ParseFromJson(item.ToString()));
+            }
+
+            foreach (var item in equipment["Items"])
+            {
+                result.EquipItem(Item.ParseFromJson(item.ToString()));
+            }
+
+            if (result.GetType().Name == "Warrior")
+            {
+                return result as Warrior;
+            }
+            else
+            {
+                return result as Mage;
+            }
+        }
+
         public delegate void LevelUpHandler();
 
         public event LevelUpHandler LevelUpEvent;
@@ -28,16 +78,28 @@ namespace KnightsOfCSharpiaLib.Creatures
             }
         }
 
+        [JsonProperty(Order=12)]
         public Inventory Inventory { get; protected set; }
+
+        [JsonProperty(Order=7)]
         public uint Strength { get; protected set; }
+
+        [JsonProperty(Order=8)]
         public uint Dexterity { get; protected set; }
+
+        [JsonProperty(Order=9)]
         public uint Intelligence { get; protected set; }
+
+        [JsonProperty(Order=9)]
         public uint WillPower { get; protected set; }
 
+        [JsonProperty(Order=13)]
         public Equipment Equipment { get; protected set; }
 
+        [JsonProperty(Order=11)]
         public uint CurrentXp { get; private set; }
 
+        [JsonProperty(Order=10)]
         public uint NeededXP { get; private set; }
 
         public void EquipItem(Item item)
@@ -110,6 +172,13 @@ namespace KnightsOfCSharpiaLib.Creatures
             {
                 this.CurrentMana = (int)this.MaxMana;
             }
+        }
+
+        public virtual string SaveState()
+        {
+            string result = JsonConvert.SerializeObject(this, Formatting.Indented);
+            result = result.Insert(0, String.Format("{0}\n", this.GetType().Name));
+            return result;
         }
 
         public override string ToString()

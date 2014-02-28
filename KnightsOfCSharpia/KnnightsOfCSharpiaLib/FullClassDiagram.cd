@@ -41,7 +41,7 @@
       </Delegate>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>BBQAAACAAAAAAAAEEAAAAAQBAABBAACAAAAAAgCEACA=</HashCode>
+      <HashCode>BhQAAACAAAAAAAAEEAAIAAQBAABBAACAAAAAAgCEACA=</HashCode>
       <FileName>Creatures\Hero.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -151,7 +151,7 @@
   <Class Name="KnightsOfCSharpiaLib.Items.Item">
     <Position X="3" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAgACAAAAkAAEAAAAAAQAAAAEQAAAAQACAABAAAE=</HashCode>
+      <HashCode>AAAAAgACAAAAkACEAAAAAAQAAAAEQAAAAQACAABAAAE=</HashCode>
       <FileName>Items\Item.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -194,34 +194,6 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAEAAAAACgAAAAAAEAAAAAABEAAA=</HashCode>
       <FileName>Items\Inventory.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="KnightsOfCSharpiaLib.Annotations.PathReferenceAttribute">
-    <Position X="16.5" Y="6.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Properties\Annotations.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="KnightsOfCSharpiaLib.Annotations.AspMvcAreaAttribute">
-    <Position X="14.25" Y="8.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Properties\Annotations.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="KnightsOfCSharpiaLib.Annotations.AspMvcPartialViewAttribute">
-    <Position X="16.25" Y="10.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Properties\Annotations.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="KnightsOfCSharpiaLib.Annotations.AspMvcViewAttribute">
-    <Position X="16.5" Y="8.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Properties\Annotations.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="KnightsOfCSharpiaLib.Items.LootCollection" Collapsed="true">

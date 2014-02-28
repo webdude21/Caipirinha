@@ -1,5 +1,6 @@
 ﻿namespace KnightsOfCSharpiaLib.Items
 {
+    using Newtonsoft.Json;
     using System.Collections.Generic;
     using System.Reflection;
 
@@ -9,6 +10,7 @@
 
         public const int ItemSize = 2;
 
+        [JsonConstructor]
         public Boots(string name, ItemRarity rarity)
             :base(name, ItemSlot, rarity, ItemSize)
         {

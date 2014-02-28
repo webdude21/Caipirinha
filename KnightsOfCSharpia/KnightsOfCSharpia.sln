@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnightsOfCSharpiaWPF", "Kni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnightsOfCSharpiaLib", "KnnightsOfCSharpiaLib\KnightsOfCSharpiaLib.csproj", "{292FFA95-1F9D-4805-BCC5-87C91251B718}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTests", "ConsoleTests\ConsoleTests.csproj", "{9320CCFD-4DE2-45BF-83D9-B75A59B78861}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{292FFA95-1F9D-4805-BCC5-87C91251B718}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{292FFA95-1F9D-4805-BCC5-87C91251B718}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{292FFA95-1F9D-4805-BCC5-87C91251B718}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9320CCFD-4DE2-45BF-83D9-B75A59B78861}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9320CCFD-4DE2-45BF-83D9-B75A59B78861}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9320CCFD-4DE2-45BF-83D9-B75A59B78861}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9320CCFD-4DE2-45BF-83D9-B75A59B78861}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

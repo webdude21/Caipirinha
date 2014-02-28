@@ -3,7 +3,9 @@
     using System;
     using Engine;
     using System.Text;
+    using Newtonsoft.Json;
 
+    [JsonObject(MemberSerialization.OptIn)]
     public abstract class Unit : ICombatant
     {
         private string name;
@@ -19,6 +21,7 @@
             this.IsAlive = true;
         }
 
+        [JsonProperty(Order=1)]
         public string Name
         {
             get { return this.name; }
@@ -32,8 +35,10 @@
             }
         }
 
+        [JsonProperty(Order=2)]
         public uint MaxHealth { get; protected set; }
 
+        [JsonProperty(Order=3)]
         public int CurrentHealth
         {
             get
@@ -51,8 +56,10 @@
             }
         }
 
+        [JsonProperty(Order=6)]
         public uint Level { get; protected set; }
 
+        [JsonProperty(Order=5)]
         public int CurrentMana 
         {
             get
@@ -69,6 +76,7 @@
             }
         }
 
+        [JsonProperty(Order=4)]
         public uint MaxMana { get; protected set; }
 
         public bool IsAlive { get; protected set; }
